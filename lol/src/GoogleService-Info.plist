@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>658229826524-n922806lqepvdoqgccd0p7p542u72jp3.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.658229826524-n922806lqepvdoqgccd0p7p542u72jp3</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDMu37yo1hUoZtAeXD1Q3c0s45aGvV51ak</string>
+	<key>GCM_SENDER_ID</key>
+	<string>658229826524</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.appraf.lol</string>
+	<key>PROJECT_ID</key>
+	<string>lol-wallpapers-fed44</string>
+	<key>STORAGE_BUCKET</key>
+	<string>lol-wallpapers-fed44.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:658229826524:ios:0f6f0410d3de5bca</string>
+	<key>DATABASE_URL</key>
+	<string>https://lol-wallpapers-fed44.firebaseio.com</string>
+</dict>
+</plist>

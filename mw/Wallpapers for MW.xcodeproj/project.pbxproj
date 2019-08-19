@@ -1,0 +1,539 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		055F486F26653FEB452E2A34 /* Pods_Wallpapers_for_MW.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8224158ED62F9E685B334ACE /* Pods_Wallpapers_for_MW.framework */; };
+		FBC805FA22F44FF70090CA6D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC805F922F44FF70090CA6D /* AppDelegate.swift */; };
+		FBC8060122F44FF80090CA6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBC8060022F44FF80090CA6D /* Assets.xcassets */; };
+		FBC8060422F44FF80090CA6D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBC8060222F44FF80090CA6D /* LaunchScreen.storyboard */; };
+		FBD89D3322FECD2F00C590FF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FBD89D3122FECD2F00C590FF /* Localizable.strings */; };
+		FBD89D4222FECF6800C590FF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FBD89D4022FECF6800C590FF /* InfoPlist.strings */; };
+		FBE3580B230AFAAA001BC06F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FBE3580A230AFAAA001BC06F /* GoogleService-Info.plist */; };
+		FBE35811230B0044001BC06F /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBE35810230B0044001BC06F /* Core.framework */; };
+		FBE35812230B0044001BC06F /* Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FBE35810230B0044001BC06F /* Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		FBE35813230B0044001BC06F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				FBE35812230B0044001BC06F /* Core.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		244138E230A88088C6DD33BF /* Pods-wallpapers-Wallpapers for MW.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wallpapers-Wallpapers for MW.release.xcconfig"; path = "../../Pods/Target Support Files/Pods-wallpapers-Wallpapers for MW/Pods-wallpapers-Wallpapers for MW.release.xcconfig"; sourceTree = "<group>"; };
+		8224158ED62F9E685B334ACE /* Pods_Wallpapers_for_MW.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wallpapers_for_MW.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B8420862C06C0F76821959B2 /* Pods-wallpapers-Wallpapers for MW.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wallpapers-Wallpapers for MW.debug.xcconfig"; path = "../../Pods/Target Support Files/Pods-wallpapers-Wallpapers for MW/Pods-wallpapers-Wallpapers for MW.debug.xcconfig"; sourceTree = "<group>"; };
+		DBF03B9F9A3642905F257245 /* Pods-Wallpapers for MW.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wallpapers for MW.debug.xcconfig"; path = "../../Pods/Target Support Files/Pods-Wallpapers for MW/Pods-Wallpapers for MW.debug.xcconfig"; sourceTree = "<group>"; };
+		E194CEE88520E4EDB68F0951 /* Pods-Wallpapers for MW.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wallpapers for MW.release.xcconfig"; path = "../../Pods/Target Support Files/Pods-Wallpapers for MW/Pods-Wallpapers for MW.release.xcconfig"; sourceTree = "<group>"; };
+		FB508C452309CD04005FAF45 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FBC805F622F44FF70090CA6D /* Wallpapers for MW.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Wallpapers for MW.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FBC805F922F44FF70090CA6D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FBC8060022F44FF80090CA6D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FBC8060322F44FF80090CA6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FBC8060522F44FF80090CA6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FBD89D2F22FECD0700C590FF /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		FBD89D3222FECD2F00C590FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FBD89D3522FECD3F00C590FF /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FBD89D3E22FECDEA00C590FF /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		FBD89D3F22FECDEA00C590FF /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FBD89D4122FECF6800C590FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FBD89D4322FECF6B00C590FF /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FBD89D4422FECF6C00C590FF /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FBD89D4722FEDEFF00C590FF /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		FBD89D4822FEDF0000C590FF /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FBD89D4922FEDF0000C590FF /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FBD89D4A22FEDF3400C590FF /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		FBD89D4B22FEDF3400C590FF /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FBD89D4C22FEDF3400C590FF /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FBD89D5022FEDF5D00C590FF /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		FBD89D5122FEDF5D00C590FF /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		FBD89D5222FEDF5D00C590FF /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		FBD89D5322FEDF9A00C590FF /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		FBD89D5422FEDF9A00C590FF /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FBD89D5522FEDF9A00C590FF /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FBD89D5922FEDFC100C590FF /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-PT"; path = "pt-PT.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		FBD89D5A22FEDFC100C590FF /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-PT"; path = "pt-PT.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		FBD89D5B22FEDFC100C590FF /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-PT"; path = "pt-PT.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		FBD89D6222FEE01300C590FF /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		FBD89D6322FEE01300C590FF /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FBD89D6422FEE01300C590FF /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FBD89D6522FEE01800C590FF /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		FBD89D6622FEE01800C590FF /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FBD89D6722FEE01800C590FF /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FBD89D6822FEE02500C590FF /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		FBD89D6922FEE02500C590FF /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FBD89D6A22FEE02500C590FF /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FBD89D6E22FEE05F00C590FF /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		FBD89D6F22FEE05F00C590FF /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		FBD89D7022FEE05F00C590FF /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		FBD89D7722FEE0FC00C590FF /* bg */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = bg; path = bg.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		FBD89D7822FEE0FC00C590FF /* bg */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = bg; path = bg.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FBD89D7922FEE0FC00C590FF /* bg */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = bg; path = bg.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FBE3580A230AFAAA001BC06F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FBE35810230B0044001BC06F /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FBC805F322F44FF70090CA6D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBE35811230B0044001BC06F /* Core.framework in Frameworks */,
+				055F486F26653FEB452E2A34 /* Pods_Wallpapers_for_MW.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D64C91C0A720096EBCBC1A37 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B8420862C06C0F76821959B2 /* Pods-wallpapers-Wallpapers for MW.debug.xcconfig */,
+				244138E230A88088C6DD33BF /* Pods-wallpapers-Wallpapers for MW.release.xcconfig */,
+				DBF03B9F9A3642905F257245 /* Pods-Wallpapers for MW.debug.xcconfig */,
+				E194CEE88520E4EDB68F0951 /* Pods-Wallpapers for MW.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		E56773D8C9617AAA4FCA937C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8224158ED62F9E685B334ACE /* Pods_Wallpapers_for_MW.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FBC805ED22F44FF70090CA6D = {
+			isa = PBXGroup;
+			children = (
+				FBE35810230B0044001BC06F /* Core.framework */,
+				FBC805F822F44FF70090CA6D /* src */,
+				FBC805F722F44FF70090CA6D /* Products */,
+				D64C91C0A720096EBCBC1A37 /* Pods */,
+				E56773D8C9617AAA4FCA937C /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		FBC805F722F44FF70090CA6D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FBC805F622F44FF70090CA6D /* Wallpapers for MW.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FBC805F822F44FF70090CA6D /* src */ = {
+			isa = PBXGroup;
+			children = (
+				FBC8060522F44FF80090CA6D /* Info.plist */,
+				FBE3580A230AFAAA001BC06F /* GoogleService-Info.plist */,
+				FBD89D4022FECF6800C590FF /* InfoPlist.strings */,
+				FBD89D3122FECD2F00C590FF /* Localizable.strings */,
+				FBC8060222F44FF80090CA6D /* LaunchScreen.storyboard */,
+				FBC8060022F44FF80090CA6D /* Assets.xcassets */,
+				FBC805F922F44FF70090CA6D /* AppDelegate.swift */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FBC805F522F44FF70090CA6D /* Wallpapers for MW */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FBC8060822F44FF80090CA6D /* Build configuration list for PBXNativeTarget "Wallpapers for MW" */;
+			buildPhases = (
+				B12C834DE240CFC148B37867 /* [CP] Check Pods Manifest.lock */,
+				FBC805F222F44FF70090CA6D /* Sources */,
+				FBC805F322F44FF70090CA6D /* Frameworks */,
+				FBC805F422F44FF70090CA6D /* Resources */,
+				FBE35813230B0044001BC06F /* Embed Frameworks */,
+				5C10BD128D7088E50C15364B /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Wallpapers for MW";
+			productName = Wallpapers;
+			productReference = FBC805F622F44FF70090CA6D /* Wallpapers for MW.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FBC805EE22F44FF70090CA6D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = "Atilla Özder";
+				TargetAttributes = {
+					FBC805F522F44FF70090CA6D = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+				};
+			};
+			buildConfigurationList = FBC805F122F44FF70090CA6D /* Build configuration list for PBXProject "Wallpapers for MW" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				tr,
+				de,
+				it,
+				fr,
+				"es-419",
+				ru,
+				"pt-PT",
+				nl,
+				ja,
+				pl,
+				"zh-Hans",
+				bg,
+			);
+			mainGroup = FBC805ED22F44FF70090CA6D;
+			productRefGroup = FBC805F722F44FF70090CA6D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FBC805F522F44FF70090CA6D /* Wallpapers for MW */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FBC805F422F44FF70090CA6D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBC8060422F44FF80090CA6D /* LaunchScreen.storyboard in Resources */,
+				FBD89D4222FECF6800C590FF /* InfoPlist.strings in Resources */,
+				FBE3580B230AFAAA001BC06F /* GoogleService-Info.plist in Resources */,
+				FBD89D3322FECD2F00C590FF /* Localizable.strings in Resources */,
+				FBC8060122F44FF80090CA6D /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5C10BD128D7088E50C15364B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Wallpapers for MW/Pods-Wallpapers for MW-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Wallpapers for MW/Pods-Wallpapers for MW-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Wallpapers for MW/Pods-Wallpapers for MW-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B12C834DE240CFC148B37867 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Wallpapers for MW-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FBC805F222F44FF70090CA6D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBC805FA22F44FF70090CA6D /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		FBC8060222F44FF80090CA6D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FBC8060322F44FF80090CA6D /* Base */,
+				FBD89D2F22FECD0700C590FF /* tr */,
+				FBD89D3E22FECDEA00C590FF /* de */,
+				FBD89D4722FEDEFF00C590FF /* it */,
+				FBD89D4A22FEDF3400C590FF /* fr */,
+				FBD89D5022FEDF5D00C590FF /* es-419 */,
+				FBD89D5322FEDF9A00C590FF /* ru */,
+				FBD89D5922FEDFC100C590FF /* pt-PT */,
+				FBD89D6222FEE01300C590FF /* nl */,
+				FBD89D6522FEE01800C590FF /* ja */,
+				FBD89D6822FEE02500C590FF /* pl */,
+				FBD89D6E22FEE05F00C590FF /* zh-Hans */,
+				FBD89D7722FEE0FC00C590FF /* bg */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		FBD89D3122FECD2F00C590FF /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FBD89D3222FECD2F00C590FF /* Base */,
+				FBD89D3522FECD3F00C590FF /* tr */,
+				FBD89D3F22FECDEA00C590FF /* de */,
+				FBD89D4922FEDF0000C590FF /* it */,
+				FBD89D4C22FEDF3400C590FF /* fr */,
+				FBD89D5222FEDF5D00C590FF /* es-419 */,
+				FBD89D5522FEDF9A00C590FF /* ru */,
+				FBD89D5B22FEDFC100C590FF /* pt-PT */,
+				FBD89D6422FEE01300C590FF /* nl */,
+				FBD89D6722FEE01800C590FF /* ja */,
+				FBD89D6A22FEE02500C590FF /* pl */,
+				FBD89D7022FEE05F00C590FF /* zh-Hans */,
+				FBD89D7922FEE0FC00C590FF /* bg */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		FBD89D4022FECF6800C590FF /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FBD89D4122FECF6800C590FF /* Base */,
+				FBD89D4322FECF6B00C590FF /* tr */,
+				FBD89D4422FECF6C00C590FF /* de */,
+				FBD89D4822FEDF0000C590FF /* it */,
+				FBD89D4B22FEDF3400C590FF /* fr */,
+				FBD89D5122FEDF5D00C590FF /* es-419 */,
+				FBD89D5422FEDF9A00C590FF /* ru */,
+				FBD89D5A22FEDFC100C590FF /* pt-PT */,
+				FBD89D6322FEE01300C590FF /* nl */,
+				FBD89D6622FEE01800C590FF /* ja */,
+				FBD89D6922FEE02500C590FF /* pl */,
+				FBD89D6F22FEE05F00C590FF /* zh-Hans */,
+				FBD89D7822FEE0FC00C590FF /* bg */,
+				FB508C452309CD04005FAF45 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FBC8060622F44FF80090CA6D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FBC8060722F44FF80090CA6D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FBC8060922F44FF80090CA6D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DBF03B9F9A3642905F257245 /* Pods-Wallpapers for MW.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 74NMDHX448;
+				INFOPLIST_FILE = "$(SRCROOT)/src/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.appraf.mw;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = MWBlockArtDebugProfile;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FBC8060A22F44FF80090CA6D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E194CEE88520E4EDB68F0951 /* Pods-Wallpapers for MW.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 74NMDHX448;
+				INFOPLIST_FILE = "$(SRCROOT)/src/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.appraf.mw;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = MWBlockArtReleaseProfile;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FBC805F122F44FF70090CA6D /* Build configuration list for PBXProject "Wallpapers for MW" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FBC8060622F44FF80090CA6D /* Debug */,
+				FBC8060722F44FF80090CA6D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FBC8060822F44FF80090CA6D /* Build configuration list for PBXNativeTarget "Wallpapers for MW" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FBC8060922F44FF80090CA6D /* Debug */,
+				FBC8060A22F44FF80090CA6D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FBC805EE22F44FF70090CA6D /* Project object */;
+}
