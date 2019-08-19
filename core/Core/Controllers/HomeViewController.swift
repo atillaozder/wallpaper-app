@@ -80,6 +80,18 @@ public class HomeViewController: UIViewController {
         self.view.insertSubview(bannerView, at: 1)
         bannerView.pinCenterX(to: view.centerXAnchor)
         bannerView.pinBottom(to: view.safeBottomAnchor)
+        bannerView.delegate = self
+    }
+}
+
+extension HomeViewController: GADBannerViewDelegate {
+    public func adViewDidReceiveAd(_ bannerView: GADBannerView) {
+        var insets = UIEdgeInsets.zero
+        insets.top = MenuBar.barHeight
+        insets.bottom = bannerView.frame.height
+        collectionView.contentInset = insets
+        collectionView.scrollIndicatorInsets = insets
+        collectionView.collectionViewLayout.invalidateLayout()
     }
 }
 
@@ -136,8 +148,9 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDelegate
     public func collectionView(_ collectionView: UICollectionView,
                                layout collectionViewLayout: UICollectionViewLayout,
                                sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return .init(width: collectionView.bounds.width,
-                     height: collectionView.bounds.height - MenuBar.barHeight)
+        let insets = collectionView.contentInset
+        let height = collectionView.bounds.height - insets.top - insets.bottom
+        return .init(width: collectionView.bounds.width, height: height)
     }
 }
 

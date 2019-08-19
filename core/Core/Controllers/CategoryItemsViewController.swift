@@ -64,6 +64,16 @@ class CategoryItemsViewController: UIViewController {
         self.view.insertSubview(bannerView, at: 1)
         bannerView.pinCenterX(to: view.centerXAnchor)
         bannerView.pinBottom(to: view.safeBottomAnchor)
+        bannerView.delegate = self
+    }
+}
+
+extension CategoryItemsViewController: GADBannerViewDelegate {
+    public func adViewDidReceiveAd(_ bannerView: GADBannerView) {
+        var insets = UIEdgeInsets.zero
+        insets.bottom = bannerView.frame.height
+        collectionView.contentInset = insets
+        collectionView.scrollIndicatorInsets = insets
     }
 }
 

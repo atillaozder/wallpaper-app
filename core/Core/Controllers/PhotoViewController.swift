@@ -38,16 +38,19 @@ class PhotoViewController: UIViewController {
         return ai
     }()
     
-    let scrollView: UIScrollView = {
+    lazy var scrollView: UIScrollView = {
         let sv = UIScrollView()
         sv.showsVerticalScrollIndicator = false
         sv.showsHorizontalScrollIndicator = false
-        sv.bounces = false
+        sv.bounces = true
         sv.bouncesZoom = true
         sv.clipsToBounds = true
         sv.decelerationRate = .fast
         sv.contentInset = .zero
         sv.layer.speed = 2.5
+        var insets = UIEdgeInsets.zero
+        insets.bottom = kDownloadButtonHeight + view.windowSafeAreaInsets.bottom
+        sv.contentInset = insets
         // Default values before image is loaded to ignore zooming
         sv.maximumZoomScale = 1
         sv.minimumZoomScale = 1
@@ -286,6 +289,10 @@ extension PhotoViewController: UIScrollViewDelegate {
 extension PhotoViewController: GADBannerViewDelegate {
     /// Tells the delegate an ad request loaded an ad.
     func adViewDidReceiveAd(_ bannerView: GADBannerView) {
+        var insets = UIEdgeInsets.zero
+        insets.bottom = bannerView.frame.height + kDownloadButtonHeight + view.windowSafeAreaInsets.bottom
+        scrollView.contentInset = insets
+        
         if !self.didReceiveAd {
             downloadButtonBottomConstraint?.constant -= bannerView.frame.height
             self.didReceiveAd = true
