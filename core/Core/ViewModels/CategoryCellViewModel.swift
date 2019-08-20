@@ -22,7 +22,7 @@ class CategoryCellViewModel: Identifiable, CellImagePrefetcher {
         width -= UIConstants.kImageEdgeInsets.right
         return ImageTransformer(size: .init(width: width, height: 200),
                                 fillColor: .defaultImageBackground,
-                                alpha: 0.6)
+                                alpha: 0.20)
     }
     
     var identifier: String {

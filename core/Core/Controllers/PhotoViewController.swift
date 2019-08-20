@@ -174,8 +174,8 @@ class PhotoViewController: UIViewController {
     
     @objc
     private func shareTapped() {
-        guard let image = imageView.image else { return }
-        let viewController = UIActivityViewController(activityItems: [image], applicationActivities: nil)
+        guard let image = imageView.image?.jpegData(compressionQuality: 1.0) else { return }
+        let viewController = UIActivityViewController(activityItems: [image], applicationActivities: [])
         viewController.excludedActivityTypes = [.saveToCameraRoll]
         viewController.popoverPresentationController?.sourceView = shareBarButton.customView ?? self.view
         self.present(viewController, animated: true, completion: nil)
