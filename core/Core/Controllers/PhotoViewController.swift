@@ -93,7 +93,7 @@ class PhotoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        InterstitialHandler.shared().delegate = self
+        InterstitialHandler.shared().setDelegate(self)
         InterstitialHandler.shared().increase()
         view.backgroundColor = .white
         
@@ -174,6 +174,7 @@ class PhotoViewController: UIViewController {
     
     @objc
     private func shareTapped() {
+        InterstitialHandler.shared().increase()
         guard let image = imageView.image?.jpegData(compressionQuality: 1.0) else { return }
         let viewController = UIActivityViewController(activityItems: [image], applicationActivities: [])
         viewController.excludedActivityTypes = [.saveToCameraRoll]
@@ -301,7 +302,8 @@ extension PhotoViewController: GADBannerViewDelegate {
 }
 
 extension PhotoViewController: InterstitialHandlerDelegate {
-    func showInterstitialAd(_ handler: InterstitialHandler, interstitial: GADInterstitial) {
+    func interstitialHandler(_ handler: InterstitialHandler,
+                             didShowInterstitial interstitial: GADInterstitial) {
         interstitial.present(fromRootViewController: self)
     }
 }

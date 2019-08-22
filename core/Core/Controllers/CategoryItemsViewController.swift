@@ -40,7 +40,7 @@ class CategoryItemsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        InterstitialHandler.shared().delegate = self
+        InterstitialHandler.shared().setDelegate(self)
         InterstitialHandler.shared().increase()
         self.setupViews()
         pageController.delegate = self
@@ -90,7 +90,8 @@ extension CategoryItemsViewController: PageControllerDelegate {
 }
 
 extension CategoryItemsViewController: InterstitialHandlerDelegate {
-    func showInterstitialAd(_ handler: InterstitialHandler, interstitial: GADInterstitial) {
+    func interstitialHandler(_ handler: InterstitialHandler,
+                             didShowInterstitial interstitial: GADInterstitial) {
         interstitial.present(fromRootViewController: self)
     }
 }

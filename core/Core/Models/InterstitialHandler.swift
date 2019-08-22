@@ -18,7 +18,7 @@ public class FirebaseHandler {
 }
 
 protocol InterstitialHandlerDelegate: class {
-    func showInterstitialAd(_ handler: InterstitialHandler, interstitial: GADInterstitial)
+    func interstitialHandler(_ handler: InterstitialHandler, didShowInterstitial interstitial: GADInterstitial)
 }
 
 class InterstitialHandler: NSObject {
@@ -39,11 +39,16 @@ class InterstitialHandler: NSObject {
         return InterstitialHandler.sharedInstance
     }
     
+    func setDelegate(_ delegate: InterstitialHandlerDelegate) {
+        self.delegate = nil
+        self.delegate = delegate
+    }
+    
     func increase() {
         counter += 1
-        if counter == 4 {
+        if counter == 6 {
             if interstitial.isReady {
-                delegate?.showInterstitialAd(self, interstitial: interstitial)
+                delegate?.interstitialHandler(self, didShowInterstitial: interstitial)
             }
             counter = 0
         }

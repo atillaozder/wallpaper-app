@@ -24,7 +24,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         
         #if DEBUG
-        DroppingFramesHelper().activate()
+        if #available(iOS 11.0, *) {
+            DroppingFramesHelper().activate()
+        }
         #endif
         
         return true

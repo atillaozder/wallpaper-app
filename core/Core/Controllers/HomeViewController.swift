@@ -56,6 +56,11 @@ public class HomeViewController: UIViewController {
         self.setupViews()
     }
     
+    public override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        InterstitialHandler.shared().setDelegate(self)
+    }
+    
     private func setupViews() {
         self.navigationItem.title = Bundle.main.displayName
         self.view.backgroundColor = .white
@@ -92,6 +97,15 @@ extension HomeViewController: GADBannerViewDelegate {
         collectionView.contentInset = insets
         collectionView.scrollIndicatorInsets = insets
         collectionView.collectionViewLayout.invalidateLayout()
+    }
+}
+
+extension HomeViewController: InterstitialHandlerDelegate {
+    func interstitialHandler(_ handler: InterstitialHandler,
+                             didShowInterstitial interstitial: GADInterstitial) {
+        if viewIfLoaded?.window != nil {
+            interstitial.present(fromRootViewController: self)
+        }
     }
 }
 

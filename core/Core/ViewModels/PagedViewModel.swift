@@ -141,6 +141,7 @@ class PagedViewModel<T: Identifiable>: PagedViewModelType {
                 if isPageLoading {
                     return .empty()
                 } else {
+                    InterstitialHandler.shared().increase()
                     self.pageInput.currentPage = 1
                     return self.fetchData()
                         .trackActivity(self.pageOutput.loadingIndicator)
@@ -156,6 +157,7 @@ class PagedViewModel<T: Identifiable>: PagedViewModelType {
                 if isNextPageLoading {
                     return .empty()
                 } else {
+                    InterstitialHandler.shared().increase()
                     self.previousPage = self.pageInput.currentPage
                     self.pageInput.currentPage += 1
                     return self.fetchData()
