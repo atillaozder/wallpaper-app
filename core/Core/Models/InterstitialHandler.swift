@@ -46,7 +46,7 @@ class InterstitialHandler: NSObject {
     
     func increase() {
         counter += 1
-        if counter == 6 {
+        if counter == 4 {
             if interstitial.isReady {
                 delegate?.interstitialHandler(self, didShowInterstitial: interstitial)
             }
