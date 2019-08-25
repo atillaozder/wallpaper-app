@@ -8,16 +8,16 @@
 
 import UIKit
 
-public class NavigationController: UINavigationController {
+ class NavigationController: UINavigationController {
     
     var lastViewController: UIViewController?
     
-    public override func viewDidLoad() {
+     override func viewDidLoad() {
         super.viewDidLoad()
         delegate = self
     }
     
-    public override func pushViewController(_ viewController: UIViewController, animated: Bool) {
+     override func pushViewController(_ viewController: UIViewController, animated: Bool) {
         viewController.navigationItem.backBarButtonItem = UIBarButtonItem()
         viewController.navigationItem.backBarButtonItem?.title = ""
         lastViewController = viewController
@@ -25,13 +25,13 @@ public class NavigationController: UINavigationController {
         setNavigationBar(visibleViewController: lastViewController)
     }
     
-    public override func popViewController(animated: Bool) -> UIViewController? {
+     override func popViewController(animated: Bool) -> UIViewController? {
         lastViewController = super.popViewController(animated: animated)
         setNavigationBar(visibleViewController: visibleViewController)
         return lastViewController
     }
     
-    public override func popToRootViewController(animated: Bool) -> [UIViewController]? {
+     override func popToRootViewController(animated: Bool) -> [UIViewController]? {
         let rootViewController = super.popToRootViewController(animated: animated)
         setNavigationBar(visibleViewController: visibleViewController)
         return rootViewController
@@ -51,7 +51,7 @@ public class NavigationController: UINavigationController {
 }
 
 extension NavigationController: UINavigationControllerDelegate {
-    public func navigationController(_ navigationController: UINavigationController,
+     func navigationController(_ navigationController: UINavigationController,
                                      willShow viewController: UIViewController,
                                      animated: Bool) {
         if let coordinator = navigationController.topViewController?.transitionCoordinator {

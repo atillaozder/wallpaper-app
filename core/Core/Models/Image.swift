@@ -17,6 +17,10 @@ struct Image: PageItem {
         case image
     }
     
+    init() {
+        self.id = 0
+    }
+    
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.id = try container.decode(Int.self, forKey: .id)

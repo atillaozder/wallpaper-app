@@ -12,6 +12,7 @@
 "recent" = "recent";
 "category" = "category";
 "saved" = "saved";
+"favorites" = "favorites";
 
 "cancel" = "cancel";
 "openSettingsTitle" = "Go to Permissions";

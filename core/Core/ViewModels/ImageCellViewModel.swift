@@ -10,7 +10,7 @@ import Foundation
 
 class ImageCellViewModel: Identifiable, CellImagePrefetcher {
     
-    private var item: Image
+    var item: Image
     var imageUrl: URL? {
         return item.image?.asURL()
     }

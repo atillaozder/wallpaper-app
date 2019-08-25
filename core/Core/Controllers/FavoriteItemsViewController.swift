@@ -1,19 +1,18 @@
 //
-//  CategoryItemsViewController.swift
+//  FavoriteItemsViewController.swift
 //  Core
 //
-//  Created by Atilla Özder on 4.08.2019.
+//  Created by Atilla Özder on 25.08.2019.
 //  Copyright © 2019 Atilla Özder. All rights reserved.
 //
 
 import UIKit
 import GoogleMobileAds
 
-class CategoryItemsViewController: UIViewController {
+class FavoriteItemsViewController: UIViewController {
     
-    private var categoryItemsViewModel: CategoryItemsViewModel
-    private(set) lazy var pageController: CategoryItemsPageController = {
-        return CategoryItemsPageController(viewModel: categoryItemsViewModel)
+    private(set) lazy var pageController: FavoriteItemsPageController = {
+        return FavoriteItemsPageController()
     }()
     
     lazy var bannerView: GADBannerView = {
@@ -28,13 +27,11 @@ class CategoryItemsViewController: UIViewController {
         return pageController.collectionView
     }
     
-    init(viewModel: CategoryItemsViewModel) {
-        self.categoryItemsViewModel = viewModel
+    init() {
         super.init(nibName: nil, bundle: nil)
     }
     
     required init?(coder aDecoder: NSCoder) {
-        self.categoryItemsViewModel = CategoryItemsViewModel()
         super.init(coder: aDecoder)
     }
     
@@ -49,7 +46,7 @@ class CategoryItemsViewController: UIViewController {
     }
     
     private func setupViews() {
-        self.navigationItem.title = categoryItemsViewModel.navigationTitle
+        self.navigationItem.title = Localization.favorites
         self.view.backgroundColor = .white
         
         self.view.addSubview(collectionView)
@@ -68,7 +65,7 @@ class CategoryItemsViewController: UIViewController {
     }
 }
 
-extension CategoryItemsViewController: GADBannerViewDelegate {
+extension FavoriteItemsViewController: GADBannerViewDelegate {
     public func adViewDidReceiveAd(_ bannerView: GADBannerView) {
         var insets = UIEdgeInsets.zero
         insets.bottom = bannerView.frame.height
@@ -77,19 +74,18 @@ extension CategoryItemsViewController: GADBannerViewDelegate {
     }
 }
 
-extension CategoryItemsViewController: PageControllerDelegate {
+extension FavoriteItemsViewController: PageControllerDelegate {
     func pageController(_ pageController: PageController, didSelectItem item: CellViewModelType) {
         switch item {
         case .image(let cvm):
             presentImageScreen(cvm.item)
-
         default:
             break
         }
     }
 }
 
-extension CategoryItemsViewController: InterstitialHandlerDelegate {
+extension FavoriteItemsViewController: InterstitialHandlerDelegate {
     func interstitialHandler(_ handler: InterstitialHandler,
                              didShowInterstitial interstitial: GADInterstitial) {
         interstitial.present(fromRootViewController: self)

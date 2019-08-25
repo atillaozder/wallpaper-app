@@ -9,7 +9,7 @@
 import UIKit
 import GoogleMobileAds
 
-public class HomeViewController: UIViewController {
+class HomeViewController: UIViewController {
     
     private let dataSource = [Localization.recent, Localization.category]
     
@@ -51,12 +51,12 @@ public class HomeViewController: UIViewController {
         return getBannerView()
     }()
     
-    public override func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
         self.setupViews()
     }
     
-    public override func viewWillAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         InterstitialHandler.shared().setDelegate(self)
     }
@@ -90,7 +90,7 @@ public class HomeViewController: UIViewController {
 }
 
 extension HomeViewController: GADBannerViewDelegate {
-    public func adViewDidReceiveAd(_ bannerView: GADBannerView) {
+    func adViewDidReceiveAd(_ bannerView: GADBannerView) {
         var insets = UIEdgeInsets.zero
         insets.top = MenuBar.barHeight
         insets.bottom = bannerView.frame.height
@@ -103,8 +103,10 @@ extension HomeViewController: GADBannerViewDelegate {
 extension HomeViewController: InterstitialHandlerDelegate {
     func interstitialHandler(_ handler: InterstitialHandler,
                              didShowInterstitial interstitial: GADInterstitial) {
-        if viewIfLoaded?.window != nil {
-            interstitial.present(fromRootViewController: self)
+        DispatchQueue.main.async {
+            if self.viewIfLoaded?.window != nil {
+                interstitial.present(fromRootViewController: self)
+            }
         }
     }
 }
@@ -116,17 +118,17 @@ extension HomeViewController: MenuBarDelegate {
 }
 
 extension HomeViewController: UICollectionViewDataSource {
-    public func numberOfSections(in collectionView: UICollectionView) -> Int {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
     
-    public func collectionView(_ collectionView: UICollectionView,
-                               numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView,
+                        numberOfItemsInSection section: Int) -> Int {
         return dataSource.count
     }
     
-    public func collectionView(_ collectionView: UICollectionView,
-                               cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         if let section = DataSourceSections(rawValue: indexPath.item) {
             switch section {
@@ -148,7 +150,7 @@ extension HomeViewController: UICollectionViewDataSource {
 }
 
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-    public func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let size = scrollView.bounds.size
         let offset = scrollView.contentOffset
         menuBar.barLeftAnchorConstraint?.constant = offset.x / CGFloat(dataSource.count)
@@ -159,9 +161,9 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDelegate
         }
     }
     
-    public func collectionView(_ collectionView: UICollectionView,
-                               layout collectionViewLayout: UICollectionViewLayout,
-                               sizeForItemAt indexPath: IndexPath) -> CGSize {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
         let insets = collectionView.contentInset
         let height = collectionView.bounds.height - insets.top - insets.bottom
         return .init(width: collectionView.bounds.width, height: height)
@@ -172,8 +174,7 @@ extension HomeViewController: PageControllerDelegate {
     func pageController(_ pageController: PageController, didSelectItem item: CellViewModelType) {
         switch item {
         case .image(let cvm):
-            let viewController = PhotoViewController(imageUrl: cvm.imageUrl)
-            self.navigationController?.pushViewController(viewController, animated: true)
+            presentImageScreen(cvm.item)
         case .category(let cvm):
             let viewModel = CategoryItemsViewModel(category: cvm.category)
             let viewController = CategoryItemsViewController(viewModel: viewModel)
@@ -181,5 +182,6 @@ extension HomeViewController: PageControllerDelegate {
         }
     }
 }
+
 
 

@@ -21,14 +21,13 @@ class PhotoViewController: UIViewController {
     let kDownloadButtonHeight: CGFloat = 50
     var downloadButtonBottomConstraint: NSLayoutConstraint?
     
-    lazy var shareBarButton: UIBarButtonItem = {
-        let img = UIImage(named: "ic_share")
-        let customView = UIImageView(image: img)
-        customView.addTapGesture(self, action: #selector(shareTapped))
-        customView.tintColor = .black
-        customView.contentMode = .scaleAspectFit
-        customView.pinWidth(to: 50)
-        return UIBarButtonItem(customView: customView)
+    lazy var favImageView: UIImageView = {
+        let iv = UIImageView()
+        iv.addTapGesture(self, action: #selector(favoriteTapped))
+        iv.tintColor = .defaultTextColor
+        iv.contentMode = .center
+        iv.pin(size: .init(width: 50, height: 44))
+        return iv
     }()
     
     lazy var activityIndicator: UIActivityIndicatorView = {
@@ -76,13 +75,13 @@ class PhotoViewController: UIViewController {
         return getBannerView()
     }()
     
-    init(imageUrl: URL?) {
-        self.viewModel = PhotoViewModel(imageUrl: imageUrl)
+    init(image: Image) {
+        self.viewModel = PhotoViewModel(image: image)
         super.init(nibName: nil, bundle: nil)
     }
     
     required init?(coder aDecoder: NSCoder) {
-        self.viewModel = PhotoViewModel(imageUrl: nil)
+        self.viewModel = PhotoViewModel(image: nil)
         super.init(coder: aDecoder)
     }
     
@@ -126,7 +125,7 @@ class PhotoViewController: UIViewController {
     }
     
     private func setupButtons() {
-        self.navigationItem.setRightBarButton(shareBarButton, animated: false)
+        setupBarButtons()
     
         let btn = UIButton(type: .custom)
         btn.setTitle(Localization.save, for: .normal)
@@ -144,6 +143,22 @@ class PhotoViewController: UIViewController {
         self.downloadButtonBottomConstraint = btn.pinBottom(to: view.safeBottomAnchor)
         btn.pinHeight(to: kDownloadButtonHeight)
         view.bringSubviewToFront(btn)
+    }
+    
+    private func setupBarButtons() {
+        let shareImg = UIImage(named: "ic_share")
+        let shareView = UIImageView(image: shareImg)
+        shareView.addTapGesture(self, action: #selector(shareTapped(_:)))
+        shareView.tintColor = .defaultTextColor
+        shareView.contentMode = .center
+        shareView.pin(size: .init(width: 50, height: 44))
+        let shareBarButton = UIBarButtonItem(customView: shareView)
+        
+        let favoriteBarButton = UIBarButtonItem(customView: favImageView)
+        let value = StorageHelper.shared().value(for: viewModel.item)
+        setImageView(from: value)
+        self.navigationItem.setRightBarButtonItems([shareBarButton, favoriteBarButton],
+                                                   animated: false)
     }
     
     func bindUI() {
@@ -173,13 +188,27 @@ class PhotoViewController: UIViewController {
     }
     
     @objc
-    private func shareTapped() {
+    func shareTapped(_ sender: UITapGestureRecognizer) {
         InterstitialHandler.shared().increase()
         guard let image = imageView.image?.jpegData(compressionQuality: 1.0) else { return }
         let viewController = UIActivityViewController(activityItems: [image], applicationActivities: [])
         viewController.excludedActivityTypes = [.saveToCameraRoll]
-        viewController.popoverPresentationController?.sourceView = shareBarButton.customView ?? self.view
+        viewController.popoverPresentationController?.sourceView = sender.view ?? self.view
         self.present(viewController, animated: true, completion: nil)
+    }
+    
+    @objc
+    func favoriteTapped() {
+        let newValue = !StorageHelper.shared().value(for: viewModel.item)
+        viewModel.toggleFavorite()
+        setImageView(from: newValue)
+    }
+    
+    func setImageView(from value: Bool) {
+        let image = value ? UIImage(named: "ic_filled_heart") : UIImage(named: "ic_empty_heart")
+        let tintColor: UIColor = value ? .red : .defaultTextColor
+        favImageView.image = image?.withRenderingMode(.alwaysTemplate)
+        favImageView.tintColor = tintColor
     }
     
     @objc

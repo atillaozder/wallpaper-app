@@ -22,7 +22,7 @@ class PhotoViewModel {
     
     static let albumName = Bundle.main.displayName
     
-    var imageUrl: URL?
+    var item: Image
     var image: BehaviorRelay<UIImage?>
     var downloadedImage: UIImage? {
         willSet {
@@ -30,19 +30,24 @@ class PhotoViewModel {
         }
     }
     
-    init(imageUrl: URL?) {
-        self.imageUrl = imageUrl
+    init(image: Image?) {
+        self.item = image ?? Image()
         self.image = BehaviorRelay(value: nil)
         self.loadImage()
     }
     
     func loadImage() {
         let manager = SDWebImageManager.shared
-        manager.loadImage(with: imageUrl, options: [], progress: nil)
+        manager.loadImage(with: item.image?.asURL(), options: [], progress: nil)
         { [weak self] (image, _, _, _, _, _) in
             guard let `self` = self else { return }
             self.downloadedImage = image
         }
+    }
+    
+    func toggleFavorite() {
+        InterstitialHandler.shared().increase()
+        StorageHelper.shared().toggleFavorite(for: item)
     }
     
     private func createAlbum(completion: @escaping (PHAssetCollection?)->()) {

@@ -33,6 +33,10 @@ struct Localization {
         return "category".localized.capitalized(with: .current)
     }
     
+    static var favorites: String {
+        return "favorites".localized.capitalized(with: .current)
+    }
+    
     static var photoPermissionTitle: String {
         return "photoPermissionTitle".localized
     }
