@@ -35,5 +35,17 @@ abstract_target 'Wallpapers' do
     project 'lol/Wallpapers for LOL.xcodeproj'
     shared_pods
   end
+
+  target 'Wallpapers for CR' do
+    inherit! :search_paths
+    project 'cr/Wallpapers for CR.xcodeproj'
+    shared_pods
+  end
+
+  target 'Wallpapers for COC' do
+    inherit! :search_paths
+    project 'coc/Wallpapers for COC.xcodeproj'
+    shared_pods
+  end
 end
   
