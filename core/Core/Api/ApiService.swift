@@ -51,7 +51,7 @@ final class ApiService {
             self.dataRequest = self.session.request(urlReq)
                 .responseDecodable(queue: self.session.requestQueue,
                                    decoder: decoder)
-                { [weak self] (dataResp: DataResponse<T>) in
+                { [weak self] (dataResp: DataResponse<T, AFError>) in
                     
                     self?.dataRequest?.debugLog()
                     dataResp.debugLog()
@@ -81,10 +81,10 @@ final class ApiService {
             }
             
             let JSONSerializer = JSONResponseSerializer(
-                options: .allowFragments,
+                dataPreprocessor: PassthroughPreprocessor(),
                 emptyResponseCodes: Set(arrayLiteral: 204, 205),
-                emptyRequestMethods: Set(arrayLiteral: .head, .post, .put, .patch, .get)
-            )
+                emptyRequestMethods: Set(arrayLiteral: .head, .post, .put, .patch, .get),
+                options: .allowFragments)
             
             self.dataRequest = self.session.request(urlReq)
                 .response(queue: self.session.requestQueue,

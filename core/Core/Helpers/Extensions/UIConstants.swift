@@ -27,6 +27,7 @@ struct UIConstants {
         }
     }
     
+    static let kPageIndicatorHeight: CGFloat = 80
     static let kImageOffset: CGFloat = 4
     static let kImageInterItemSpacing: CGFloat = 4
     static let kImageLineSpacing: CGFloat = 4

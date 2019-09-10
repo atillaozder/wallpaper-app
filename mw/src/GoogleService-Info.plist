@@ -34,5 +34,7 @@
 	<string>1:465444608036:ios:824ab5c8e4dd8aa3</string>
 	<key>DATABASE_URL</key>
 	<string>https://miniworld-286bf.firebaseio.com</string>
+	<key>ADMOB_APP_ID</key>
+	<string>ca-app-pub-6481681858273303~5522963889</string>
 </dict>
 </plist>

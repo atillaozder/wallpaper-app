@@ -274,10 +274,11 @@ class PhotoViewController: UIViewController {
         viewModel.save() { [weak self] (success, error) in
             guard let `self` = self else { return }
             if success {
-                InterstitialHandler.shared().openInterstitial()
                 DispatchQueue.main.async {
                     let inset = self.kDownloadButtonHeight + self.bannerView.frame.height
-                    self.showToast(with: Localization.saved, additionalInset: inset)
+                    self.showToast(with: Localization.saved,
+                                   additionalInset: inset,
+                                   shouldPresentInterstitial: true)
                 }
             } else {
                 DispatchQueue.main.async {
@@ -373,14 +374,14 @@ extension PhotoViewController: CropViewControllerDelegate {
                             didFinishCancelled cancelled: Bool) {
         cropViewController.dismiss(animated: true, completion: nil)
         if !cancelled {
-            InterstitialHandler.shared().openInterstitial()
+            InterstitialHandler.shared().triggerPresentingInterstitial()
         }
     }
 }
 
 extension PhotoViewController: InterstitialHandlerDelegate {
     func interstitialHandler(_ handler: InterstitialHandler,
-                             willShowInterstitial interstitial: GADInterstitial) {
+                             willPresentInterstitial interstitial: GADInterstitial) {
         interstitial.present(fromRootViewController: self)
     }
 }

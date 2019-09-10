@@ -15,8 +15,8 @@ private let footerReuseId = "footerReuseId"
 class PageController: NSObject {
     
     private(set) var bag: DisposeBag = DisposeBag()
-    lazy var mainScheduler: SerialDispatchQueueScheduler = MainScheduler.instance
-    lazy var backgroundWorkScheduler: ImmediateSchedulerType = ConcurrentDispatchQueueScheduler(qos: .default)
+    lazy var mainScheduler = MainScheduler.instance
+    lazy var backgroundWorkScheduler = ConcurrentDispatchQueueScheduler(qos: .default)
     lazy var refreshControl: UIRefreshControl = UIRefreshControl()
     
     lazy var collectionView: UICollectionView = {
@@ -31,7 +31,9 @@ class PageController: NSObject {
     
     lazy var pageIndicator: UIActivityIndicatorView = {
         let ai = UIActivityIndicatorView(style: .gray)
-        ai.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 44)
+        var frame = CGRect.zero
+        frame.size = .init(width: UIScreen.main.bounds.width, height: UIConstants.kPageIndicatorHeight)
+        ai.frame = frame
         ai.hidesWhenStopped = true
         return ai
     }()
@@ -79,7 +81,6 @@ class PageController: NSObject {
         refreshControl.rx
             .controlEvent(.valueChanged)
             .sample(viewModel.pageInput.endDragging.asObservable())
-            .debounce(.milliseconds(250), scheduler: mainScheduler)
             .bind(to: viewModel.pageInput.loadPageTrigger)
             .disposed(by: bag)
         
@@ -141,13 +142,10 @@ class PageController: NSObject {
         let indexPath = IndexPath(item: lastItem, section: lastSection)
         
         collectionView.collectionViewLayout.prepare()
-        
-        let elementKindFooter = UICollectionView.elementKindSectionFooter
         let footerView = collectionView.dequeueReusableSupplementaryView(
-            ofKind: elementKindFooter,
+            ofKind: UICollectionView.elementKindSectionFooter,
             withReuseIdentifier: footerReuseId,
-            for: indexPath
-        )
+            for: indexPath)
         
         self.pageIndicator.startAnimating()
         footerView.addSubview(pageIndicator)
@@ -202,7 +200,7 @@ extension PageController: UICollectionViewDelegate, UICollectionViewDelegateFlow
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         referenceSizeForFooterInSection section: Int) -> CGSize {
-        let footerHeight: CGFloat = viewModel.pageOutput.hasNextPage ? 44 : 0.01
+        let footerHeight: CGFloat = viewModel.pageOutput.hasNextPage ? UIConstants.kPageIndicatorHeight : 0.01
         return CGSize(width: collectionView.bounds.width, height: footerHeight)
     }
     

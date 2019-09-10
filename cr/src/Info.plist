@@ -44,6 +44,10 @@
             <string>ca-app-pub-3940256099942544/4411468910</string>
             <key>bannerUnitID</key>
             <string>ca-app-pub-3940256099942544/2934735716</string>
+            <key>debugBannerUnitID</key>
+            <string>ca-app-pub-3940256099942544/6300978111</string>
+            <key>debugInterstitialUnitID</key>
+            <string>ca-app-pub-3940256099942544/1033173712</string>
         </dict>
         <key>NSAppTransportSecurity</key>
         <dict>

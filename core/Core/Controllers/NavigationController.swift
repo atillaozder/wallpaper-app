@@ -8,16 +8,16 @@
 
 import UIKit
 
- class NavigationController: UINavigationController {
+class NavigationController: UINavigationController {
     
     var lastViewController: UIViewController?
     
-     override func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
         delegate = self
     }
     
-     override func pushViewController(_ viewController: UIViewController, animated: Bool) {
+    override func pushViewController(_ viewController: UIViewController, animated: Bool) {
         viewController.navigationItem.backBarButtonItem = UIBarButtonItem()
         viewController.navigationItem.backBarButtonItem?.title = ""
         lastViewController = viewController
@@ -25,13 +25,13 @@ import UIKit
         setNavigationBar(visibleViewController: lastViewController)
     }
     
-     override func popViewController(animated: Bool) -> UIViewController? {
+    override func popViewController(animated: Bool) -> UIViewController? {
         lastViewController = super.popViewController(animated: animated)
         setNavigationBar(visibleViewController: visibleViewController)
         return lastViewController
     }
     
-     override func popToRootViewController(animated: Bool) -> [UIViewController]? {
+    override func popToRootViewController(animated: Bool) -> [UIViewController]? {
         let rootViewController = super.popToRootViewController(animated: animated)
         setNavigationBar(visibleViewController: visibleViewController)
         return rootViewController
@@ -51,9 +51,9 @@ import UIKit
 }
 
 extension NavigationController: UINavigationControllerDelegate {
-     func navigationController(_ navigationController: UINavigationController,
-                                     willShow viewController: UIViewController,
-                                     animated: Bool) {
+    func navigationController(_ navigationController: UINavigationController,
+                              willShow viewController: UIViewController,
+                              animated: Bool) {
         if let coordinator = navigationController.topViewController?.transitionCoordinator {
             coordinator.notifyWhenInteractionChanges { [weak self] (context) in
                 guard let `self` = self else { return }
@@ -64,4 +64,3 @@ extension NavigationController: UINavigationControllerDelegate {
         }
     }
 }
-

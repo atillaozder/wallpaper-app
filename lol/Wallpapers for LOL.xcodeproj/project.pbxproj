@@ -10,12 +10,12 @@
 		999C97EB093AEF5B9D09A083 /* Pods_Wallpapers_for_LOL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A72136BBA5151E94E8D079E /* Pods_Wallpapers_for_LOL.framework */; };
 		FB141C742302035F001956B8 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB141C732302035F001956B8 /* Core.framework */; };
 		FB141C752302035F001956B8 /* Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FB141C732302035F001956B8 /* Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		FB2553F22300BB6F0085D4B3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FB2553F12300BB6F0085D4B3 /* GoogleService-Info.plist */; };
 		FB354D7723007818003A6407 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB354D7623007818003A6407 /* AppDelegate.swift */; };
 		FB354D7E23007818003A6407 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB354D7D23007818003A6407 /* Assets.xcassets */; };
 		FB354D8123007818003A6407 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB354D7F23007818003A6407 /* LaunchScreen.storyboard */; };
 		FB3E89C72300C9AC00275C12 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FB3E89C32300C9AC00275C12 /* Localizable.strings */; };
 		FB3E89C82300C9AC00275C12 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FB3E89C52300C9AC00275C12 /* InfoPlist.strings */; };
+		FBE0FC892327FFD0005278AD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FBE0FC882327FFD0005278AD /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -39,7 +39,6 @@
 		89A27C08A0CC37931663F62A /* Pods-wallpapers-Wallpapers for LOL.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wallpapers-Wallpapers for LOL.debug.xcconfig"; path = "../../Pods/Target Support Files/Pods-wallpapers-Wallpapers for LOL/Pods-wallpapers-Wallpapers for LOL.debug.xcconfig"; sourceTree = "<group>"; };
 		B7B39736C830839D889FF11B /* Pods-wallpapers-Wallpapers for LOL.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wallpapers-Wallpapers for LOL.release.xcconfig"; path = "../../Pods/Target Support Files/Pods-wallpapers-Wallpapers for LOL/Pods-wallpapers-Wallpapers for LOL.release.xcconfig"; sourceTree = "<group>"; };
 		FB141C732302035F001956B8 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FB2553F12300BB6F0085D4B3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FB3037902327C670002A9E05 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		FB3037912327C670002A9E05 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FB3037922327C670002A9E05 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -146,6 +145,7 @@
 		FB3E8A002300CC6700275C12 /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-PT"; path = "pt-PT.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		FB3E8A012300CC6700275C12 /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-PT"; path = "pt-PT.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		FB3E8A022300CC6700275C12 /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-PT"; path = "pt-PT.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		FBE0FC882327FFD0005278AD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,12 +202,12 @@
 		FB354D7523007818003A6407 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				FBE0FC882327FFD0005278AD /* GoogleService-Info.plist */,
 				FB354D7F23007818003A6407 /* LaunchScreen.storyboard */,
 				FB3E89C52300C9AC00275C12 /* InfoPlist.strings */,
 				FB3E89C32300C9AC00275C12 /* Localizable.strings */,
 				FB354D7623007818003A6407 /* AppDelegate.swift */,
 				FB354D7D23007818003A6407 /* Assets.xcassets */,
-				FB2553F12300BB6F0085D4B3 /* GoogleService-Info.plist */,
 				FB354D8223007818003A6407 /* Info.plist */,
 			);
 			path = src;
@@ -309,8 +309,8 @@
 			files = (
 				FB354D8123007818003A6407 /* LaunchScreen.storyboard in Resources */,
 				FB3E89C72300C9AC00275C12 /* Localizable.strings in Resources */,
+				FBE0FC892327FFD0005278AD /* GoogleService-Info.plist in Resources */,
 				FB354D7E23007818003A6407 /* Assets.xcassets in Resources */,
-				FB2553F22300BB6F0085D4B3 /* GoogleService-Info.plist in Resources */,
 				FB3E89C82300C9AC00275C12 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -21,7 +21,11 @@ extension UIViewController {
         let v = GADBannerView(adSize: kGADAdSizeSmartBannerPortrait)
         do {
             let appPList = try PListFile<InfoPList>()
+            #if DEBUG
+            v.adUnitID = appPList.data.configuration.debugBannerUnitID
+            #else
             v.adUnitID = appPList.data.configuration.bannerUnitID
+            #endif
         } catch let err {
             #if DEBUG
             print("Failed to parse data: \(err.localizedDescription)")
@@ -37,11 +41,13 @@ extension UIViewController {
     
     static var toastIdentifier: Int = 999
     
-    func showToast(with message: String, additionalInset: CGFloat = 0) {
+    func showToast(with message: String,
+                   additionalInset: CGFloat = 0,
+                   shouldPresentInterstitial present: Bool = false) {
         if let container = view.viewWithTag(UIViewController.toastIdentifier) {
             container.removeFromSuperview()
             self.view.addSubview(container)
-            animateToast(container)
+            animateToast(container, shouldPresentInterstitial: present)
         } else {
             let height: CGFloat = 45
             
@@ -67,14 +73,18 @@ extension UIViewController {
             
             let inset = additionalInset + view.windowSafeAreaInsets.bottom + 16
             container.pinBottom(to: view.bottomAnchor, constant: -inset)
-            animateToast(container)
+            animateToast(container, shouldPresentInterstitial: present)
         }
     }
     
-    private func animateToast(_ container: UIView) {
+    private func animateToast(_ container: UIView, shouldPresentInterstitial present: Bool) {
         UIView.animate(withDuration: 0.25, delay: 0.0, options: .curveEaseIn, animations: {
             container.alpha = 1.0
         }, completion: { _ in
+            if present {
+                InterstitialHandler.shared().triggerPresentingInterstitial()
+            }
+            
             UIView.animate(withDuration: 0.5, delay: 1.5, options: .curveEaseOut, animations: {
                 container.alpha = 0.0
             }, completion: { _ in

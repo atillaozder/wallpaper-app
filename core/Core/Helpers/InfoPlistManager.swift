@@ -64,6 +64,8 @@ public class PListFile<Value: Codable> {
 
 public struct InfoPList: Codable {
     public struct Configuration: Codable {
+        public let debugBannerUnitID: String
+        public let debugInterstitialUnitID: String
         public let bannerUnitID: String
         public let interstitialUnitID: String
         public let gameName: String

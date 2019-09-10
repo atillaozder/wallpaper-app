@@ -19,7 +19,7 @@ public class FirebaseHandler {
 
 protocol InterstitialHandlerDelegate: class {
     func interstitialHandler(_ handler: InterstitialHandler,
-                             willShowInterstitial interstitial: GADInterstitial)
+                             willPresentInterstitial interstitial: GADInterstitial)
 }
 
 class InterstitialHandler: NSObject {
@@ -45,9 +45,9 @@ class InterstitialHandler: NSObject {
         self.delegate = delegate
     }
     
-    func openInterstitial() {
+    func triggerPresentingInterstitial() {
         if interstitial.isReady {
-            delegate?.interstitialHandler(self, willShowInterstitial: interstitial)
+            delegate?.interstitialHandler(self, willPresentInterstitial: interstitial)
             counter = 0
         }
     }
@@ -57,7 +57,7 @@ class InterstitialHandler: NSObject {
         if counter >= 5 {
             counter = 0
             if interstitial.isReady {
-                delegate?.interstitialHandler(self, willShowInterstitial: interstitial)
+                delegate?.interstitialHandler(self, willPresentInterstitial: interstitial)
             }
         }
     }
@@ -66,7 +66,11 @@ class InterstitialHandler: NSObject {
         var adUnitID: String = ""
         do {
             let appPList = try PListFile<InfoPList>()
+            #if DEBUG
+            adUnitID = appPList.data.configuration.debugInterstitialUnitID
+            #else
             adUnitID = appPList.data.configuration.interstitialUnitID
+            #endif
         } catch let err {
             #if DEBUG
             print("Failed to parse data: \(err.localizedDescription)")

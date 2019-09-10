@@ -21,7 +21,9 @@
 	<key>CFBundleVersion</key>
 	<string>3</string>
 	<key>GADApplicationIdentifier</key>
-	<string>ca-app-pub-6481681858273303~5522963889</string>
+	<string>ca-app-pub-7270073056899133~6413859793</string>
+    <key>FirebaseScreenReportingEnabled</key>
+    <false/>
 	<key>LSHasLocalizedDisplayName</key>
 	<true/>
 	<key>LSRequiresIPhoneOS</key>
@@ -53,11 +55,15 @@
 	<key>configuration</key>
 	<dict>
 		<key>bannerUnitID</key>
-		<string>ca-app-pub-6481681858273303/7889272772</string>
+		<string>ca-app-pub-7270073056899133/5220197627</string>
 		<key>gameName</key>
 		<string>mini-world</string>
 		<key>interstitialUnitID</key>
-		<string>ca-app-pub-6481681858273303/7574412156</string>
+		<string>ca-app-pub-7270073056899133/4870318618</string>
+        <key>debugBannerUnitID</key>
+        <string>ca-app-pub-3940256099942544/6300978111</string>
+        <key>debugInterstitialUnitID</key>
+        <string>ca-app-pub-3940256099942544/1033173712</string>
 	</dict>
 </dict>
 </plist>

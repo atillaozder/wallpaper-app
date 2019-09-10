@@ -32,5 +32,7 @@
 	<string>1:658229826524:ios:0f6f0410d3de5bca</string>
 	<key>DATABASE_URL</key>
 	<string>https://lol-wallpapers-fed44.firebaseio.com</string>
+	<key>ADMOB_APP_ID</key>
+	<string>ca-app-pub-6481681858273303~9488530561</string>
 </dict>
 </plist>

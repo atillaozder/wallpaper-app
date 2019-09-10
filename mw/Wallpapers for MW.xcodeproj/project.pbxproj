@@ -13,7 +13,7 @@
 		FBC8060422F44FF80090CA6D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBC8060222F44FF80090CA6D /* LaunchScreen.storyboard */; };
 		FBD89D3322FECD2F00C590FF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FBD89D3122FECD2F00C590FF /* Localizable.strings */; };
 		FBD89D4222FECF6800C590FF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FBD89D4022FECF6800C590FF /* InfoPlist.strings */; };
-		FBE3580B230AFAAA001BC06F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FBE3580A230AFAAA001BC06F /* GoogleService-Info.plist */; };
+		FBE0FC872327FFC0005278AD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FBE0FC862327FFC0005278AD /* GoogleService-Info.plist */; };
 		FBE35811230B0044001BC06F /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBE35810230B0044001BC06F /* Core.framework */; };
 		FBE35812230B0044001BC06F /* Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FBE35810230B0044001BC06F /* Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -141,7 +141,7 @@
 		FBC8060522F44FF80090CA6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FBD89D3222FECD2F00C590FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FBD89D4122FECF6800C590FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		FBE3580A230AFAAA001BC06F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FBE0FC862327FFC0005278AD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FBE35810230B0044001BC06F /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -199,8 +199,8 @@
 		FBC805F822F44FF70090CA6D /* src */ = {
 			isa = PBXGroup;
 			children = (
+				FBE0FC862327FFC0005278AD /* GoogleService-Info.plist */,
 				FBC8060522F44FF80090CA6D /* Info.plist */,
-				FBE3580A230AFAAA001BC06F /* GoogleService-Info.plist */,
 				FBD89D4022FECF6800C590FF /* InfoPlist.strings */,
 				FBD89D3122FECD2F00C590FF /* Localizable.strings */,
 				FBC8060222F44FF80090CA6D /* LaunchScreen.storyboard */,
@@ -305,7 +305,7 @@
 			files = (
 				FBC8060422F44FF80090CA6D /* LaunchScreen.storyboard in Resources */,
 				FBD89D4222FECF6800C590FF /* InfoPlist.strings in Resources */,
-				FBE3580B230AFAAA001BC06F /* GoogleService-Info.plist in Resources */,
+				FBE0FC872327FFC0005278AD /* GoogleService-Info.plist in Resources */,
 				FBD89D3322FECD2F00C590FF /* Localizable.strings in Resources */,
 				FBC8060122F44FF80090CA6D /* Assets.xcassets in Resources */,
 			);
