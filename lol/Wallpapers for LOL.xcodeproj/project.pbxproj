@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		45E9E39B546ECFBF23323ABC /* Pods_Wallpapers_for_LOL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A7204178C59EE0103E3D96E /* Pods_Wallpapers_for_LOL.framework */; };
+		999C97EB093AEF5B9D09A083 /* Pods_Wallpapers_for_LOL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A72136BBA5151E94E8D079E /* Pods_Wallpapers_for_LOL.framework */; };
 		FB141C742302035F001956B8 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB141C732302035F001956B8 /* Core.framework */; };
 		FB141C752302035F001956B8 /* Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FB141C732302035F001956B8 /* Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FB2553F22300BB6F0085D4B3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FB2553F12300BB6F0085D4B3 /* GoogleService-Info.plist */; };
@@ -33,7 +33,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0A7204178C59EE0103E3D96E /* Pods_Wallpapers_for_LOL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wallpapers_for_LOL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A72136BBA5151E94E8D079E /* Pods_Wallpapers_for_LOL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wallpapers_for_LOL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DBBF81C082FBA8F07777C6A /* Pods-Wallpapers for LOL.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wallpapers for LOL.debug.xcconfig"; path = "../../Pods/Target Support Files/Pods-Wallpapers for LOL/Pods-Wallpapers for LOL.debug.xcconfig"; sourceTree = "<group>"; };
 		6F01855DBFDE6B417B5953E8 /* Pods-Wallpapers for LOL.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wallpapers for LOL.release.xcconfig"; path = "../../Pods/Target Support Files/Pods-Wallpapers for LOL/Pods-Wallpapers for LOL.release.xcconfig"; sourceTree = "<group>"; };
 		89A27C08A0CC37931663F62A /* Pods-wallpapers-Wallpapers for LOL.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wallpapers-Wallpapers for LOL.debug.xcconfig"; path = "../../Pods/Target Support Files/Pods-wallpapers-Wallpapers for LOL/Pods-wallpapers-Wallpapers for LOL.debug.xcconfig"; sourceTree = "<group>"; };
@@ -92,7 +92,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB141C742302035F001956B8 /* Core.framework in Frameworks */,
-				45E9E39B546ECFBF23323ABC /* Pods_Wallpapers_for_LOL.framework in Frameworks */,
+				999C97EB093AEF5B9D09A083 /* Pods_Wallpapers_for_LOL.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,7 +113,7 @@
 		6281892C017635211E9D1458 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				0A7204178C59EE0103E3D96E /* Pods_Wallpapers_for_LOL.framework */,
+				2A72136BBA5151E94E8D079E /* Pods_Wallpapers_for_LOL.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -163,7 +163,7 @@
 				FB354D7023007818003A6407 /* Frameworks */,
 				FB354D7123007818003A6407 /* Resources */,
 				FB141C762302035F001956B8 /* Embed Frameworks */,
-				7FD2F38DD1986BE6DDD1D839 /* [CP] Embed Pods Frameworks */,
+				FC45051A791D9CCDA091FDEB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -257,7 +257,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		7FD2F38DD1986BE6DDD1D839 /* [CP] Embed Pods Frameworks */ = {
+		FC45051A791D9CCDA091FDEB /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (

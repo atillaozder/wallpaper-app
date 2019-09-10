@@ -20,7 +20,7 @@ public class TabBarController: UITabBarController {
     }
     
     private func setupControllers() {
-        let tabBarItems: [UITabBarItem.SystemItem] = [.mostRecent, .favorites]
+        let tabBarItems: [UITabBarItem.SystemItem] = [.recents, .favorites]
         let controllers = [HomeViewController(), FavoriteItemsViewController()]
         controllers.enumerated().forEach {
             $0.element.tabBarItem = .init(tabBarSystemItem: tabBarItems[$0.offset],

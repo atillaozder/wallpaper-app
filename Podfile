@@ -11,6 +11,7 @@ def shared_pods
   pod 'Firebase/Performance'
   pod 'Fabric', '~> 1.10.2'
   pod 'Crashlytics', '~> 3.13.4'
+  pod 'CropViewController'
 end
 
 abstract_target 'Wallpapers' do

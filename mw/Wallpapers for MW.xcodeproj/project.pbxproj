@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		055F486F26653FEB452E2A34 /* Pods_Wallpapers_for_MW.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8224158ED62F9E685B334ACE /* Pods_Wallpapers_for_MW.framework */; };
+		C91DBF038B94CF4604BD9526 /* Pods_Wallpapers_for_MW.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E417EF3D2511F4DB6A26A83 /* Pods_Wallpapers_for_MW.framework */; };
 		FBC805FA22F44FF70090CA6D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC805F922F44FF70090CA6D /* AppDelegate.swift */; };
 		FBC8060122F44FF80090CA6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBC8060022F44FF80090CA6D /* Assets.xcassets */; };
 		FBC8060422F44FF80090CA6D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBC8060222F44FF80090CA6D /* LaunchScreen.storyboard */; };
@@ -34,7 +34,7 @@
 
 /* Begin PBXFileReference section */
 		244138E230A88088C6DD33BF /* Pods-wallpapers-Wallpapers for MW.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wallpapers-Wallpapers for MW.release.xcconfig"; path = "../../Pods/Target Support Files/Pods-wallpapers-Wallpapers for MW/Pods-wallpapers-Wallpapers for MW.release.xcconfig"; sourceTree = "<group>"; };
-		8224158ED62F9E685B334ACE /* Pods_Wallpapers_for_MW.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wallpapers_for_MW.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E417EF3D2511F4DB6A26A83 /* Pods_Wallpapers_for_MW.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wallpapers_for_MW.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8420862C06C0F76821959B2 /* Pods-wallpapers-Wallpapers for MW.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wallpapers-Wallpapers for MW.debug.xcconfig"; path = "../../Pods/Target Support Files/Pods-wallpapers-Wallpapers for MW/Pods-wallpapers-Wallpapers for MW.debug.xcconfig"; sourceTree = "<group>"; };
 		DBF03B9F9A3642905F257245 /* Pods-Wallpapers for MW.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wallpapers for MW.debug.xcconfig"; path = "../../Pods/Target Support Files/Pods-Wallpapers for MW/Pods-Wallpapers for MW.debug.xcconfig"; sourceTree = "<group>"; };
 		E194CEE88520E4EDB68F0951 /* Pods-Wallpapers for MW.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wallpapers for MW.release.xcconfig"; path = "../../Pods/Target Support Files/Pods-Wallpapers for MW/Pods-Wallpapers for MW.release.xcconfig"; sourceTree = "<group>"; };
@@ -92,7 +92,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FBE35811230B0044001BC06F /* Core.framework in Frameworks */,
-				055F486F26653FEB452E2A34 /* Pods_Wallpapers_for_MW.framework in Frameworks */,
+				C91DBF038B94CF4604BD9526 /* Pods_Wallpapers_for_MW.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,7 +113,7 @@
 		E56773D8C9617AAA4FCA937C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				8224158ED62F9E685B334ACE /* Pods_Wallpapers_for_MW.framework */,
+				6E417EF3D2511F4DB6A26A83 /* Pods_Wallpapers_for_MW.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -163,7 +163,7 @@
 				FBC805F322F44FF70090CA6D /* Frameworks */,
 				FBC805F422F44FF70090CA6D /* Resources */,
 				FBE35813230B0044001BC06F /* Embed Frameworks */,
-				5C10BD128D7088E50C15364B /* [CP] Embed Pods Frameworks */,
+				99585CB4C4DA72C676012C50 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -235,7 +235,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		5C10BD128D7088E50C15364B /* [CP] Embed Pods Frameworks */ = {
+		99585CB4C4DA72C676012C50 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (

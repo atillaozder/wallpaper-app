@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import Photos
+import CropViewController
 import GoogleMobileAds
 import SDWebImage
 
@@ -21,14 +22,21 @@ class PhotoViewController: UIViewController {
     let kDownloadButtonHeight: CGFloat = 50
     var downloadButtonBottomConstraint: NSLayoutConstraint?
     
-    lazy var favImageView: UIImageView = {
-        let iv = UIImageView()
-        iv.addTapGesture(self, action: #selector(favoriteTapped))
-        iv.tintColor = .defaultTextColor
-        iv.contentMode = .center
-        iv.pin(size: .init(width: 50, height: 44))
-        return iv
+    lazy var favBtn: UIButton = {
+        let btn = ButtonFactory().generateButton()
+        btn.contentHorizontalAlignment = .center
+        btn.addTarget(self, action: #selector(favoriteTapped), for: .touchUpInside)
+        return btn
     }()
+    
+    var isFavorited: Bool = false {
+        willSet {
+            let image = newValue ? UIImage(named: "ic_filled_heart") : UIImage(named: "ic_empty_heart")
+            let tintColor: UIColor = newValue ? .red : .defaultTextColor
+            favBtn.setImage(image?.withRenderingMode(.alwaysTemplate), for: .normal)
+            favBtn.imageView?.tintColor = tintColor
+        }
+    }
     
     lazy var activityIndicator: UIActivityIndicatorView = {
         let ai = UIActivityIndicatorView(style: .gray)
@@ -126,39 +134,43 @@ class PhotoViewController: UIViewController {
     
     private func setupButtons() {
         setupBarButtons()
-    
-        let btn = UIButton(type: .custom)
-        btn.setTitle(Localization.save, for: .normal)
-        btn.setTitleColor(.defaultTextColor, for: .normal)
-        btn.titleLabel?.numberOfLines = 0
-        btn.titleLabel?.lineBreakMode = .byWordWrapping
-        btn.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .medium)
-        btn.addTarget(self, action: #selector(downloadTapped), for: .touchUpInside)
-        btn.backgroundColor = .white
-        btn.layer.borderColor = UIColor.defaultBorder.cgColor
-        btn.layer.borderWidth = 0.5
         
-        view.insertSubview(btn, at: 1)
-        btn.pinEdgesToView(view, insets: .zero, exclude: [.top, .bottom])
-        self.downloadButtonBottomConstraint = btn.pinBottom(to: view.safeBottomAnchor)
-        btn.pinHeight(to: kDownloadButtonHeight)
-        view.bringSubviewToFront(btn)
+        let btn = ButtonFactory().generateButton()
+        btn.setTitle(Localization.save, for: .normal)
+        btn.addTarget(self, action: #selector(downloadTapped), for: .touchUpInside)
+        
+        self.isFavorited = StorageHelper.shared().value(for: viewModel.item)
+
+        let sv = UIStackView(arrangedSubviews: [favBtn, btn])
+        sv.distribution = .fillEqually
+        sv.alignment = .fill
+        sv.spacing = 0
+        
+        view.insertSubview(sv, at: 1)
+        sv.pinEdgesToView(view, insets: .zero, exclude: [.top, .bottom])
+        self.downloadButtonBottomConstraint = sv.pinBottom(to: view.safeBottomAnchor)
+        sv.pinHeight(to: kDownloadButtonHeight)
+        view.bringSubviewToFront(sv)
     }
     
     private func setupBarButtons() {
-        let shareImg = UIImage(named: "ic_share")
-        let shareView = UIImageView(image: shareImg)
-        shareView.addTapGesture(self, action: #selector(shareTapped(_:)))
-        shareView.tintColor = .defaultTextColor
-        shareView.contentMode = .center
-        shareView.pin(size: .init(width: 50, height: 44))
-        let shareBarButton = UIBarButtonItem(customView: shareView)
-        
-        let favoriteBarButton = UIBarButtonItem(customView: favImageView)
-        let value = StorageHelper.shared().value(for: viewModel.item)
-        setImageView(from: value)
-        self.navigationItem.setRightBarButtonItems([shareBarButton, favoriteBarButton],
-                                                   animated: false)
+        let shareBarButton = UIBarButtonItem(
+            barButtonSystemItem: .action,
+            target: self,
+            action: #selector(shareTapped))
+        shareBarButton.style = .done
+        shareBarButton.imageInsets = .init(top: 0, left: 8, bottom: 0, right: 0)
+
+        let editBarButton = UIBarButtonItem(
+            barButtonSystemItem: .compose,
+            target: self,
+            action: #selector(editTapped))
+        editBarButton.style = .done
+        editBarButton.imageInsets = .init(top: 2, left: 0, bottom: 0, right: 8)
+
+        let barButtons = [shareBarButton, editBarButton]
+        barButtons.forEach { $0.tintColor = .defaultTextColor }
+        self.navigationItem.setRightBarButtonItems(barButtons, animated: false)
     }
     
     func bindUI() {
@@ -188,47 +200,73 @@ class PhotoViewController: UIViewController {
     }
     
     @objc
-    func shareTapped(_ sender: UITapGestureRecognizer) {
+    func shareTapped() {
         InterstitialHandler.shared().increase()
         guard let image = imageView.image?.jpegData(compressionQuality: 1.0) else { return }
         let viewController = UIActivityViewController(activityItems: [image], applicationActivities: [])
         viewController.excludedActivityTypes = [.saveToCameraRoll]
-        viewController.popoverPresentationController?.sourceView = sender.view ?? self.view
+        viewController.popoverPresentationController?.sourceView = self.view
         self.present(viewController, animated: true, completion: nil)
+    }
+    
+    @objc
+    func editTapped() {
+        getLibraryPermission { [weak self] (authorized) in
+            guard let `self` = self else { return }
+            authorized ? self.presentCropController() : self.askPermission()
+        }
     }
     
     @objc
     func favoriteTapped() {
         let newValue = !StorageHelper.shared().value(for: viewModel.item)
         viewModel.toggleFavorite()
-        setImageView(from: newValue)
+        self.isFavorited = newValue
     }
-    
-    func setImageView(from value: Bool) {
-        let image = value ? UIImage(named: "ic_filled_heart") : UIImage(named: "ic_empty_heart")
-        let tintColor: UIColor = value ? .red : .defaultTextColor
-        favImageView.image = image?.withRenderingMode(.alwaysTemplate)
-        favImageView.tintColor = tintColor
-    }
-    
+
     @objc
-    private func downloadTapped() {        
+    private func downloadTapped() {
+        getLibraryPermission { [weak self] (authorized) in
+            guard let `self` = self else { return }
+            authorized ? self.saveImage() : self.askPermission()
+        }
+    }
+    
+    private func getLibraryPermission(completionHandler: @escaping ((Bool) -> Void)) {
         let status = PHPhotoLibrary.authorizationStatus()
         switch status {
         case .notDetermined:
             PHPhotoLibrary.requestAuthorization { (status) in
                 if status == .authorized {
-                    self.saveImage()
+                    DispatchQueue.main.async {
+                        completionHandler(true)
+                    }
                 }
             }
         case .authorized:
-            self.saveImage()
-        case .denied:
-            self.askPermission()
-        case .restricted:
-            self.askPermission()
+            DispatchQueue.main.async {
+                completionHandler(true)
+            }
+        case .denied, .restricted:
+            DispatchQueue.main.async {
+                completionHandler(false)
+            }
         @unknown default:
-            self.askPermission()
+            DispatchQueue.main.async {
+                completionHandler(false)
+            }
+        }
+    }
+    
+    private func presentCropController() {
+        if let image = self.imageView.image {
+            let cropController = CropViewController(croppingStyle: .default, image: image)
+            cropController.aspectRatioPreset = .presetCustom
+            cropController.aspectRatioPickerButtonHidden = false
+            cropController.toolbarPosition = .top
+            cropController.delegate = self
+            cropController.showActivitySheetOnDone = true
+            self.present(cropController, animated: true, completion: nil)
         }
     }
     
@@ -236,6 +274,7 @@ class PhotoViewController: UIViewController {
         viewModel.save() { [weak self] (success, error) in
             guard let `self` = self else { return }
             if success {
+                InterstitialHandler.shared().openInterstitial()
                 DispatchQueue.main.async {
                     let inset = self.kDownloadButtonHeight + self.bannerView.frame.height
                     self.showToast(with: Localization.saved, additionalInset: inset)
@@ -258,8 +297,7 @@ class PhotoViewController: UIViewController {
         let alertController = UIAlertController(
             title: Localization.photoPermissionTitle,
             message: Localization.photoPermissionMessage,
-            preferredStyle: .alert
-        )
+            preferredStyle: .alert)
         
         let openSettings = UIAlertAction(
             title: Localization.openSettingsTitle,
@@ -330,9 +368,19 @@ extension PhotoViewController: GADBannerViewDelegate {
     }
 }
 
+extension PhotoViewController: CropViewControllerDelegate {
+    func cropViewController(_ cropViewController: CropViewController,
+                            didFinishCancelled cancelled: Bool) {
+        cropViewController.dismiss(animated: true, completion: nil)
+        if !cancelled {
+            InterstitialHandler.shared().openInterstitial()
+        }
+    }
+}
+
 extension PhotoViewController: InterstitialHandlerDelegate {
     func interstitialHandler(_ handler: InterstitialHandler,
-                             didShowInterstitial interstitial: GADInterstitial) {
+                             willShowInterstitial interstitial: GADInterstitial) {
         interstitial.present(fromRootViewController: self)
     }
 }

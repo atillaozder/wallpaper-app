@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		65BA7F4C58CF26A1093212C6 /* Pods_Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFF91498D9A90118D79C3256 /* Pods_Core.framework */; };
+		7227DA229DA7A920029E8ED5 /* Pods_Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA0190533257FDF971AC54A0 /* Pods_Core.framework */; };
+		FB3AFC99232699C5008DF609 /* ButtonFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3AFC98232699C5008DF609 /* ButtonFactory.swift */; };
 		FBBAF8F223127EA9005F7542 /* StorageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBAF8F123127EA9005F7542 /* StorageHelper.swift */; };
 		FBBAF8F4231286CB005F7542 /* FavoriteItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBAF8F3231286CB005F7542 /* FavoriteItemsViewController.swift */; };
 		FBBAF8F723128905005F7542 /* FavoriteItemsPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBAF8F623128905005F7542 /* FavoriteItemsPageController.swift */; };
@@ -82,7 +83,8 @@
 		6CB3896AA0BA2D519255CEA9 /* Pods-wallpapers-Core.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wallpapers-Core.debug.xcconfig"; path = "../../Pods/Target Support Files/Pods-wallpapers-Core/Pods-wallpapers-Core.debug.xcconfig"; sourceTree = "<group>"; };
 		780A3E98BD141C8E9FC7EEAC /* Pods-Core.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Core.debug.xcconfig"; path = "../../Pods/Target Support Files/Pods-Core/Pods-Core.debug.xcconfig"; sourceTree = "<group>"; };
 		83E5A38F8539AE6563D9EFB2 /* Pods-wallpapers-Core.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wallpapers-Core.release.xcconfig"; path = "../../Pods/Target Support Files/Pods-wallpapers-Core/Pods-wallpapers-Core.release.xcconfig"; sourceTree = "<group>"; };
-		BFF91498D9A90118D79C3256 /* Pods_Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA0190533257FDF971AC54A0 /* Pods_Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB3AFC98232699C5008DF609 /* ButtonFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonFactory.swift; sourceTree = "<group>"; };
 		FBBAF8F123127EA9005F7542 /* StorageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageHelper.swift; sourceTree = "<group>"; };
 		FBBAF8F3231286CB005F7542 /* FavoriteItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteItemsViewController.swift; sourceTree = "<group>"; };
 		FBBAF8F623128905005F7542 /* FavoriteItemsPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteItemsPageController.swift; sourceTree = "<group>"; };
@@ -159,7 +161,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				65BA7F4C58CF26A1093212C6 /* Pods_Core.framework in Frameworks */,
+				7227DA229DA7A920029E8ED5 /* Pods_Core.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -169,7 +171,7 @@
 		6F2E0456BC8553F98D5D5A2F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BFF91498D9A90118D79C3256 /* Pods_Core.framework */,
+				DA0190533257FDF971AC54A0 /* Pods_Core.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -366,6 +368,7 @@
 				FBD003E32300670800D12BF8 /* ActivityIndicator.swift */,
 				FBD003E42300670800D12BF8 /* InterstitialHandler.swift */,
 				FBD003E52300670800D12BF8 /* Identifiable.swift */,
+				FB3AFC98232699C5008DF609 /* ButtonFactory.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -554,6 +557,7 @@
 				FBD004332300670900D12BF8 /* MenuBarCell.swift in Sources */,
 				FBD004172300670900D12BF8 /* UIView+AutoLayout.swift in Sources */,
 				FBD003F92300670900D12BF8 /* ImageViewModel.swift in Sources */,
+				FB3AFC99232699C5008DF609 /* ButtonFactory.swift in Sources */,
 				FBD004222300670900D12BF8 /* ActivityIndicator.swift in Sources */,
 				FBD004022300670900D12BF8 /* CategoryViewModel.swift in Sources */,
 				FBD003AA2300668900D12BF8 /* InfoPlistManager.swift in Sources */,

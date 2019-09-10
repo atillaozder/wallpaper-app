@@ -91,7 +91,7 @@ extension CategoryItemsViewController: PageControllerDelegate {
 
 extension CategoryItemsViewController: InterstitialHandlerDelegate {
     func interstitialHandler(_ handler: InterstitialHandler,
-                             didShowInterstitial interstitial: GADInterstitial) {
+                             willShowInterstitial interstitial: GADInterstitial) {
         interstitial.present(fromRootViewController: self)
     }
 }

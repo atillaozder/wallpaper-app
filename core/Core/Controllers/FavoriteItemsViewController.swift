@@ -87,7 +87,7 @@ extension FavoriteItemsViewController: PageControllerDelegate {
 
 extension FavoriteItemsViewController: InterstitialHandlerDelegate {
     func interstitialHandler(_ handler: InterstitialHandler,
-                             didShowInterstitial interstitial: GADInterstitial) {
+                             willShowInterstitial interstitial: GADInterstitial) {
         interstitial.present(fromRootViewController: self)
     }
 }

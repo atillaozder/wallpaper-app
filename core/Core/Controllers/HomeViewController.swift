@@ -102,7 +102,7 @@ extension HomeViewController: GADBannerViewDelegate {
 
 extension HomeViewController: InterstitialHandlerDelegate {
     func interstitialHandler(_ handler: InterstitialHandler,
-                             didShowInterstitial interstitial: GADInterstitial) {
+                             willShowInterstitial interstitial: GADInterstitial) {
         DispatchQueue.main.async {
             if self.viewIfLoaded?.window != nil {
                 interstitial.present(fromRootViewController: self)
