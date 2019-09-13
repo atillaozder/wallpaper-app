@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,7 @@
 		FB683FBD232BE26A0055E634 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FB683FBB232BE26A0055E634 /* Localizable.strings */; };
 		FB68401F232BE3240055E634 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB68401E232BE3240055E634 /* Core.framework */; };
 		FB684020232BE3240055E634 /* Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FB68401E232BE3240055E634 /* Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FB9C979F232BFCDC0019BFD6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FB9C979E232BFCDC0019BFD6 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -139,6 +140,7 @@
 		FB68401C232BE2FA0055E634 /* hi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hi; path = hi.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FB68401D232BE2FA0055E634 /* hi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hi; path = hi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FB68401E232BE3240055E634 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB9C979E232BFCDC0019BFD6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +199,7 @@
 				FB683FA6232BE1F40055E634 /* AppDelegate.swift */,
 				FB683FAD232BE1F40055E634 /* Assets.xcassets */,
 				FB683FAF232BE1F40055E634 /* LaunchScreen.storyboard */,
+				FB9C979E232BFCDC0019BFD6 /* GoogleService-Info.plist */,
 				FB683FB2232BE1F40055E634 /* Info.plist */,
 				FB683FB8232BE25F0055E634 /* InfoPlist.strings */,
 				FB683FBB232BE26A0055E634 /* Localizable.strings */,
@@ -299,6 +302,7 @@
 			files = (
 				FB683FB1232BE1F40055E634 /* LaunchScreen.storyboard in Resources */,
 				FB683FBD232BE26A0055E634 /* Localizable.strings in Resources */,
+				FB9C979F232BFCDC0019BFD6 /* GoogleService-Info.plist in Resources */,
 				FB683FBA232BE25F0055E634 /* InfoPlist.strings in Resources */,
 				FB683FAE232BE1F40055E634 /* Assets.xcassets in Resources */,
 			);

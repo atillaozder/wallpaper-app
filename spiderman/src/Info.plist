@@ -23,7 +23,7 @@
 	<key>FirebaseScreenReportingEnabled</key>
 	<false/>
 	<key>GADApplicationIdentifier</key>
-	<string>ca-app-pub-7270073056899133~6413859793</string>
+	<string>ca-app-pub-7270073056899133~3369334999</string>
 	<key>LSHasLocalizedDisplayName</key>
 	<true/>
 	<key>LSRequiresIPhoneOS</key>
@@ -55,15 +55,15 @@
 	<key>configuration</key>
 	<dict>
 		<key>bannerUnitID</key>
-		<string>ca-app-pub-7270073056899133/5220197627</string>
+		<string>ca-app-pub-7270073056899133/2738586088</string>
 		<key>debugBannerUnitID</key>
 		<string>ca-app-pub-3940256099942544/6300978111</string>
 		<key>debugInterstitialUnitID</key>
 		<string>ca-app-pub-3940256099942544/1033173712</string>
 		<key>gameName</key>
-		<string>mini-world</string>
+		<string>spider-man</string>
 		<key>interstitialUnitID</key>
-		<string>ca-app-pub-7270073056899133/4870318618</string>
+		<string>ca-app-pub-7270073056899133/9112422743</string>
 	</dict>
 </dict>
 </plist>
