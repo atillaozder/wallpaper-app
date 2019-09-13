@@ -53,5 +53,17 @@ abstract_target 'Wallpapers' do
     project 'illustrator/Wallpapers for Illustrator.xcodeproj'
     shared_pods
   end
+
+  target 'Wallpapers for LoveAlarm' do
+    inherit! :search_paths
+    project 'lovealarm/Wallpapers for LoveAlarm.xcodeproj'
+    shared_pods
+  end
+
+  target 'Wallpapers for Spiderman' do
+    inherit! :search_paths
+    project 'spiderman/Wallpapers for Spiderman.xcodeproj'
+    shared_pods
+  end
 end
   

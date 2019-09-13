@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>806585423872-cjl9jabl91fjo6q0kv7507iaahqac9m3.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.806585423872-cjl9jabl91fjo6q0kv7507iaahqac9m3</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAvv20v_3Uf0mEg9Ye2HdiD_WGKzWFIv0c</string>
+	<key>GCM_SENDER_ID</key>
+	<string>806585423872</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.appraf.lovealarm</string>
+	<key>PROJECT_ID</key>
+	<string>lovealarm-5bd51</string>
+	<key>STORAGE_BUCKET</key>
+	<string>lovealarm-5bd51.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:806585423872:ios:79ecab4f582f8d4df620e5</string>
+	<key>DATABASE_URL</key>
+	<string>https://lovealarm-5bd51.firebaseio.com</string>
+</dict>
+</plist>
