@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,7 @@
 		FB6E0AC9232AA8EF00EBDE18 /* Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FB6E0AC7232AA8EF00EBDE18 /* Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FB6E0ACD232AA93B00EBDE18 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FB6E0ACB232AA93B00EBDE18 /* InfoPlist.strings */; };
 		FB6E0AD0232AA94600EBDE18 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FB6E0ACE232AA94600EBDE18 /* Localizable.strings */; };
+		FB8A553A232BAC34006F4895 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FB8A5539232BAC34006F4895 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -139,6 +140,7 @@
 		FB6E0B2E232AA9F700EBDE18 /* hi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hi; path = hi.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		FB6E0B2F232AA9F700EBDE18 /* hi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hi; path = hi.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FB6E0B30232AA9F700EBDE18 /* hi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hi; path = hi.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FB8A5539232BAC34006F4895 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +199,7 @@
 				FB6E0AB5232AA89B00EBDE18 /* AppDelegate.swift */,
 				FB6E0ABC232AA89C00EBDE18 /* Assets.xcassets */,
 				FB6E0ABE232AA89C00EBDE18 /* LaunchScreen.storyboard */,
+				FB8A5539232BAC34006F4895 /* GoogleService-Info.plist */,
 				FB6E0AC1232AA89C00EBDE18 /* Info.plist */,
 				FB6E0ACB232AA93B00EBDE18 /* InfoPlist.strings */,
 				FB6E0ACE232AA94600EBDE18 /* Localizable.strings */,
@@ -299,6 +302,7 @@
 			files = (
 				FB6E0AC0232AA89C00EBDE18 /* LaunchScreen.storyboard in Resources */,
 				FB6E0AD0232AA94600EBDE18 /* Localizable.strings in Resources */,
+				FB8A553A232BAC34006F4895 /* GoogleService-Info.plist in Resources */,
 				FB6E0ACD232AA93B00EBDE18 /* InfoPlist.strings in Resources */,
 				FB6E0ABD232AA89C00EBDE18 /* Assets.xcassets in Resources */,
 			);

@@ -89,9 +89,11 @@ extension FavoriteItemsViewController: InterstitialHandlerDelegate {
     func interstitialHandler(_ handler: InterstitialHandler,
                              willPresentInterstitial interstitial: GADInterstitial) {
         interstitial.present(fromRootViewController: self)
-        if let refreshControl = self.collectionView.refreshControl,
-            refreshControl.isRefreshing {
-            refreshControl.endRefreshing()
+        DispatchQueue.main.async {
+            if let refreshControl = self.collectionView.refreshControl,
+                refreshControl.isRefreshing {
+                refreshControl.endRefreshing()
+            }
         }
     }
 }

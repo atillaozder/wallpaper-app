@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>197177274224-97ddugeicjqe71b935fmksoskkcgcl3p.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.197177274224-97ddugeicjqe71b935fmksoskkcgcl3p</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCqBYx00PrO9fD5VyrN3g5rJysz4eYcsi8</string>
+	<key>GCM_SENDER_ID</key>
+	<string>197177274224</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.appraf.illustrator</string>
+	<key>PROJECT_ID</key>
+	<string>illustrator-af057</string>
+	<key>STORAGE_BUCKET</key>
+	<string>illustrator-af057.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:197177274224:ios:318859cefdd350907b29b5</string>
+	<key>DATABASE_URL</key>
+	<string>https://illustrator-af057.firebaseio.com</string>
+</dict>
+</plist>
