@@ -63,7 +63,6 @@ class MenuBar: UIView {
     }
     
     func scroll(at index: Int, animated: Bool = true) {
-        InterstitialHandler.shared().increase()
         self.collectionView.selectItem(at: .init(item: index, section: 0),
                                        animated: animated,
                                        scrollPosition: .centeredHorizontally)

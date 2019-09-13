@@ -84,9 +84,7 @@ class PhotoViewModel {
         return photoAlbum
     }
     
-    func save(_ completion: ((Bool, Error?) -> Void)?) {
-        InterstitialHandler.shared().increase()
-        
+    func save(_ completion: ((Bool, Error?) -> Void)?) {        
         if let album = fetchAlbum() {
             saveImage(to: album, completion: completion)
         } else {

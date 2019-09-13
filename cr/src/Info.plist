@@ -35,15 +35,15 @@
             <string>UIInterfaceOrientationPortrait</string>
         </array>
         <key>GADApplicationIdentifier</key>
-        <string>ca-app-pub-3940256099942544~1458002511</string>
+        <string>ca-app-pub-7270073056899133~3929406493</string>
         <key>configuration</key>
         <dict>
             <key>gameName</key>
-            <string>mini-world</string>
+            <string>coc-cr</string>
             <key>interstitialUnitID</key>
-            <string>ca-app-pub-3940256099942544/4411468910</string>
+            <string>ca-app-pub-7270073056899133/9464804207</string>
             <key>bannerUnitID</key>
-            <string>ca-app-pub-3940256099942544/2934735716</string>
+            <string>ca-app-pub-7270073056899133/3855408396</string>
             <key>debugBannerUnitID</key>
             <string>ca-app-pub-3940256099942544/6300978111</string>
             <key>debugInterstitialUnitID</key>

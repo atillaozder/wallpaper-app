@@ -15,6 +15,7 @@
 		FB3038722327CEEC002A9E05 /* Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FB3038702327CEEC002A9E05 /* Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FB3038E02327D0F0002A9E05 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FB3038DE2327D0F0002A9E05 /* InfoPlist.strings */; };
 		FB3038E32327D0FB002A9E05 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FB3038E12327D0FB002A9E05 /* Localizable.strings */; };
+		FB3DBBE1232C25D6002743CF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FB3DBBE0232C25D6002743CF /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -139,6 +140,7 @@
 		FB3039412327D15B002A9E05 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		FB3039422327D15C002A9E05 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FB3039432327D15C002A9E05 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FB3DBBE0232C25D6002743CF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +199,7 @@
 				FB30385E2327CEAF002A9E05 /* AppDelegate.swift */,
 				FB3038652327CEAF002A9E05 /* Assets.xcassets */,
 				FB3038672327CEAF002A9E05 /* LaunchScreen.storyboard */,
+				FB3DBBE0232C25D6002743CF /* GoogleService-Info.plist */,
 				FB30386A2327CEAF002A9E05 /* Info.plist */,
 				FB3038DE2327D0F0002A9E05 /* InfoPlist.strings */,
 				FB3038E12327D0FB002A9E05 /* Localizable.strings */,
@@ -299,6 +302,7 @@
 			files = (
 				FB3038692327CEAF002A9E05 /* LaunchScreen.storyboard in Resources */,
 				FB3038E32327D0FB002A9E05 /* Localizable.strings in Resources */,
+				FB3DBBE1232C25D6002743CF /* GoogleService-Info.plist in Resources */,
 				FB3038E02327D0F0002A9E05 /* InfoPlist.strings in Resources */,
 				FB3038662327CEAF002A9E05 /* Assets.xcassets in Resources */,
 			);
