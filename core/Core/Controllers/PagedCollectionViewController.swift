@@ -124,7 +124,6 @@ extension PagedCollectionViewController: GADBannerViewDelegate {
         insets.bottom = bannerView.frame.height
         collectionView.contentInset = insets
         collectionView.scrollIndicatorInsets = insets
-        collectionView.collectionViewLayout.invalidateLayout()
     }
 }
 

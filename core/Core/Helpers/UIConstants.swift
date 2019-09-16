@@ -31,7 +31,7 @@ struct UIConstants {
     static let kImageInterItemSpacing: CGFloat = 1
     static let kImageLineSpacing: CGFloat = 1
     static let kItemSize: CGSize = .init(width: UIConstants.itemWidth(), height: UIConstants.itemHeight())
-    static let kImageEdgeInsets: UIEdgeInsets = .init(top: UIConstants.kImageOffset * 2, left: UIConstants.kImageOffset, bottom: UIConstants.kImageOffset, right: UIConstants.kImageOffset)
+    static let kImageEdgeInsets: UIEdgeInsets = .init(top: UIConstants.kImageOffset, left: UIConstants.kImageOffset, bottom: UIConstants.kImageOffset, right: UIConstants.kImageOffset)
     
     static func itemHeight() -> CGFloat {
         return (UIConstants.itemWidth() * 3 / 2).rounded()

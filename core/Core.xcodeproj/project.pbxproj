@@ -78,6 +78,7 @@
 		FBE12604232FD16300FD70CD /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE12603232FD16300FD70CD /* SideMenuViewController.swift */; };
 		FBE12606232FD64A00FD70CD /* SideMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE12605232FD64A00FD70CD /* SideMenuCell.swift */; };
 		FBE1260A232FDCDD00FD70CD /* SideMenuHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE12609232FDCDD00FD70CD /* SideMenuHeaderView.swift */; };
+		FBE1260C232FF05400FD70CD /* InteractivePopGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE1260B232FF05400FD70CD /* InteractivePopGestureRecognizer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -158,6 +159,7 @@
 		FBE12603232FD16300FD70CD /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 		FBE12605232FD64A00FD70CD /* SideMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuCell.swift; sourceTree = "<group>"; };
 		FBE12609232FDCDD00FD70CD /* SideMenuHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuHeaderView.swift; sourceTree = "<group>"; };
+		FBE1260B232FF05400FD70CD /* InteractivePopGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractivePopGestureRecognizer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,6 +232,7 @@
 				FBD003CF2300670800D12BF8 /* UIConstants.swift */,
 				FBBAF8F123127EA9005F7542 /* StorageHelper.swift */,
 				FBD003C62300670800D12BF8 /* Localization.swift */,
+				FBE1260B232FF05400FD70CD /* InteractivePopGestureRecognizer.swift */,
 				FBD003C72300670800D12BF8 /* DroppingFramesHelper.swift */,
 				FBD003A92300668900D12BF8 /* InfoPlistManager.swift */,
 				FBD003C82300670800D12BF8 /* Image */,
@@ -465,6 +468,7 @@
 				FBD0042B2300670900D12BF8 /* ApiErrorResponse.swift in Sources */,
 				FBBAF8F4231286CB005F7542 /* FavoritesViewController.swift in Sources */,
 				FBD004272300670900D12BF8 /* URLRequestConfigurable.swift in Sources */,
+				FBE1260C232FF05400FD70CD /* InteractivePopGestureRecognizer.swift in Sources */,
 				FBD0041A2300670900D12BF8 /* Reactive+Custom.swift in Sources */,
 				FBD004142300670900D12BF8 /* UIView+Utils.swift in Sources */,
 				FBD004072300670900D12BF8 /* CategoryItemsViewController.swift in Sources */,

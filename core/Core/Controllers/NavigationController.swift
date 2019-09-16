@@ -18,11 +18,13 @@ extension NavigationBarSettable {
 
 public class NavigationController: UINavigationController {
     
+    private lazy var popGestureRecognizer = InteractivePopGestureRecognizer(controller: self)
     private(set) var lastViewController: UIViewController?
     
     public override func viewDidLoad() {
         super.viewDidLoad()
         delegate = self
+        interactivePopGestureRecognizer?.delegate = popGestureRecognizer
     }
     
     public override func pushViewController(_ viewController: UIViewController, animated: Bool) {

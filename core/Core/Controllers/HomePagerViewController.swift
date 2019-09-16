@@ -21,8 +21,7 @@ public class HomePagerViewController: PagerViewController {
             target: self,
             action: #selector(openSideMenu))
         self.navigationItem.setLeftBarButton(barButton, animated: false)
-        let panGesture = SideMenuManager.default.addPanGestureToPresent(toView: self.navigationController!.navigationBar)
-        panGesture.cancelsTouchesInView = false
+        let _ = SideMenuManager.default.addPanGestureToPresent(toView: self.navigationController!.navigationBar)
     }
     
     @objc
