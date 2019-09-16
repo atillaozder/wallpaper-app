@@ -6,7 +6,6 @@
 //  Copyright © 2019 Atilla Özder. All rights reserved.
 //
 
-import UIKit
 import RxSwift
 
 class CollectionCell: UICollectionViewCell {
@@ -15,12 +14,12 @@ class CollectionCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setup()
+        setupViews()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        setup()
+        setupViews()
     }
     
     override func prepareForReuse() {
@@ -28,7 +27,7 @@ class CollectionCell: UICollectionViewCell {
         bag = DisposeBag()
     }
     
-    func setup() {
+    func setupViews() {
         return
     }
     

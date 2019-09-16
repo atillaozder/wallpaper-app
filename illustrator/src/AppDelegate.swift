@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         setupNavigationBar()
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.backgroundColor = .white
-        window?.rootViewController = TabBarController()
+        window?.rootViewController = NavigationController(rootViewController: HomePagerViewController())
         window?.makeKeyAndVisible()
         
         #if DEBUG

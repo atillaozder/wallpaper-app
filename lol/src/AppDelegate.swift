@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  Wallpapers for League of Legends
+//  wallpapers
 //
-//  Created by Atilla Özder on 11.08.2019.
+//  Created by Atilla Özder on 12.08.2019.
 //  Copyright © 2019 Atilla Özder. All rights reserved.
 //
 
@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         setupNavigationBar()
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.backgroundColor = .white
-        window?.rootViewController = TabBarController()
+        window?.rootViewController = NavigationController(rootViewController: HomePagerViewController())
         window?.makeKeyAndVisible()
         
         #if DEBUG

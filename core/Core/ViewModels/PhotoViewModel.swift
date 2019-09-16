@@ -6,22 +6,16 @@
 //  Copyright © 2019 Atilla Özder. All rights reserved.
 //
 
-import class UIKit.UIImage
 import SDWebImage
 import RxSwift
 import RxCocoa
 import Photos
 
-extension Bundle {
-    var displayName: String {
-        return object(forInfoDictionaryKey: "CFBundleDisplayName") as? String ?? "Free Wallpapers HD-4K"
-    }
-}
-
 class PhotoViewModel {
     
     static let albumName = Bundle.main.displayName
     
+    var didReceiveAd: Bool = false
     var item: Image
     var image: BehaviorRelay<UIImage?>
     var downloadedImage: UIImage? {

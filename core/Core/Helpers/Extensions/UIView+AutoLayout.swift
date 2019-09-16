@@ -6,8 +6,6 @@
 //  Copyright © 2019 Atilla Özder. All rights reserved.
 //
 
-import UIKit
-
 enum SizePriority {
     case required
     case low

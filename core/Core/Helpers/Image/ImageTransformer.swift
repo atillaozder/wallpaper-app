@@ -6,12 +6,9 @@
 //  Copyright © 2019 Atilla Özder. All rights reserved.
 //
 
-import UIKit
-import protocol SDWebImage.SDImageTransformer
-
 let DEFAULT_CONTENT_MODE: UIView.ContentMode = .scaleAspectFill
 
-class ImageTransformer: NSObject, SDImageTransformer {
+class ImageTransformer {
     
     var size: CGSize
     var cornerRadius: CGFloat
@@ -28,7 +25,7 @@ class ImageTransformer: NSObject, SDImageTransformer {
     }
     
     var transformerKey: String {
-        return "ImageResizingTransformer \(size.width), \(size.height) \(cornerRadius)"
+        return "\(size.width), \(size.height) \(cornerRadius)"
     }
     
     init(size: CGSize,
@@ -55,28 +52,17 @@ class ImageTransformer: NSObject, SDImageTransformer {
         self.isOpaque = isOpaque
         self.alpha = alpha
         self.contentMode = contentMode
-        
-        super.init()
     }
     
-    func transformedImage(with image: UIImage, forKey key: String) -> UIImage? {
-        var contentImage: UIImage?
+    func transformedImage(with image: UIImage, forKey key: String = "") -> UIImage? {
+        var contentImage: UIImage? = image
         switch contentMode {
         case .scaleToFill:
-            contentImage = image
+            break
         default:
             contentImage = image.crop(to: self.size)
         }
-
-        return contentImage?.resize(
-            to: size,
-            radius: cornerRadius,
-            fillColor: fillColor,
-            borderWidth: borderWidth,
-            borderColor: borderColor,
-            isOpaque: isOpaque,
-            alpha: alpha
-        )
+        return contentImage?.resize(from: self)
     }
 }
 

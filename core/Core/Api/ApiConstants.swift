@@ -10,4 +10,5 @@ import Foundation
 
 struct ApiConstants {
     static let baseURLString: String = "https://wallnutcorporation.xyz/"
+    static let privacyPolicyURLString: String = ApiConstants.baseURLString + "privacy_policy"
 }

@@ -6,22 +6,30 @@
 //  Copyright © 2019 Atilla Özder. All rights reserved.
 //
 
-import UIKit
+import RxSwift
+import RxCocoa
 
-class ImageCell: PagedCollectionCell {
+class ImageCell: CollectionCell {
     
-    override func setup() {
-        super.setup()
-        pageController.viewModel = ImageViewModel()
+    var cellView: ImageCellView? {
+        didSet {
+            setup()
+        }
     }
     
-    override func getPageController() -> PageController {
-        return ImagePageController()
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        cellView?.prepareForReuse()
     }
     
-    override func setDelegates(_ delegate: PageControllerDelegate?) {
-        super.setDelegates(delegate)
-        let controller = pageController as! ImagePageController
-        controller.delegate = delegate
+    func setup() {
+        if let view = self.cellView {
+            contentView.addSubview(view)
+            view.pinEdgesToSuperview()
+        }
+    }
+    
+    override func bind(to viewModel: Identifiable) {
+        cellView?.bind(to: viewModel)
     }
 }

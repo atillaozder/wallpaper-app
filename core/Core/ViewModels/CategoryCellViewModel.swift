@@ -7,9 +7,8 @@
 //
 
 import Foundation
-import class UIKit.UIScreen
 
-class CategoryCellViewModel: Identifiable, CellImagePrefetcher {
+class CategoryCellViewModel: Identifiable, ImageFetchable {
     
     var category: Category
     var landImagePrefetcher: ImagePrefetcher
@@ -32,12 +31,19 @@ class CategoryCellViewModel: Identifiable, CellImagePrefetcher {
     init(category: Category) {
         self.category = category
         self.categoryNameText = category.name
-        self.landImagePrefetcher = ImagePrefetcher(url: category.image?.asURL(), transformer: CategoryCellViewModel.imageTransformer)
+        self.landImagePrefetcher = ImagePrefetcher(
+            url: category.image?.asURL(),
+            transformer: CategoryCellViewModel.imageTransformer)
         self.prefetchers = [landImagePrefetcher]
     }
     
     func set(_ object: Identifiable) {
         guard let cvm = object as? CategoryCellViewModel else { return }
         self.landImagePrefetcher = cvm.landImagePrefetcher
+    }
+    
+    func getViewController() -> UIViewController {
+        let viewModel = CategoryItemsViewModel(category: category)
+        return CategoryItemsViewController(viewModel: viewModel)
     }
 }

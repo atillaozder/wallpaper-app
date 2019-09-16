@@ -6,11 +6,9 @@
 //  Copyright © 2019 Atilla Özder. All rights reserved.
 //
 
-import UIKit
-
 class MenuBarCell: CollectionCell {
     
-    lazy var label: UILabel = {
+    let label: UILabel = {
         let lbl = UILabel()
         lbl.textAlignment = .center
         lbl.lineBreakMode = .byTruncatingTail
@@ -18,12 +16,18 @@ class MenuBarCell: CollectionCell {
         lbl.font = .systemFont(ofSize: 14.5, weight: .semibold)
         lbl.backgroundColor = .white
         lbl.textColor = UIColor.gray
+        lbl.adjustsFontSizeToFitWidth = true
+        lbl.minimumScaleFactor = 0.5
         return lbl
     }()
     
     override var isHighlighted: Bool {
         didSet {
-            label.backgroundColor = isHighlighted ? UIColor.groupTableViewBackground : UIColor.white
+            if !isSelected {
+                label.textColor = isHighlighted ?
+                    UIColor.gray.withAlphaComponent(0.5) :
+                    UIColor.gray
+            }
         }
     }
     
@@ -33,17 +37,15 @@ class MenuBarCell: CollectionCell {
         }
     }
     
-    override func setup() {
-        super.setup()
+    override func setupViews() {
+        super.setupViews()
         self.contentView.addSubview(label)
-        label.pinEdgesToView(contentView, insets: .zero, exclude: [.bottom])
-        label.pin(size: .init(width: 0, height: MenuBar.barHeight - 0.5))
+        label.pinEdgesToSuperview()
         
         let separator = UIView()
         separator.backgroundColor = .lightGray
         self.contentView.addSubview(separator)
-        
         separator.pinEdgesToView(contentView, insets: .zero, exclude: [.top])
-        separator.pinTop(to: label.bottomAnchor)
+        separator.pinHeight(to: 0.5)
     }
 }

@@ -12,32 +12,33 @@ import RxCocoa
 
 class PagedViewModel<T: Identifiable>: PagedViewModelType {
     
+    private(set) lazy var serialWorkScheduler = SerialDispatchQueueScheduler(qos: .background)
+    private(set) lazy var concurrentWorkScheduler = ConcurrentDispatchQueueScheduler(qos: .background)
     private(set) var bag: DisposeBag
-    let backgroundWorkScheduler: ImmediateSchedulerType
     private lazy var previousPage = self.pageInput.currentPage
     
     var pageInput: PagedViewModelInput! {
         get { return nil }
-        set {}
+        set { return }
     }
     
     var pageOutput: PagedViewModelOutput! {
         get { return nil }
-        set {}
+        set { return }
     }
     
     var source: [T] {
-        get { return pageOutput.viewModels.value as! [T] }
-        set {
+        get {
+            return pageOutput.viewModels.value as! [T]
+        } set {
             pageOutput.viewModels.accept(newValue)
             let state: ViewState = newValue.isEmpty ? .noData : .loaded
-            pageInput.viewState.onNext(state)
+            pageInput.state.onNext(state)
         }
     }
     
     init() {
         self.bag = DisposeBag()
-        self.backgroundWorkScheduler = ConcurrentDispatchQueueScheduler(qos: .background)
     }
     
     func viewDidLoad() {
@@ -67,11 +68,11 @@ class PagedViewModel<T: Identifiable>: PagedViewModelType {
         guard let urlReqConv = getPageRequest() else { return .empty() }
         return ApiService.shared()
             .request(urlReqConv, type: U.self)
-            .subscribeOn(backgroundWorkScheduler)
-            .observeOn(backgroundWorkScheduler)
+            .subscribeOn(concurrentWorkScheduler)
+            .observeOn(concurrentWorkScheduler)
             .catchError { [weak self] (err) -> Observable<U> in
                 guard let `self` = self else { return .empty() }
-                self.pageInput.viewState.onNext(.error(err.asApiError))
+                self.pageInput.state.onNext(.error(err.asApiError))
                 return .empty()
             }.flatMap { [weak self] (response) -> Observable<[T]> in
                 guard let `self` = self else { return .empty() }
@@ -82,38 +83,16 @@ class PagedViewModel<T: Identifiable>: PagedViewModelType {
     
     @discardableResult
     func map<U>(_ response: U) -> [T] where U: Paginatable {
-        self.pageOutput.hasNextPage = !response.next.stringValue.isEmpty
+        if let nextPage = response.next {
+            self.pageOutput.hasNextPage = !nextPage.isEmpty
+        } else {
+            self.pageOutput.hasNextPage = false
+        }
         return []
     }
     
-    func scrollViewWillBeginDragging() {
-        pageInput.endDragging.accept(nil)
-    }
-    
-    func scrollViewWillEndDragging() {
-        pageInput.endDragging.accept(true)
-    }
-    
-    func collectionView(willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        if let viewModel = cellViewModel(at: indexPath.item) as? CellImagePrefetcher {
-            viewModel.fetchImages()
-        }
-    }
-    
-    func collectionView(prefetchItemsAt indexPaths: [IndexPath]) {
-        for indexPath in indexPaths {
-            if let viewModel = cellViewModel(at: indexPath.item) as? CellImagePrefetcher {
-                viewModel.fetchImages()
-            }
-        }
-    }
-    
-    func collectionView(cancelPrefetchingForItemsAt indexPaths: [IndexPath]) {
-        for indexPath in indexPaths {
-            if let viewModel = cellViewModel(at: indexPath.item) as? CellImagePrefetcher {
-                viewModel.cancelFetching()
-            }
-        }
+    func onRefresh() {
+        return
     }
     
     func reloadData() {
@@ -135,13 +114,12 @@ class PagedViewModel<T: Identifiable>: PagedViewModelType {
         let pageRequest = self.pageOutput.isPageLoading
             .asObservable()
             .sample(self.pageInput.loadPageTrigger)
-            .observeOn(backgroundWorkScheduler)
+            .observeOn(serialWorkScheduler)
             .flatMap { [weak self] (isPageLoading) -> Observable<[T]> in
                 guard let `self` = self else { return .empty() }
                 if isPageLoading {
                     return .empty()
                 } else {
-                    InterstitialHandler.shared().increase()
                     self.pageInput.currentPage = 1
                     return self.fetchData()
                         .trackActivity(self.pageOutput.loadingIndicator)
@@ -151,7 +129,7 @@ class PagedViewModel<T: Identifiable>: PagedViewModelType {
         let nextPageRequest = self.pageOutput.isNextPageLoading
             .asObservable()
             .sample(self.pageInput.loadNextPageTrigger)
-            .observeOn(backgroundWorkScheduler)
+            .observeOn(serialWorkScheduler)
             .flatMap { [weak self] (isNextPageLoading) -> Observable<[T]> in
                 guard let `self` = self else { return .empty() }
                 if isNextPageLoading {
@@ -170,7 +148,9 @@ class PagedViewModel<T: Identifiable>: PagedViewModelType {
             .sample(merged)
             .map { [weak self] current, request -> [Identifiable] in
                 guard let `self` = self else { return current }
-                return self.pageInput.currentPage == 1 ? self.merge(request, current) : self.distinct(current + request)
+                return self.pageInput.currentPage == 1 ?
+                    self.merge(request, current) :
+                    self.distinct(current + request)
             }.catchErrorJustReturn([])
         
         sequence.bind(to: pageOutput.viewModels).disposed(by: bag)
@@ -180,12 +160,12 @@ class PagedViewModel<T: Identifiable>: PagedViewModelType {
                 self.previousPage = self.pageInput.currentPage
             }).map { (dataSource) -> ViewState in
                 return dataSource.isEmpty ? .noData : .loaded
-            }.bind(to: pageInput.viewState)
+            }.bind(to: pageInput.state)
             .disposed(by: bag)
     }
     
     private func observeError() {
-        pageOutput.viewState
+        pageOutput.state
             .filter { return $0 == ViewState.error(.invalidData) }
             .filter { [weak self] (_) -> Bool in
                 guard let `self` = self else { return false }
@@ -200,8 +180,8 @@ class PagedViewModel<T: Identifiable>: PagedViewModelType {
         let merged = request + slicedCurrent
         
         return merged.reduce(into: [Identifiable]()) { elements, element in
-            if let addedBefore = elements.first(where: { $0.isEqual(element) }) {
-                addedBefore.set(element)
+            if let identifiable = elements.first(where: { $0.identifier == element.identifier }) {
+                identifiable.set(element)
             } else {
                 elements.append(element)
             }

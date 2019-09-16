@@ -6,13 +6,23 @@
 //  Copyright © 2019 Atilla Özder. All rights reserved.
 //
 
-import UIKit
 import CoreGraphics
 
 extension UIImage {
     
+    func resize(from transformer: ImageTransformer) -> UIImage? {
+        return resize(
+            to: transformer.size,
+            with: transformer.cornerRadius,
+            fillColor: transformer.fillColor,
+            borderWidth: transformer.borderWidth,
+            borderColor: transformer.borderColor,
+            isOpaque: transformer.isOpaque,
+            alpha: transformer.alpha)
+    }
+    
     func resize(to newSize: CGSize,
-                radius: CGFloat,
+                with radius: CGFloat,
                 fillColor: UIColor = .white,
                 borderWidth: CGFloat? = nil,
                 borderColor: UIColor = .defaultBorder,
@@ -23,21 +33,24 @@ extension UIImage {
         let rect = CGRect(origin: .zero, size: newSize)
         
         UIGraphicsBeginImageContextWithOptions(rect.size, isOpaque, scale)
-        let ctx = UIGraphicsGetCurrentContext()
+        defer { UIGraphicsEndImageContext() }
+        
+        guard let ctx = UIGraphicsGetCurrentContext() else { return self }
         
         let path = UIBezierPath(roundedRect: rect, cornerRadius: radius)
         path.lineCapStyle = .round
         path.lineJoinStyle = .round
-        path.close()
+        
+        ctx.saveGState()
         
         // to prevent black background
         if isOpaque {
-            ctx?.setFillColor(fillColor.cgColor)
-            ctx?.fill(rect)
+            ctx.setFillColor(fillColor.cgColor)
+            ctx.fill(rect)
         }
         
-        ctx?.saveGState()
         path.addClip()
+        path.close()
         
         fillColor.setFill()
         path.fill()
@@ -50,37 +63,50 @@ extension UIImage {
             path.stroke()
         }
         
-        if let imageAlpha = alpha, let cgImage = self.cgImage {
-            UIColor.black.withAlphaComponent(imageAlpha).setFill()
-            ctx?.fill(rect)
-            ctx?.setBlendMode(.destinationIn)
-            ctx?.draw(cgImage, in: rect)
+        if let iAlpha = alpha {
+            let color = UIColor.black.withAlphaComponent(iAlpha)
+            ctx.setFillColor(color.cgColor)
+            ctx.fill(rect)
         }
         
-        ctx?.restoreGState()
+        ctx.restoreGState()
         
-        let resized = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        return resized ?? self
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        return image ?? self
     }
     
-    func resize(to size: CGSize,
+    func resize(to newSize: CGSize,
                 fillColor: UIColor = .white,
                 tintColor: UIColor? = nil) -> UIImage
     {
-        let format = UIGraphicsImageRendererFormat.default()
-        format.scale = UIScreen.main.scale
-        format.opaque = (fillColor == .white && tintColor != nil)
+        let rect = CGRect(origin: .zero, size: newSize)
         
-        return UIGraphicsImageRenderer(size: size, format: format).image { ctx in
-            let rect = CGRect(origin: .zero, size: size)
-            if let color = tintColor {
-                fillColor.setFill()
-                ctx.fill(rect, blendMode: .normal)
-                color.setFill()
-                ctx.fill(rect, blendMode: .destinationIn)
-            }
-            self.draw(in: rect)
+        var alpha: CGFloat = 0
+        fillColor.getRed(nil, green: nil, blue: nil, alpha: &alpha)
+        let isOpaque = (alpha == 1.0 && tintColor != nil)
+        
+        UIGraphicsBeginImageContextWithOptions(rect.size, isOpaque, UIScreen.main.scale)
+        defer { UIGraphicsEndImageContext() }
+        guard let ctx = UIGraphicsGetCurrentContext() else { return self }
+        
+        ctx.saveGState()
+        
+        if isOpaque {
+            ctx.setBlendMode(.normal)
+            ctx.setFillColor(fillColor.cgColor)
+            ctx.fill(rect)
         }
+        
+        if let tintColor = tintColor {
+            ctx.setBlendMode(.destinationIn)
+            ctx.setFillColor(tintColor.cgColor)
+            ctx.fill(rect)
+        }
+        
+        self.draw(in: rect)
+        
+        ctx.restoreGState()
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        return image ?? self
     }
 }

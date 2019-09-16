@@ -6,8 +6,6 @@
 //  Copyright © 2019 Atilla Özder. All rights reserved.
 //
 
-import UIKit
-
 public class DroppingFramesHelper {
     var firstTime: TimeInterval = 0
     var lastTime: TimeInterval = 0

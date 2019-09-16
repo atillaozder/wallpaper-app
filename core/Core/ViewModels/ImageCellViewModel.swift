@@ -8,7 +8,7 @@
 
 import Foundation
 
-class ImageCellViewModel: Identifiable, CellImagePrefetcher {
+class ImageCellViewModel: Identifiable, ImageFetchable {
     
     var item: Image
     var imageUrl: URL? {
@@ -30,7 +30,9 @@ class ImageCellViewModel: Identifiable, CellImagePrefetcher {
     
     init(item: Image) {
         self.item = item
-        self.portraitImagePrefetcher = ImagePrefetcher(url: item.image?.asURL(), transformer: ImageCellViewModel.imageTransformer)
+        self.portraitImagePrefetcher = ImagePrefetcher(
+            url: item.image?.asURL(),
+            transformer: ImageCellViewModel.imageTransformer)
         self.prefetchers = [portraitImagePrefetcher]
     }
     

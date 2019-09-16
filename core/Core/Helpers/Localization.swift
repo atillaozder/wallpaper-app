@@ -37,6 +37,10 @@ struct Localization {
         return "favorites".localized.capitalized(with: .current)
     }
     
+    static var random: String {
+        return "random".localized.capitalized(with: .current)
+    }
+    
     static var photoPermissionTitle: String {
         return "photoPermissionTitle".localized
     }

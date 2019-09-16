@@ -17,9 +17,11 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0.2</string>
+	<string>2.0.0</string>
 	<key>CFBundleVersion</key>
 	<string>7</string>
+	<key>FirebaseScreenReportingEnabled</key>
+	<false/>
 	<key>GADApplicationIdentifier</key>
 	<string>ca-app-pub-7270073056899133~7903676063</string>
 	<key>LSHasLocalizedDisplayName</key>
@@ -33,8 +35,6 @@
 	</dict>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>$(PRODUCT_NAME) will only upload and share photos you choose.</string>
-	<key>FirebaseScreenReportingEnabled</key>
-	<false/>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIRequiredDeviceCapabilities</key>
@@ -58,12 +58,12 @@
 		<string>ca-app-pub-7270073056899133/8722482450</string>
 		<key>debugBannerUnitID</key>
 		<string>ca-app-pub-3940256099942544/6300978111</string>
+		<key>debugInterstitialUnitID</key>
+		<string>ca-app-pub-3940256099942544/1033173712</string>
 		<key>gameName</key>
 		<string>lol</string>
 		<key>interstitialUnitID</key>
 		<string>ca-app-pub-7270073056899133/1146696029</string>
-		<key>debugInterstitialUnitID</key>
-		<string>ca-app-pub-3940256099942544/1033173712</string>
 	</dict>
 </dict>
 </plist>

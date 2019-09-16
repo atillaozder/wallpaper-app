@@ -6,7 +6,6 @@
 //  Copyright © 2019 Atilla Özder. All rights reserved.
 //
 
-import UIKit
 import RxSwift
 import Photos
 import CropViewController
@@ -18,25 +17,10 @@ class PhotoViewController: UIViewController {
     private let bag: DisposeBag = DisposeBag()
     private let viewModel: PhotoViewModel
     
-    private var didReceiveAd: Bool = false
-    let kDownloadButtonHeight: CGFloat = 50
-    var downloadButtonBottomConstraint: NSLayoutConstraint?
-    
-    lazy var favBtn: UIButton = {
-        let btn = ButtonFactory().generateButton()
-        btn.contentHorizontalAlignment = .center
-        btn.addTarget(self, action: #selector(favoriteTapped), for: .touchUpInside)
-        return btn
+    unowned var favBtn: UIButton { return buttonBar.favoriteButton }
+    lazy var buttonBar: ImageActionBar = {
+        return ImageActionBar()
     }()
-    
-    var isFavorited: Bool = false {
-        willSet {
-            let image = newValue ? UIImage(named: "ic_filled_heart") : UIImage(named: "ic_empty_heart")
-            let tintColor: UIColor = newValue ? .red : .defaultTextColor
-            favBtn.setImage(image?.withRenderingMode(.alwaysTemplate), for: .normal)
-            favBtn.imageView?.tintColor = tintColor
-        }
-    }
     
     lazy var activityIndicator: UIActivityIndicatorView = {
         let ai = UIActivityIndicatorView(style: .gray)
@@ -56,9 +40,8 @@ class PhotoViewController: UIViewController {
         sv.contentInset = .zero
         sv.layer.speed = 2.5
         var insets = UIEdgeInsets.zero
-        insets.bottom = kDownloadButtonHeight + view.windowSafeAreaInsets.bottom
+        insets.bottom = ImageActionBar.defaultHeight + view.windowSafeAreaInsets.bottom
         sv.contentInset = insets
-        // Default values before image is loaded to ignore zooming
         sv.maximumZoomScale = 1
         sv.minimumZoomScale = 1
         return sv
@@ -133,44 +116,18 @@ class PhotoViewController: UIViewController {
     }
     
     private func setupButtons() {
-        setupBarButtons()
+        favBtn.addTarget(self, action: #selector(favoriteTapped), for: .touchUpInside)
+        buttonBar.shareButton.addTarget(self, action: #selector(shareTapped), for: .touchUpInside)
+        buttonBar.editButton.addTarget(self, action: #selector(editTapped), for: .touchUpInside)
+        buttonBar.downloadButton.addTarget(self, action: #selector(downloadTapped), for: .touchUpInside)
+        buttonBar.previewButton.addTarget(self, action: #selector(previewTapped), for: .touchUpInside)
+        buttonBar.isFavorited = StorageHelper.shared().value(for: viewModel.item)
         
-        let btn = ButtonFactory().generateButton()
-        btn.setTitle(Localization.save, for: .normal)
-        btn.addTarget(self, action: #selector(downloadTapped), for: .touchUpInside)
-        
-        self.isFavorited = StorageHelper.shared().value(for: viewModel.item)
-
-        let sv = UIStackView(arrangedSubviews: [favBtn, btn])
-        sv.distribution = .fillEqually
-        sv.alignment = .fill
-        sv.spacing = 0
-        
-        view.insertSubview(sv, at: 1)
-        sv.pinEdgesToView(view, insets: .zero, exclude: [.top, .bottom])
-        self.downloadButtonBottomConstraint = sv.pinBottom(to: view.safeBottomAnchor)
-        sv.pinHeight(to: kDownloadButtonHeight)
-        view.bringSubviewToFront(sv)
-    }
-    
-    private func setupBarButtons() {
-        let shareBarButton = UIBarButtonItem(
-            barButtonSystemItem: .action,
-            target: self,
-            action: #selector(shareTapped))
-        shareBarButton.style = .done
-        shareBarButton.imageInsets = .init(top: 0, left: 8, bottom: 0, right: 0)
-
-        let editBarButton = UIBarButtonItem(
-            barButtonSystemItem: .compose,
-            target: self,
-            action: #selector(editTapped))
-        editBarButton.style = .done
-        editBarButton.imageInsets = .init(top: 2, left: 0, bottom: 0, right: 8)
-
-        let barButtons = [shareBarButton, editBarButton]
-        barButtons.forEach { $0.tintColor = .defaultTextColor }
-        self.navigationItem.setRightBarButtonItems(barButtons, animated: false)
+        view.insertSubview(buttonBar, at: 1)
+        buttonBar.pinEdgesToView(view, insets: .zero, exclude: [.top, .bottom])
+        buttonBar.buttonBarBottomConstraint = buttonBar.pinBottom(to: view.safeBottomAnchor)
+        buttonBar.pinHeight(to: ImageActionBar.defaultHeight)
+        view.bringSubviewToFront(buttonBar)
     }
     
     func bindUI() {
@@ -218,10 +175,15 @@ class PhotoViewController: UIViewController {
     }
     
     @objc
+    func previewTapped() {
+        return
+    }
+    
+    @objc
     func favoriteTapped() {
         let newValue = !StorageHelper.shared().value(for: viewModel.item)
         viewModel.toggleFavorite()
-        self.isFavorited = newValue
+        buttonBar.isFavorited = newValue
     }
 
     @objc
@@ -275,7 +237,7 @@ class PhotoViewController: UIViewController {
             guard let `self` = self else { return }
             if success {
                 DispatchQueue.main.async {
-                    let inset = self.kDownloadButtonHeight + self.bannerView.frame.height
+                    let inset = ImageActionBar.defaultHeight + self.bannerView.frame.height
                     self.showToast(with: Localization.saved,
                                    additionalInset: inset,
                                    shouldPresentInterstitial: true)
@@ -359,12 +321,12 @@ extension PhotoViewController: GADBannerViewDelegate {
     /// Tells the delegate an ad request loaded an ad.
     func adViewDidReceiveAd(_ bannerView: GADBannerView) {
         var insets = UIEdgeInsets.zero
-        insets.bottom = bannerView.frame.height + kDownloadButtonHeight + view.windowSafeAreaInsets.bottom
+        insets.bottom = bannerView.frame.height + ImageActionBar.defaultHeight + view.windowSafeAreaInsets.bottom
         scrollView.contentInset = insets
         
-        if !self.didReceiveAd {
-            downloadButtonBottomConstraint?.constant -= bannerView.frame.height
-            self.didReceiveAd = true
+        if !viewModel.didReceiveAd {
+            buttonBar.buttonBarBottomConstraint?.constant -= bannerView.frame.height
+            viewModel.didReceiveAd = true
         }
     }
 }

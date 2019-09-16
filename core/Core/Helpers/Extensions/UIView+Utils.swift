@@ -6,8 +6,6 @@
 //  Copyright © 2019 Atilla Özder. All rights reserved.
 //
 
-import UIKit
-
 extension UIView {
     func addTapGesture(_ target: AnyObject,
                        action: Selector?,

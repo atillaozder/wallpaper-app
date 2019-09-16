@@ -6,92 +6,93 @@
 //  Copyright © 2019 Atilla Özder. All rights reserved.
 //
 
-import UIKit
-
-protocol MenuBarDelegate: class {
-    func menuBar(_ menuBar: MenuBar, didScrollAt indexPath: IndexPath)
+protocol MenuBarScrollDelegate: class {
+    func menuBar(_ menuBar: MenuBar, didSelectItemAt indexPath: IndexPath)
 }
 
-class MenuBar: UIView {
+public class MenuBar: UIView {
     
-    static let barHeight: CGFloat = 40
-    var barWidthConstraint: NSLayoutConstraint?
+    static let defaultBarHeight: CGFloat = 40
+    weak var delegate: MenuBarScrollDelegate?
     var barLeftAnchorConstraint: NSLayoutConstraint?
-    weak var delegate: MenuBarDelegate?
     
-    var dataSource: [String] = [] {
+    var startIndex = 0
+    var titles: [String] = [] {
         didSet {
-            setupHorizontalBar()
             collectionView.reloadData()
+            separator.pinWidth(to: widthAnchor, multiplier: 1 / CGFloat(titles.count))
+            scroll(at: startIndex, animated: false)
         }
     }
     
-    lazy var collectionView: UICollectionView = {
-        let flowLayout = UICollectionViewFlowLayout()
-        let cv = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
+    private lazy var collectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.backgroundColor = .white
+        cv.registerCell(MenuBarCell.self)
         cv.showsVerticalScrollIndicator = false
         cv.showsHorizontalScrollIndicator = false
         cv.isScrollEnabled = false
         cv.delegate = self
         cv.dataSource = self
-        cv.registerCell(MenuBarCell.self)
         return cv
+    }()
+    
+    lazy var separator: UIView = {
+        let v = UIView()
+        v.backgroundColor = .defaultTextColor
+        v.pinHeight(to: 1)
+        return v
     }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.addSubview(collectionView)
-        self.collectionView.pinEdgesToSuperview()
+        setup()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        setup()
     }
     
-    private func setupHorizontalBar() {
-        let separator = UIView()
-        separator.backgroundColor = .defaultTextColor
+    private func setup() {
+        self.addSubview(collectionView)
+        collectionView.pinEdgesToSuperview()
         
         self.addSubview(separator)
         barLeftAnchorConstraint = separator.leftAnchor.constraint(equalTo: leftAnchor)
         barLeftAnchorConstraint?.isActive = true
-        
         separator.pinBottom(to: bottomAnchor)
-        separator.pinWidth(to: widthAnchor, multiplier: 1 / CGFloat(dataSource.count))
-        separator.pinHeight(to: 1)
     }
     
     func scroll(at index: Int, animated: Bool = true) {
-        self.collectionView.selectItem(at: .init(item: index, section: 0),
-                                       animated: animated,
-                                       scrollPosition: .centeredHorizontally)
+        let indexPath = IndexPath(item: Int(index), section: 0)
+        self.collectionView.selectItem(
+            at: indexPath,
+            animated: animated,
+            scrollPosition: .centeredHorizontally)
     }
     
-    func scrollIndicator(at point: CGFloat) {
-        let offsetX: CGFloat = self.frame.size.width / CGFloat(dataSource.count)
-        let constant: CGFloat = offsetX * abs(point)
-        DispatchQueue.main.async {
-            self.barLeftAnchorConstraint?.constant = constant
-        }
+    func updateIndicator(_ xOffset: CGFloat) {
+        barLeftAnchorConstraint?.constant = xOffset
     }
 }
 
 extension MenuBar: UICollectionViewDataSource {
     
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
+    public func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
     
-    func collectionView(_ collectionView: UICollectionView,
-                        numberOfItemsInSection section: Int) -> Int {
-        return dataSource.count
+    public func collectionView(_ collectionView: UICollectionView,
+                               numberOfItemsInSection section: Int) -> Int {
+        return titles.count
     }
     
-    func collectionView(_ collectionView: UICollectionView,
-                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    public func collectionView(_ collectionView: UICollectionView,
+                               cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(for: indexPath) as MenuBarCell
-        cell.label.text = dataSource[indexPath.item]
+        cell.label.text = titles[indexPath.item]
         cell.tintColor = UIColor(red: 91, green: 14, blue: 13)
         return cell
     }
@@ -99,20 +100,22 @@ extension MenuBar: UICollectionViewDataSource {
 
 extension MenuBar: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
-    func collectionView(_ collectionView: UICollectionView,
-                        didSelectItemAt indexPath: IndexPath) {
-        self.delegate?.menuBar(self, didScrollAt: indexPath)
+    public func collectionView(_ collectionView: UICollectionView,
+                               didSelectItemAt indexPath: IndexPath) {
+        self.delegate?.menuBar(self, didSelectItemAt: indexPath)
     }
     
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: frame.width / CGFloat(dataSource.count), height: frame.height)
+    public func collectionView(_ collectionView: UICollectionView,
+                               layout collectionViewLayout: UICollectionViewLayout,
+                               sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.frame.width / CGFloat(titles.count),
+                      height: frame.height)
     }
     
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+    public func collectionView(_ collectionView: UICollectionView,
+                               layout collectionViewLayout: UICollectionViewLayout,
+                               minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
 }
+

@@ -13,8 +13,9 @@
 "category" = "category";
 "saved" = "saved";
 "favorites" = "favorites";
+"random" = "random";
 
 "cancel" = "cancel";
-"openSettingsTitle" = "Go to Permissions";
-"photoPermissionTitle" = "We want permission to access your gallery.";
-"photoPermissionMessage" = "In order to view your photos, you should give Wallpapers for Spiderman HD access to your gallery. We will only upload and share the photos you choose. You can go to permissions through Settings>Wallpapers for Spiderman HD.";
+"openSettingsTitle" = "Settings";
+"photoPermissionTitle" = "Illustrator wants permission to access your gallery.";
+"photoPermissionMessage" = "In order to download pictures, you should give Illustrator access to your gallery. You can go to permissions through Settings>Illustrator.";

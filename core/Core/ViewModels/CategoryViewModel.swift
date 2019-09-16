@@ -14,17 +14,17 @@ class CategoryViewModel: PagedViewModel<CategoryCellViewModel> {
     
     struct Input: PagedViewModelInput {
         var currentPage: Int
-        var endDragging: BehaviorRelay<Bool?>
+        var isDragging: BehaviorRelay<Bool?>
         var loadPageTrigger: PublishSubject<Void>
         var loadNextPageTrigger: PublishSubject<Void>
-        var viewState: PublishSubject<ViewState>
+        var state: PublishSubject<ViewState>
         
         init() {
             self.currentPage = 1
-            self.endDragging = BehaviorRelay(value: nil)
+            self.isDragging = BehaviorRelay(value: nil)
             self.loadPageTrigger = PublishSubject()
             self.loadNextPageTrigger = PublishSubject()
-            self.viewState = PublishSubject()
+            self.state = PublishSubject()
         }
     }
     
@@ -35,7 +35,7 @@ class CategoryViewModel: PagedViewModel<CategoryCellViewModel> {
         let nextPageIndicator: ActivityIndicator
         var isPageLoading: Driver<Bool>
         var isNextPageLoading: Driver<Bool>
-        var viewState: Observable<ViewState>
+        var state: Observable<ViewState>
         var hasNextPage: Bool
         var isEmpty: Bool {
             return viewModels.value.isEmpty
@@ -47,14 +47,14 @@ class CategoryViewModel: PagedViewModel<CategoryCellViewModel> {
             self.isPageLoading = loadingIndicator.asDriver()
             self.isNextPageLoading = nextPageIndicator.asDriver()
             self.hasNextPage = false
-            self.viewState = input.viewState.asObservable()
+            self.state = input.state.asObservable()
             self.viewModels = BehaviorRelay(value: [])
             self.dataSource = viewModels.asDriver(onErrorJustReturn: [])
         }
     }
     
-    private(set) var input: PagedViewModelInput
-    private(set) var output: PagedViewModelOutput
+    private(set) var input: Input
+    private(set) var output: Output
     
     override var pageInput: PagedViewModelInput! {
         get { return input }
@@ -86,5 +86,4 @@ class CategoryViewModel: PagedViewModel<CategoryCellViewModel> {
             .items
             .map { return CategoryCellViewModel(category: $0) }
     }
-    
 }

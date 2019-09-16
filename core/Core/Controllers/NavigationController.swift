@@ -6,18 +6,26 @@
 //  Copyright © 2019 Atilla Özder. All rights reserved.
 //
 
-import UIKit
+protocol NavigationBarSettable {
+    var isTranslucent: Bool { get }
+}
 
-class NavigationController: UINavigationController {
+extension NavigationBarSettable {
+    var isTranslucent: Bool {
+        return true
+    }
+}
+
+public class NavigationController: UINavigationController {
     
-    var lastViewController: UIViewController?
+    private(set) var lastViewController: UIViewController?
     
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         delegate = self
     }
     
-    override func pushViewController(_ viewController: UIViewController, animated: Bool) {
+    public override func pushViewController(_ viewController: UIViewController, animated: Bool) {
         viewController.navigationItem.backBarButtonItem = UIBarButtonItem()
         viewController.navigationItem.backBarButtonItem?.title = ""
         lastViewController = viewController
@@ -25,21 +33,30 @@ class NavigationController: UINavigationController {
         setNavigationBar(visibleViewController: lastViewController)
     }
     
-    override func popViewController(animated: Bool) -> UIViewController? {
+    public override func popViewController(animated: Bool) -> UIViewController? {
         lastViewController = super.popViewController(animated: animated)
         setNavigationBar(visibleViewController: visibleViewController)
         return lastViewController
     }
     
-    override func popToRootViewController(animated: Bool) -> [UIViewController]? {
+    public override func popToRootViewController(animated: Bool) -> [UIViewController]? {
         let rootViewController = super.popToRootViewController(animated: animated)
         setNavigationBar(visibleViewController: visibleViewController)
         return rootViewController
     }
     
     func setNavigationBar(visibleViewController viewController: UIViewController?) {
-        if let viewController = viewController,
-            viewController.isKind(of: HomeViewController.self) {
+        if let navBar = viewController as? NavigationBarSettable {
+            navigationBar.isTranslucent = navBar.isTranslucent
+            setSeparatorLine(true)
+        } else {
+            navigationBar.isTranslucent = false
+            setSeparatorLine(false)
+        }
+    }
+    
+    func setSeparatorLine(_ isHidden: Bool) {
+        if isHidden {
             let img = UIImage()
             navigationBar.shadowImage = img
             navigationBar.setBackgroundImage(img, for: .default)
@@ -51,9 +68,9 @@ class NavigationController: UINavigationController {
 }
 
 extension NavigationController: UINavigationControllerDelegate {
-    func navigationController(_ navigationController: UINavigationController,
-                              willShow viewController: UIViewController,
-                              animated: Bool) {
+    public func navigationController(_ navigationController: UINavigationController,
+                                     willShow viewController: UIViewController,
+                                     animated: Bool) {
         if let coordinator = navigationController.topViewController?.transitionCoordinator {
             coordinator.notifyWhenInteractionChanges { [weak self] (context) in
                 guard let `self` = self else { return }
@@ -64,3 +81,4 @@ extension NavigationController: UINavigationControllerDelegate {
         }
     }
 }
+

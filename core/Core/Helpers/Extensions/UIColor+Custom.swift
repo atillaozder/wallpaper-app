@@ -6,8 +6,6 @@
 //  Copyright © 2019 Atilla Özder. All rights reserved.
 //
 
-import UIKit
-
 public extension UIColor {
     
     convenience init(red: Int, green: Int, blue: Int) {
