@@ -120,6 +120,10 @@ class PagedCollectionViewController: ViewController {
 
 extension PagedCollectionViewController: GADBannerViewDelegate {
     func adViewDidReceiveAd(_ bannerView: GADBannerView) {
+        if refreshControl.isRefreshing {
+            refreshControl.endRefreshing()
+        }
+        
         var insets = defaultInsets
         insets.bottom = bannerView.frame.height
         collectionView.contentInset = insets

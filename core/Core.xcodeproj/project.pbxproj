@@ -19,6 +19,7 @@
 		FB183CDA232FB56000612E77 /* LandImageCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB183CD9232FB56000612E77 /* LandImageCellView.swift */; };
 		FB183CDC232FB74A00612E77 /* Bundle+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB183CDB232FB74A00612E77 /* Bundle+Helpers.swift */; };
 		FB183CDE232FC40900612E77 /* ImageActionBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB183CDD232FC40900612E77 /* ImageActionBar.swift */; };
+		FB8BDE1D2330E4A2009EF80F /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8BDE1C2330E4A2009EF80F /* Asset.swift */; };
 		FBBAF8F223127EA9005F7542 /* StorageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBAF8F123127EA9005F7542 /* StorageHelper.swift */; };
 		FBBAF8F4231286CB005F7542 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBAF8F3231286CB005F7542 /* FavoritesViewController.swift */; };
 		FBBAF8F92312891D005F7542 /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBAF8F82312891D005F7542 /* FavoritesViewModel.swift */; };
@@ -98,6 +99,7 @@
 		FB183CD9232FB56000612E77 /* LandImageCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandImageCellView.swift; sourceTree = "<group>"; };
 		FB183CDB232FB74A00612E77 /* Bundle+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Helpers.swift"; sourceTree = "<group>"; };
 		FB183CDD232FC40900612E77 /* ImageActionBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageActionBar.swift; sourceTree = "<group>"; };
+		FB8BDE1C2330E4A2009EF80F /* Asset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
 		FBBAF8F123127EA9005F7542 /* StorageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageHelper.swift; sourceTree = "<group>"; };
 		FBBAF8F3231286CB005F7542 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		FBBAF8F82312891D005F7542 /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
@@ -229,6 +231,7 @@
 		FBD003C52300670800D12BF8 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				FB8BDE1C2330E4A2009EF80F /* Asset.swift */,
 				FBD003CF2300670800D12BF8 /* UIConstants.swift */,
 				FBBAF8F123127EA9005F7542 /* StorageHelper.swift */,
 				FBD003C62300670800D12BF8 /* Localization.swift */,
@@ -482,6 +485,7 @@
 				FBD004032300670900D12BF8 /* PagedCategory.swift in Sources */,
 				FBBAF8F92312891D005F7542 /* FavoritesViewModel.swift in Sources */,
 				FBE12604232FD16300FD70CD /* SideMenuViewController.swift in Sources */,
+				FB8BDE1D2330E4A2009EF80F /* Asset.swift in Sources */,
 				FBD004292300670900D12BF8 /* BodyParameterEncoding.swift in Sources */,
 				FBD004242300670900D12BF8 /* Identifiable.swift in Sources */,
 				FB183CCC232FA09E00612E77 /* ImageListViewController.swift in Sources */,

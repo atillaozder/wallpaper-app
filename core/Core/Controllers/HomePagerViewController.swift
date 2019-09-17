@@ -16,7 +16,7 @@ public class HomePagerViewController: PagerViewController {
         dataSource = self
         
         let barButton = UIBarButtonItem(
-            image: UIImage(named: "ic_menu"),
+            image: Asset.icMenu.image,
             style: .plain,
             target: self,
             action: #selector(openSideMenu))

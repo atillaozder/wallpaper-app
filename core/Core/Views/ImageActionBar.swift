@@ -31,38 +31,43 @@ class ImageActionBar: UIStackView {
     
     lazy var downloadButton: UIButton = {
         let btn = ActionButtonFactory().createButton()
-        btn.setImage(UIImage(named: "ic_download")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        let image = Asset.icDownload.image.withRenderingMode(.alwaysTemplate)
+        btn.setImage(image, for: .normal)
         return btn
     }()
     
     lazy var shareButton: UIButton = {
         let btn = ActionButtonFactory().createButton()
-        btn.setImage(UIImage(named: "ic_upload")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        let image = Asset.icUpload.image.withRenderingMode(.alwaysTemplate)
+        btn.setImage(image, for: .normal)
         return btn
     }()
     
     lazy var editButton: UIButton = {
         let btn = ActionButtonFactory().createButton()
-        btn.setImage(UIImage(named: "ic_edit")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        let image = Asset.icEdit.image.withRenderingMode(.alwaysTemplate)
+        btn.setImage(image, for: .normal)
         return btn
     }()
     
     lazy var favoriteButton: UIButton = {
         let btn = ActionButtonFactory().createButton()
-        btn.setImage(UIImage(named: "ic_empty_star")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        let image = Asset.icEmptyStar.image.withRenderingMode(.alwaysTemplate)
+        btn.setImage(image, for: .normal)
         return btn
     }()
     
     lazy var previewButton: UIButton = {
         let btn = ActionButtonFactory().createButton()
-        btn.setImage(UIImage(named: "ic_preview")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        let image = Asset.icPreview.image.withRenderingMode(.alwaysTemplate)
+        btn.setImage(image, for: .normal)
         return btn
     }()
     
     var isFavorited: Bool = false {
         willSet {
-            let image = newValue ? UIImage(named: "ic_filled_star") : UIImage(named: "ic_empty_star")
-            favoriteButton.setImage(image?.withRenderingMode(.alwaysTemplate), for: .normal)
+            let image = newValue ? Asset.icFilledStar.image : Asset.icEmptyStar.image
+            favoriteButton.setImage(image.withRenderingMode(.alwaysTemplate), for: .normal)
         }
     }
     
