@@ -54,15 +54,17 @@ class ImageTransformer {
         self.contentMode = contentMode
     }
     
-    func transformedImage(with image: UIImage, forKey key: String = "") -> UIImage? {
-        var contentImage: UIImage? = image
+    private func cropImage(_ image: UIImage) -> UIImage? {
         switch contentMode {
         case .scaleToFill:
-            break
+            return image
         default:
-            contentImage = image.crop(to: self.size)
+            return image.crop(to: self.size)
         }
-        return contentImage?.resize(from: self)
+    }
+    
+    func transformedImage(with image: UIImage, forKey key: String = "") -> UIImage? {
+        return cropImage(image)?.resize(from: self)
     }
 }
 
