@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "FB354D7223007818003A6407"
-               BuildableName = "Wallpapers for LOL.app"
-               BlueprintName = "Wallpapers for LOL"
-               ReferencedContainer = "container:Wallpapers for LOL.xcodeproj">
+               BlueprintIdentifier = "FBC805F522F44FF70090CA6D"
+               BuildableName = "MiniWorld.app"
+               BlueprintName = "MiniWorld"
+               ReferencedContainer = "container:MiniWorld.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,10 +32,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "FB354D7223007818003A6407"
-            BuildableName = "Wallpapers for LOL.app"
-            BlueprintName = "Wallpapers for LOL"
-            ReferencedContainer = "container:Wallpapers for LOL.xcodeproj">
+            BlueprintIdentifier = "FBC805F522F44FF70090CA6D"
+            BuildableName = "MiniWorld.app"
+            BlueprintName = "MiniWorld"
+            ReferencedContainer = "container:MiniWorld.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -55,10 +55,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "FB354D7223007818003A6407"
-            BuildableName = "Wallpapers for LOL.app"
-            BlueprintName = "Wallpapers for LOL"
-            ReferencedContainer = "container:Wallpapers for LOL.xcodeproj">
+            BlueprintIdentifier = "FBC805F522F44FF70090CA6D"
+            BuildableName = "MiniWorld.app"
+            BlueprintName = "MiniWorld"
+            ReferencedContainer = "container:MiniWorld.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -74,10 +74,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "FB354D7223007818003A6407"
-            BuildableName = "Wallpapers for LOL.app"
-            BlueprintName = "Wallpapers for LOL"
-            ReferencedContainer = "container:Wallpapers for LOL.xcodeproj">
+            BlueprintIdentifier = "FBC805F522F44FF70090CA6D"
+            BuildableName = "MiniWorld.app"
+            BlueprintName = "MiniWorld"
+            ReferencedContainer = "container:MiniWorld.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

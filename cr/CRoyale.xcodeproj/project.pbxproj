@@ -33,11 +33,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		361C0291D368249D0A6593B9 /* Pods-Wallpapers for CR.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wallpapers for CR.debug.xcconfig"; path = "Target Support Files/Pods-Wallpapers for CR/Pods-Wallpapers for CR.debug.xcconfig"; sourceTree = "<group>"; };
 		6451AF22877E17CE7AF8FF21 /* Pods-CRoyale.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CRoyale.debug.xcconfig"; path = "Target Support Files/Pods-CRoyale/Pods-CRoyale.debug.xcconfig"; sourceTree = "<group>"; };
 		6FBE8A845E426EBEE6963391 /* Pods-CRoyale.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CRoyale.release.xcconfig"; path = "Target Support Files/Pods-CRoyale/Pods-CRoyale.release.xcconfig"; sourceTree = "<group>"; };
 		8DEF8CBD6A99860032F69EC3 /* Pods_CRoyale.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CRoyale.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E3C136F67F33BBCAE197BC43 /* Pods-Wallpapers for CR.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wallpapers for CR.release.xcconfig"; path = "Target Support Files/Pods-Wallpapers for CR/Pods-Wallpapers for CR.release.xcconfig"; sourceTree = "<group>"; };
 		FB3038392327CD6D002A9E05 /* CRoyale.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CRoyale.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB30383C2327CD6D002A9E05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB3038432327CD6E002A9E05 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -170,8 +168,6 @@
 		399C456E74472BFF298818EF /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				361C0291D368249D0A6593B9 /* Pods-Wallpapers for CR.debug.xcconfig */,
-				E3C136F67F33BBCAE197BC43 /* Pods-Wallpapers for CR.release.xcconfig */,
 				6451AF22877E17CE7AF8FF21 /* Pods-CRoyale.debug.xcconfig */,
 				6FBE8A845E426EBEE6963391 /* Pods-CRoyale.release.xcconfig */,
 			);

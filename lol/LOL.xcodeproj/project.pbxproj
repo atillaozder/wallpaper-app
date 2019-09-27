@@ -34,11 +34,7 @@
 
 /* Begin PBXFileReference section */
 		0407AE1977359449563E0CEE /* Pods-LOL.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LOL.debug.xcconfig"; path = "../../Pods/Target Support Files/Pods-LOL/Pods-LOL.debug.xcconfig"; sourceTree = "<group>"; };
-		4DBBF81C082FBA8F07777C6A /* Pods-Wallpapers for LOL.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wallpapers for LOL.debug.xcconfig"; path = "../../Pods/Target Support Files/Pods-Wallpapers for LOL/Pods-Wallpapers for LOL.debug.xcconfig"; sourceTree = "<group>"; };
-		6F01855DBFDE6B417B5953E8 /* Pods-Wallpapers for LOL.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wallpapers for LOL.release.xcconfig"; path = "../../Pods/Target Support Files/Pods-Wallpapers for LOL/Pods-Wallpapers for LOL.release.xcconfig"; sourceTree = "<group>"; };
 		880A5F01EDBC8822CCBA2A53 /* Pods_LOL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LOL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		89A27C08A0CC37931663F62A /* Pods-wallpapers-Wallpapers for LOL.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wallpapers-Wallpapers for LOL.debug.xcconfig"; path = "../../Pods/Target Support Files/Pods-wallpapers-Wallpapers for LOL/Pods-wallpapers-Wallpapers for LOL.debug.xcconfig"; sourceTree = "<group>"; };
-		B7B39736C830839D889FF11B /* Pods-wallpapers-Wallpapers for LOL.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wallpapers-Wallpapers for LOL.release.xcconfig"; path = "../../Pods/Target Support Files/Pods-wallpapers-Wallpapers for LOL/Pods-wallpapers-Wallpapers for LOL.release.xcconfig"; sourceTree = "<group>"; };
 		C6EF69C5707AD41C3628804A /* Pods-LOL.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LOL.release.xcconfig"; path = "../../Pods/Target Support Files/Pods-LOL/Pods-LOL.release.xcconfig"; sourceTree = "<group>"; };
 		FB141C732302035F001956B8 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB3037902327C670002A9E05 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
@@ -166,10 +162,6 @@
 		3990A46A91B978A0532671FE /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				89A27C08A0CC37931663F62A /* Pods-wallpapers-Wallpapers for LOL.debug.xcconfig */,
-				B7B39736C830839D889FF11B /* Pods-wallpapers-Wallpapers for LOL.release.xcconfig */,
-				4DBBF81C082FBA8F07777C6A /* Pods-Wallpapers for LOL.debug.xcconfig */,
-				6F01855DBFDE6B417B5953E8 /* Pods-Wallpapers for LOL.release.xcconfig */,
 				0407AE1977359449563E0CEE /* Pods-LOL.debug.xcconfig */,
 				C6EF69C5707AD41C3628804A /* Pods-LOL.release.xcconfig */,
 			);

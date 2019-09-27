@@ -33,9 +33,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0F0DB3CD766457247174D5F2 /* Pods-Wallpapers for Illustrator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wallpapers for Illustrator.debug.xcconfig"; path = "Target Support Files/Pods-Wallpapers for Illustrator/Pods-Wallpapers for Illustrator.debug.xcconfig"; sourceTree = "<group>"; };
 		1F61D483B23444526748B75E /* Pods-Illustrator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Illustrator.debug.xcconfig"; path = "Target Support Files/Pods-Illustrator/Pods-Illustrator.debug.xcconfig"; sourceTree = "<group>"; };
-		76B4C52DA7EAA0BE70EEE1AA /* Pods-Wallpapers for Illustrator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wallpapers for Illustrator.release.xcconfig"; path = "Target Support Files/Pods-Wallpapers for Illustrator/Pods-Wallpapers for Illustrator.release.xcconfig"; sourceTree = "<group>"; };
 		BD2653150A2DD941CAB6809C /* Pods_Illustrator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Illustrator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA23BCC86CD16E8ABAF007E5 /* Pods-Illustrator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Illustrator.release.xcconfig"; path = "Target Support Files/Pods-Illustrator/Pods-Illustrator.release.xcconfig"; sourceTree = "<group>"; };
 		FB6E0AB2232AA89B00EBDE18 /* Illustrator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Illustrator.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -169,8 +167,6 @@
 		F34E4CA1B8CDD224BE6C5010 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				0F0DB3CD766457247174D5F2 /* Pods-Wallpapers for Illustrator.debug.xcconfig */,
-				76B4C52DA7EAA0BE70EEE1AA /* Pods-Wallpapers for Illustrator.release.xcconfig */,
 				1F61D483B23444526748B75E /* Pods-Illustrator.debug.xcconfig */,
 				EA23BCC86CD16E8ABAF007E5 /* Pods-Illustrator.release.xcconfig */,
 			);

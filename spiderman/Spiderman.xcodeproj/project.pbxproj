@@ -35,9 +35,7 @@
 /* Begin PBXFileReference section */
 		05D47F77727DC5713E0E1FC7 /* Pods-Spiderman.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spiderman.release.xcconfig"; path = "Target Support Files/Pods-Spiderman/Pods-Spiderman.release.xcconfig"; sourceTree = "<group>"; };
 		4055A60D5A488FFD2F5BF20B /* Pods_Spiderman.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Spiderman.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		44E6396B1625137607771655 /* Pods-Wallpapers for Spiderman.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wallpapers for Spiderman.release.xcconfig"; path = "Target Support Files/Pods-Wallpapers for Spiderman/Pods-Wallpapers for Spiderman.release.xcconfig"; sourceTree = "<group>"; };
 		84E5738ED201F2210A7AB510 /* Pods-Spiderman.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spiderman.debug.xcconfig"; path = "Target Support Files/Pods-Spiderman/Pods-Spiderman.debug.xcconfig"; sourceTree = "<group>"; };
-		A4FAA3B1C848813A75522B73 /* Pods-Wallpapers for Spiderman.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wallpapers for Spiderman.debug.xcconfig"; path = "Target Support Files/Pods-Wallpapers for Spiderman/Pods-Wallpapers for Spiderman.debug.xcconfig"; sourceTree = "<group>"; };
 		FB683FA3232BE1F40055E634 /* Spiderman.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spiderman.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB683FA6232BE1F40055E634 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB683FAD232BE1F40055E634 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -169,8 +167,6 @@
 		D068F7AD8B92A405E8E0B74E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				A4FAA3B1C848813A75522B73 /* Pods-Wallpapers for Spiderman.debug.xcconfig */,
-				44E6396B1625137607771655 /* Pods-Wallpapers for Spiderman.release.xcconfig */,
 				84E5738ED201F2210A7AB510 /* Pods-Spiderman.debug.xcconfig */,
 				05D47F77727DC5713E0E1FC7 /* Pods-Spiderman.release.xcconfig */,
 			);

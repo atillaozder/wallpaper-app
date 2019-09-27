@@ -33,8 +33,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0540949DB1C29E8F7E0D79D1 /* Pods-Wallpapers for COC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wallpapers for COC.release.xcconfig"; path = "Target Support Files/Pods-Wallpapers for COC/Pods-Wallpapers for COC.release.xcconfig"; sourceTree = "<group>"; };
-		7CA4C163F8AB05759F54A0A6 /* Pods-Wallpapers for COC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wallpapers for COC.debug.xcconfig"; path = "Target Support Files/Pods-Wallpapers for COC/Pods-Wallpapers for COC.debug.xcconfig"; sourceTree = "<group>"; };
 		7CE162D92F5F4B2DD5B07E87 /* Pods-Coc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coc.release.xcconfig"; path = "Target Support Files/Pods-Coc/Pods-Coc.release.xcconfig"; sourceTree = "<group>"; };
 		D73BBFE5E65DA351DEE85CEC /* Pods_Coc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Coc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F24243D2AC7534741B4B52A0 /* Pods-Coc.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coc.debug.xcconfig"; path = "Target Support Files/Pods-Coc/Pods-Coc.debug.xcconfig"; sourceTree = "<group>"; };
@@ -161,8 +159,6 @@
 		84570043F5CE01D6377AD76F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				7CA4C163F8AB05759F54A0A6 /* Pods-Wallpapers for COC.debug.xcconfig */,
-				0540949DB1C29E8F7E0D79D1 /* Pods-Wallpapers for COC.release.xcconfig */,
 				F24243D2AC7534741B4B52A0 /* Pods-Coc.debug.xcconfig */,
 				7CE162D92F5F4B2DD5B07E87 /* Pods-Coc.release.xcconfig */,
 			);

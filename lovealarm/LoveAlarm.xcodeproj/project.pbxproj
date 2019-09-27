@@ -35,9 +35,7 @@
 /* Begin PBXFileReference section */
 		43A67A66974BFD21C7C4FA8C /* Pods-LoveAlarm.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoveAlarm.release.xcconfig"; path = "Target Support Files/Pods-LoveAlarm/Pods-LoveAlarm.release.xcconfig"; sourceTree = "<group>"; };
 		74D0BECC5BEEC5EF60677800 /* Pods_LoveAlarm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LoveAlarm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		807BA2245220AECB77831327 /* Pods-Wallpapers for LoveAlarm.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wallpapers for LoveAlarm.debug.xcconfig"; path = "Target Support Files/Pods-Wallpapers for LoveAlarm/Pods-Wallpapers for LoveAlarm.debug.xcconfig"; sourceTree = "<group>"; };
 		A37F19B6CA664814EF944ACC /* Pods-LoveAlarm.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoveAlarm.debug.xcconfig"; path = "Target Support Files/Pods-LoveAlarm/Pods-LoveAlarm.debug.xcconfig"; sourceTree = "<group>"; };
-		C09B2F7B0D6B72D12C10148F /* Pods-Wallpapers for LoveAlarm.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wallpapers for LoveAlarm.release.xcconfig"; path = "Target Support Files/Pods-Wallpapers for LoveAlarm/Pods-Wallpapers for LoveAlarm.release.xcconfig"; sourceTree = "<group>"; };
 		FB062A7A232BD1DC00156144 /* LoveAlarm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoveAlarm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB062A7D232BD1DC00156144 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB062A84232BD1DD00156144 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -169,8 +167,6 @@
 		CC795996CF322D4DAF391334 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				807BA2245220AECB77831327 /* Pods-Wallpapers for LoveAlarm.debug.xcconfig */,
-				C09B2F7B0D6B72D12C10148F /* Pods-Wallpapers for LoveAlarm.release.xcconfig */,
 				A37F19B6CA664814EF944ACC /* Pods-LoveAlarm.debug.xcconfig */,
 				43A67A66974BFD21C7C4FA8C /* Pods-LoveAlarm.release.xcconfig */,
 			);

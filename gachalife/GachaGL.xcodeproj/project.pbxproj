@@ -8,27 +8,40 @@
 
 /* Begin PBXBuildFile section */
 		24054D1091390724D2C347E8 /* Pods_GachaGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59B5806411A63FA3EB46474A /* Pods_GachaGL.framework */; };
+		FB2E59AB233E1C4800973E3B /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB2E59AA233E1C4800973E3B /* Core.framework */; };
+		FB2E59AC233E1C4800973E3B /* Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FB2E59AA233E1C4800973E3B /* Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FBBD4EBE233D222200770038 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBD4EBD233D222200770038 /* AppDelegate.swift */; };
 		FBBD4EC5233D222300770038 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBBD4EC4233D222300770038 /* Assets.xcassets */; };
 		FBBD4EC8233D222300770038 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBBD4EC6233D222300770038 /* LaunchScreen.storyboard */; };
-		FBBD4ED0233D22E400770038 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBBD4ECF233D22E400770038 /* Core.framework */; };
 		FBBD4ED3233D233400770038 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FBBD4ED1233D233400770038 /* Localizable.strings */; };
 		FBDF84E8233D315900DA49C2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FBDF84E7233D315900DA49C2 /* GoogleService-Info.plist */; };
 		FBFD4CCE233D237300742AB0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FBFD4CCC233D237300742AB0 /* InfoPlist.strings */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		FB2E59A9233E1BD900973E3B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				FB2E59AC233E1C4800973E3B /* Core.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		2DA5E75775CCF626F6C31906 /* Pods-GachaGL.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GachaGL.debug.xcconfig"; path = "Target Support Files/Pods-GachaGL/Pods-GachaGL.debug.xcconfig"; sourceTree = "<group>"; };
-		33519584CFE120E9EA5A7B5C /* Pods-GLWallpapers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GLWallpapers.release.xcconfig"; path = "Target Support Files/Pods-GLWallpapers/Pods-GLWallpapers.release.xcconfig"; sourceTree = "<group>"; };
-		36753645DBB3EEB889785EDA /* Pods-GLWallpapers.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GLWallpapers.debug.xcconfig"; path = "Target Support Files/Pods-GLWallpapers/Pods-GLWallpapers.debug.xcconfig"; sourceTree = "<group>"; };
 		59B5806411A63FA3EB46474A /* Pods_GachaGL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GachaGL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF722DE8DE09C34E175259EE /* Pods-GachaGL.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GachaGL.release.xcconfig"; path = "Target Support Files/Pods-GachaGL/Pods-GachaGL.release.xcconfig"; sourceTree = "<group>"; };
+		FB2E59AA233E1C4800973E3B /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBBD4EBA233D222200770038 /* GachaGL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GachaGL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBBD4EBD233D222200770038 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FBBD4EC4233D222300770038 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FBBD4EC7233D222300770038 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FBBD4EC9233D222300770038 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FBBD4ECF233D22E400770038 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBBD4ED2233D233400770038 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FBDF84E7233D315900DA49C2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FBFD4CCD233D237300742AB0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -135,8 +148,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FBBD4ED0233D22E400770038 /* Core.framework in Frameworks */,
 				24054D1091390724D2C347E8 /* Pods_GachaGL.framework in Frameworks */,
+				FB2E59AB233E1C4800973E3B /* Core.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,8 +159,6 @@
 		4FB205E85026A66CC378939C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				36753645DBB3EEB889785EDA /* Pods-GLWallpapers.debug.xcconfig */,
-				33519584CFE120E9EA5A7B5C /* Pods-GLWallpapers.release.xcconfig */,
 				2DA5E75775CCF626F6C31906 /* Pods-GachaGL.debug.xcconfig */,
 				CF722DE8DE09C34E175259EE /* Pods-GachaGL.release.xcconfig */,
 			);
@@ -158,7 +169,6 @@
 		E282112A5370639DA411D5A2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				FBBD4ECF233D22E400770038 /* Core.framework */,
 				59B5806411A63FA3EB46474A /* Pods_GachaGL.framework */,
 			);
 			name = Frameworks;
@@ -167,6 +177,7 @@
 		FBBD4EB1233D222200770038 = {
 			isa = PBXGroup;
 			children = (
+				FB2E59AA233E1C4800973E3B /* Core.framework */,
 				FBBD4EBC233D222200770038 /* src */,
 				FBBD4EBB233D222200770038 /* Products */,
 				4FB205E85026A66CC378939C /* Pods */,
@@ -208,6 +219,7 @@
 				FBBD4EB7233D222200770038 /* Frameworks */,
 				FBBD4EB8233D222200770038 /* Resources */,
 				D98423C121CF465B25BBEB22 /* [CP] Embed Pods Frameworks */,
+				FB2E59A9233E1BD900973E3B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

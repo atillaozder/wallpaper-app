@@ -33,13 +33,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		244138E230A88088C6DD33BF /* Pods-wallpapers-Wallpapers for MW.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wallpapers-Wallpapers for MW.release.xcconfig"; path = "../../Pods/Target Support Files/Pods-wallpapers-Wallpapers for MW/Pods-wallpapers-Wallpapers for MW.release.xcconfig"; sourceTree = "<group>"; };
 		9BEF7EA9C77E7290E4BA5816 /* Pods-MiniWorld.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiniWorld.debug.xcconfig"; path = "../../Pods/Target Support Files/Pods-MiniWorld/Pods-MiniWorld.debug.xcconfig"; sourceTree = "<group>"; };
 		9FEE0F7A2F8E310C084125E2 /* Pods-MiniWorld.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiniWorld.release.xcconfig"; path = "../../Pods/Target Support Files/Pods-MiniWorld/Pods-MiniWorld.release.xcconfig"; sourceTree = "<group>"; };
-		B8420862C06C0F76821959B2 /* Pods-wallpapers-Wallpapers for MW.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wallpapers-Wallpapers for MW.debug.xcconfig"; path = "../../Pods/Target Support Files/Pods-wallpapers-Wallpapers for MW/Pods-wallpapers-Wallpapers for MW.debug.xcconfig"; sourceTree = "<group>"; };
 		CDBC8A6424A779820914AFF6 /* Pods_MiniWorld.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MiniWorld.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DBF03B9F9A3642905F257245 /* Pods-Wallpapers for MW.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wallpapers for MW.debug.xcconfig"; path = "../../Pods/Target Support Files/Pods-Wallpapers for MW/Pods-Wallpapers for MW.debug.xcconfig"; sourceTree = "<group>"; };
-		E194CEE88520E4EDB68F0951 /* Pods-Wallpapers for MW.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wallpapers for MW.release.xcconfig"; path = "../../Pods/Target Support Files/Pods-Wallpapers for MW/Pods-Wallpapers for MW.release.xcconfig"; sourceTree = "<group>"; };
 		FB3037D02327CB22002A9E05 /* en-GB */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-GB"; path = "en-GB.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		FB3037D12327CB22002A9E05 /* en-GB */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-GB"; path = "en-GB.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		FB3037D22327CB22002A9E05 /* en-GB */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-GB"; path = "en-GB.lproj/Localizable.strings"; sourceTree = "<group>"; };
@@ -163,10 +159,6 @@
 		D64C91C0A720096EBCBC1A37 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				B8420862C06C0F76821959B2 /* Pods-wallpapers-Wallpapers for MW.debug.xcconfig */,
-				244138E230A88088C6DD33BF /* Pods-wallpapers-Wallpapers for MW.release.xcconfig */,
-				DBF03B9F9A3642905F257245 /* Pods-Wallpapers for MW.debug.xcconfig */,
-				E194CEE88520E4EDB68F0951 /* Pods-Wallpapers for MW.release.xcconfig */,
 				9BEF7EA9C77E7290E4BA5816 /* Pods-MiniWorld.debug.xcconfig */,
 				9FEE0F7A2F8E310C084125E2 /* Pods-MiniWorld.release.xcconfig */,
 			);

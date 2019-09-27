@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "FBC805F522F44FF70090CA6D"
-               BuildableName = "Wallpapers for MW.app"
-               BlueprintName = "Wallpapers for MW"
-               ReferencedContainer = "container:Wallpapers for MW.xcodeproj">
+               BlueprintIdentifier = "FB354D7223007818003A6407"
+               BuildableName = "LOL.app"
+               BlueprintName = "LOL"
+               ReferencedContainer = "container:LOL.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,10 +32,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "FBC805F522F44FF70090CA6D"
-            BuildableName = "Wallpapers for MW.app"
-            BlueprintName = "Wallpapers for MW"
-            ReferencedContainer = "container:Wallpapers for MW.xcodeproj">
+            BlueprintIdentifier = "FB354D7223007818003A6407"
+            BuildableName = "LOL.app"
+            BlueprintName = "LOL"
+            ReferencedContainer = "container:LOL.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -55,10 +55,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "FBC805F522F44FF70090CA6D"
-            BuildableName = "Wallpapers for MW.app"
-            BlueprintName = "Wallpapers for MW"
-            ReferencedContainer = "container:Wallpapers for MW.xcodeproj">
+            BlueprintIdentifier = "FB354D7223007818003A6407"
+            BuildableName = "LOL.app"
+            BlueprintName = "LOL"
+            ReferencedContainer = "container:LOL.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -74,10 +74,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "FBC805F522F44FF70090CA6D"
-            BuildableName = "Wallpapers for MW.app"
-            BlueprintName = "Wallpapers for MW"
-            ReferencedContainer = "container:Wallpapers for MW.xcodeproj">
+            BlueprintIdentifier = "FB354D7223007818003A6407"
+            BuildableName = "LOL.app"
+            BlueprintName = "LOL"
+            ReferencedContainer = "container:LOL.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
