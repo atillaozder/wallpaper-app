@@ -25,45 +25,51 @@ abstract_target 'Wallpapers' do
     shared_pods
   end
 
-  target 'Wallpapers for MW' do
+  target 'MiniWorld' do
     inherit! :search_paths
-    project 'mw/Wallpapers for MW.xcodeproj'
+    project 'mw/MiniWorld.xcodeproj'
     shared_pods
   end
 
-  target 'Wallpapers for LOL' do
+  target 'LOL' do
     inherit! :search_paths
-    project 'lol/Wallpapers for LOL.xcodeproj'
+    project 'lol/LOL.xcodeproj'
     shared_pods
   end
 
-  target 'Wallpapers for CR' do
+  target 'CRoyale' do
     inherit! :search_paths
-    project 'cr/Wallpapers for CR.xcodeproj'
+    project 'cr/CRoyale.xcodeproj'
     shared_pods
   end
 
-  target 'Wallpapers for COC' do
+  target 'Coc' do
     inherit! :search_paths
-    project 'coc/Wallpapers for COC.xcodeproj'
+    project 'coc/Coc.xcodeproj'
     shared_pods
   end
 
-  target 'Wallpapers for Illustrator' do
+  target 'Illustrator' do
     inherit! :search_paths
-    project 'illustrator/Wallpapers for Illustrator.xcodeproj'
+    project 'illustrator/Illustrator.xcodeproj'
     shared_pods
   end
 
-  target 'Wallpapers for LoveAlarm' do
+  target 'LoveAlarm' do
     inherit! :search_paths
-    project 'lovealarm/Wallpapers for LoveAlarm.xcodeproj'
+    project 'lovealarm/LoveAlarm.xcodeproj'
     shared_pods
   end
 
-  target 'Wallpapers for Spiderman' do
+  target 'Spiderman' do
     inherit! :search_paths
-    project 'spiderman/Wallpapers for Spiderman.xcodeproj'
+    project 'spiderman/Spiderman.xcodeproj'
+    shared_pods
+  end
+
+  target 'GachaGL' do
+    inherit! :search_paths
+    project 'gachalife/GachaGL.xcodeproj'
     shared_pods
   end
 end

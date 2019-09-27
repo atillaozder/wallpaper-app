@@ -1,0 +1,21 @@
+/* 
+  Localizable.strings
+  Wallpapers
+
+  Created by Atilla Özder on 10.08.2019.
+  Copyright © 2019 Atilla Özder. All rights reserved.
+*/
+
+"set_as_wallpaper" = "set as wallpaper";
+"share" = "share";
+"save" = "save";
+"recent" = "recent";
+"category" = "category";
+"saved" = "saved";
+"favorites" = "favorites";
+"random" = "random";
+
+"cancel" = "cancel";
+"openSettingsTitle" = "Settings";
+"photoPermissionTitle" = "GL wants permission to access your gallery.";
+"photoPermissionMessage" = "In order to download pictures, you should give GL access to your gallery. You can go to permissions through Settings>GL.";

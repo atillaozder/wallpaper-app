@@ -1,0 +1,677 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		81AF9E41E2414F539F3F61B3 /* Pods_LoveAlarm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74D0BECC5BEEC5EF60677800 /* Pods_LoveAlarm.framework */; };
+		FB062A7E232BD1DC00156144 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB062A7D232BD1DC00156144 /* AppDelegate.swift */; };
+		FB062A85232BD1DD00156144 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB062A84232BD1DD00156144 /* Assets.xcassets */; };
+		FB062A88232BD1DD00156144 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB062A86232BD1DD00156144 /* LaunchScreen.storyboard */; };
+		FB062A93232BD22700156144 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FB062A91232BD22700156144 /* Localizable.strings */; };
+		FB062A96232BD23400156144 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FB062A94232BD23400156144 /* InfoPlist.strings */; };
+		FB062AF8232BD36100156144 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FB062AF7232BD36100156144 /* GoogleService-Info.plist */; };
+		FB062AFA232BD43500156144 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB062AF9232BD43500156144 /* Core.framework */; };
+		FB062AFB232BD43500156144 /* Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FB062AF9232BD43500156144 /* Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		FB062AFC232BD43500156144 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				FB062AFB232BD43500156144 /* Core.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		43A67A66974BFD21C7C4FA8C /* Pods-LoveAlarm.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoveAlarm.release.xcconfig"; path = "Target Support Files/Pods-LoveAlarm/Pods-LoveAlarm.release.xcconfig"; sourceTree = "<group>"; };
+		74D0BECC5BEEC5EF60677800 /* Pods_LoveAlarm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LoveAlarm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		807BA2245220AECB77831327 /* Pods-Wallpapers for LoveAlarm.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wallpapers for LoveAlarm.debug.xcconfig"; path = "Target Support Files/Pods-Wallpapers for LoveAlarm/Pods-Wallpapers for LoveAlarm.debug.xcconfig"; sourceTree = "<group>"; };
+		A37F19B6CA664814EF944ACC /* Pods-LoveAlarm.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoveAlarm.debug.xcconfig"; path = "Target Support Files/Pods-LoveAlarm/Pods-LoveAlarm.debug.xcconfig"; sourceTree = "<group>"; };
+		C09B2F7B0D6B72D12C10148F /* Pods-Wallpapers for LoveAlarm.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wallpapers for LoveAlarm.release.xcconfig"; path = "Target Support Files/Pods-Wallpapers for LoveAlarm/Pods-Wallpapers for LoveAlarm.release.xcconfig"; sourceTree = "<group>"; };
+		FB062A7A232BD1DC00156144 /* LoveAlarm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoveAlarm.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB062A7D232BD1DC00156144 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FB062A84232BD1DD00156144 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FB062A87232BD1DD00156144 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FB062A89232BD1DD00156144 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FB062A92232BD22700156144 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FB062A95232BD23400156144 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FB062A97232BD25900156144 /* en-GB */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-GB"; path = "en-GB.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		FB062A98232BD25900156144 /* en-GB */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-GB"; path = "en-GB.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		FB062A99232BD25900156144 /* en-GB */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-GB"; path = "en-GB.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		FB062A9A232BD25D00156144 /* en-AU */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-AU"; path = "en-AU.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		FB062A9B232BD25D00156144 /* en-AU */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-AU"; path = "en-AU.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		FB062A9C232BD25D00156144 /* en-AU */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-AU"; path = "en-AU.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		FB062A9D232BD26000156144 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		FB062A9E232BD26000156144 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FB062A9F232BD26000156144 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FB062AA0232BD26500156144 /* zh-HK */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-HK"; path = "zh-HK.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		FB062AA1232BD26500156144 /* zh-HK */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-HK"; path = "zh-HK.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		FB062AA2232BD26500156144 /* zh-HK */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-HK"; path = "zh-HK.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		FB062AA3232BD26900156144 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		FB062AA4232BD26900156144 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		FB062AA5232BD26900156144 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		FB062AA6232BD26D00156144 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		FB062AA7232BD26E00156144 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		FB062AA8232BD26E00156144 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		FB062AA9232BD27100156144 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		FB062AAA232BD27100156144 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		FB062AAB232BD27100156144 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		FB062AAC232BD27400156144 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		FB062AAD232BD27400156144 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FB062AAE232BD27400156144 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FB062AAF232BD27700156144 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		FB062AB0232BD27700156144 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FB062AB1232BD27700156144 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FB062AB2232BD27A00156144 /* fr-CA */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "fr-CA"; path = "fr-CA.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		FB062AB3232BD27A00156144 /* fr-CA */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "fr-CA"; path = "fr-CA.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		FB062AB4232BD27B00156144 /* fr-CA */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "fr-CA"; path = "fr-CA.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		FB062AB5232BD27E00156144 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		FB062AB6232BD27E00156144 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FB062AB7232BD27E00156144 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FB062AB8232BD28100156144 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		FB062AB9232BD28100156144 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FB062ABA232BD28100156144 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FB062ABB232BD28400156144 /* en-IN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-IN"; path = "en-IN.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		FB062ABC232BD28400156144 /* en-IN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-IN"; path = "en-IN.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		FB062ABD232BD28400156144 /* en-IN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-IN"; path = "en-IN.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		FB062ABE232BD28700156144 /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-PT"; path = "pt-PT.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		FB062ABF232BD28700156144 /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-PT"; path = "pt-PT.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		FB062AC0232BD28700156144 /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-PT"; path = "pt-PT.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		FB062AC1232BD28B00156144 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		FB062AC2232BD28B00156144 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		FB062AC3232BD28B00156144 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		FB062AC4232BD28F00156144 /* hi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hi; path = hi.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		FB062AC5232BD28F00156144 /* hi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hi; path = hi.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FB062AC6232BD28F00156144 /* hi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hi; path = hi.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FB062AC7232BD29300156144 /* el */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = el; path = el.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		FB062AC8232BD29300156144 /* el */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = el; path = el.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FB062AC9232BD29300156144 /* el */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = el; path = el.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FB062ACA232BD29600156144 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		FB062ACB232BD29700156144 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FB062ACC232BD29700156144 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FB062ACD232BD29A00156144 /* sk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sk; path = sk.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		FB062ACE232BD29A00156144 /* sk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sk; path = sk.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FB062ACF232BD29A00156144 /* sk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sk; path = sk.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FB062AD0232BD29E00156144 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		FB062AD1232BD29E00156144 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FB062AD2232BD29F00156144 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FB062AD3232BD2AA00156144 /* id */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = id; path = id.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		FB062AD4232BD2AA00156144 /* id */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = id; path = id.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FB062AD5232BD2AA00156144 /* id */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = id; path = id.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FB062AD6232BD2AE00156144 /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		FB062AD7232BD2AE00156144 /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FB062AD8232BD2AE00156144 /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FB062AD9232BD2B100156144 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		FB062ADA232BD2B100156144 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FB062ADB232BD2B100156144 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FB062ADC232BD2B400156144 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		FB062ADD232BD2B400156144 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FB062ADE232BD2B500156144 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FB062ADF232BD2C200156144 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		FB062AE0232BD2C200156144 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FB062AE1232BD2C200156144 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FB062AE2232BD2C600156144 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		FB062AE3232BD2C600156144 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FB062AE4232BD2C600156144 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FB062AE5232BD2C900156144 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		FB062AE6232BD2C900156144 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FB062AE7232BD2C900156144 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FB062AE8232BD2CD00156144 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		FB062AE9232BD2CD00156144 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FB062AEA232BD2CD00156144 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FB062AEB232BD2D000156144 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		FB062AEC232BD2D000156144 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FB062AED232BD2D000156144 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FB062AEE232BD2D400156144 /* nb */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nb; path = nb.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		FB062AEF232BD2D400156144 /* nb */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nb; path = nb.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FB062AF0232BD2D400156144 /* nb */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nb; path = nb.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FB062AF1232BD2D800156144 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		FB062AF2232BD2D800156144 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FB062AF3232BD2D800156144 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FB062AF4232BD2DC00156144 /* fi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fi; path = fi.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		FB062AF5232BD2DC00156144 /* fi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fi; path = fi.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FB062AF6232BD2DC00156144 /* fi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fi; path = fi.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FB062AF7232BD36100156144 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FB062AF9232BD43500156144 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FB062A77232BD1DC00156144 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB062AFA232BD43500156144 /* Core.framework in Frameworks */,
+				81AF9E41E2414F539F3F61B3 /* Pods_LoveAlarm.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A9491FD6CEBDFACD40C66CAF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				74D0BECC5BEEC5EF60677800 /* Pods_LoveAlarm.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CC795996CF322D4DAF391334 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				807BA2245220AECB77831327 /* Pods-Wallpapers for LoveAlarm.debug.xcconfig */,
+				C09B2F7B0D6B72D12C10148F /* Pods-Wallpapers for LoveAlarm.release.xcconfig */,
+				A37F19B6CA664814EF944ACC /* Pods-LoveAlarm.debug.xcconfig */,
+				43A67A66974BFD21C7C4FA8C /* Pods-LoveAlarm.release.xcconfig */,
+			);
+			name = Pods;
+			path = ../Pods;
+			sourceTree = "<group>";
+		};
+		FB062A71232BD1DC00156144 = {
+			isa = PBXGroup;
+			children = (
+				FB062AF9232BD43500156144 /* Core.framework */,
+				FB062A7C232BD1DC00156144 /* src */,
+				FB062A7B232BD1DC00156144 /* Products */,
+				CC795996CF322D4DAF391334 /* Pods */,
+				A9491FD6CEBDFACD40C66CAF /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		FB062A7B232BD1DC00156144 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FB062A7A232BD1DC00156144 /* LoveAlarm.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FB062A7C232BD1DC00156144 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				FB062AF7232BD36100156144 /* GoogleService-Info.plist */,
+				FB062A7D232BD1DC00156144 /* AppDelegate.swift */,
+				FB062A84232BD1DD00156144 /* Assets.xcassets */,
+				FB062A86232BD1DD00156144 /* LaunchScreen.storyboard */,
+				FB062A89232BD1DD00156144 /* Info.plist */,
+				FB062A94232BD23400156144 /* InfoPlist.strings */,
+				FB062A91232BD22700156144 /* Localizable.strings */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FB062A79232BD1DC00156144 /* LoveAlarm */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FB062A8C232BD1DD00156144 /* Build configuration list for PBXNativeTarget "LoveAlarm" */;
+			buildPhases = (
+				42A381B404F722D19C6E2A9E /* [CP] Check Pods Manifest.lock */,
+				FB062A76232BD1DC00156144 /* Sources */,
+				FB062A77232BD1DC00156144 /* Frameworks */,
+				FB062A78232BD1DC00156144 /* Resources */,
+				FB062AFC232BD43500156144 /* Embed Frameworks */,
+				6A87F58EE1A433ABDFBF5C2B /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LoveAlarm;
+			productName = "Wallpapers for LoveAlarm";
+			productReference = FB062A7A232BD1DC00156144 /* LoveAlarm.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FB062A72232BD1DC00156144 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1030;
+				LastUpgradeCheck = 1030;
+				ORGANIZATIONNAME = "Atilla Özder";
+				TargetAttributes = {
+					FB062A79232BD1DC00156144 = {
+						CreatedOnToolsVersion = 10.3;
+					};
+				};
+			};
+			buildConfigurationList = FB062A75232BD1DC00156144 /* Build configuration list for PBXProject "LoveAlarm" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				"en-GB",
+				"en-AU",
+				ja,
+				"zh-HK",
+				"zh-Hans",
+				"zh-Hant",
+				"es-419",
+				es,
+				fr,
+				"fr-CA",
+				de,
+				ru,
+				"en-IN",
+				"pt-PT",
+				"pt-BR",
+				hi,
+				el,
+				cs,
+				sk,
+				uk,
+				id,
+				da,
+				tr,
+				it,
+				vi,
+				nl,
+				ko,
+				sv,
+				ar,
+				nb,
+				pl,
+				fi,
+			);
+			mainGroup = FB062A71232BD1DC00156144;
+			productRefGroup = FB062A7B232BD1DC00156144 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FB062A79232BD1DC00156144 /* LoveAlarm */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FB062A78232BD1DC00156144 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB062A88232BD1DD00156144 /* LaunchScreen.storyboard in Resources */,
+				FB062A96232BD23400156144 /* InfoPlist.strings in Resources */,
+				FB062AF8232BD36100156144 /* GoogleService-Info.plist in Resources */,
+				FB062A93232BD22700156144 /* Localizable.strings in Resources */,
+				FB062A85232BD1DD00156144 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		42A381B404F722D19C6E2A9E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LoveAlarm-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6A87F58EE1A433ABDFBF5C2B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LoveAlarm/Pods-LoveAlarm-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LoveAlarm/Pods-LoveAlarm-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LoveAlarm/Pods-LoveAlarm-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FB062A76232BD1DC00156144 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB062A7E232BD1DC00156144 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		FB062A86232BD1DD00156144 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FB062A87232BD1DD00156144 /* Base */,
+				FB062A97232BD25900156144 /* en-GB */,
+				FB062A9A232BD25D00156144 /* en-AU */,
+				FB062A9D232BD26000156144 /* ja */,
+				FB062AA0232BD26500156144 /* zh-HK */,
+				FB062AA3232BD26900156144 /* zh-Hans */,
+				FB062AA6232BD26D00156144 /* zh-Hant */,
+				FB062AA9232BD27100156144 /* es-419 */,
+				FB062AAC232BD27400156144 /* es */,
+				FB062AAF232BD27700156144 /* fr */,
+				FB062AB2232BD27A00156144 /* fr-CA */,
+				FB062AB5232BD27E00156144 /* de */,
+				FB062AB8232BD28100156144 /* ru */,
+				FB062ABB232BD28400156144 /* en-IN */,
+				FB062ABE232BD28700156144 /* pt-PT */,
+				FB062AC1232BD28B00156144 /* pt-BR */,
+				FB062AC4232BD28F00156144 /* hi */,
+				FB062AC7232BD29300156144 /* el */,
+				FB062ACA232BD29600156144 /* cs */,
+				FB062ACD232BD29A00156144 /* sk */,
+				FB062AD0232BD29E00156144 /* uk */,
+				FB062AD3232BD2AA00156144 /* id */,
+				FB062AD6232BD2AE00156144 /* da */,
+				FB062AD9232BD2B100156144 /* tr */,
+				FB062ADC232BD2B400156144 /* it */,
+				FB062ADF232BD2C200156144 /* vi */,
+				FB062AE2232BD2C600156144 /* nl */,
+				FB062AE5232BD2C900156144 /* ko */,
+				FB062AE8232BD2CD00156144 /* sv */,
+				FB062AEB232BD2D000156144 /* ar */,
+				FB062AEE232BD2D400156144 /* nb */,
+				FB062AF1232BD2D800156144 /* pl */,
+				FB062AF4232BD2DC00156144 /* fi */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		FB062A91232BD22700156144 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FB062A92232BD22700156144 /* Base */,
+				FB062A98232BD25900156144 /* en-GB */,
+				FB062A9B232BD25D00156144 /* en-AU */,
+				FB062A9E232BD26000156144 /* ja */,
+				FB062AA1232BD26500156144 /* zh-HK */,
+				FB062AA4232BD26900156144 /* zh-Hans */,
+				FB062AA7232BD26E00156144 /* zh-Hant */,
+				FB062AAA232BD27100156144 /* es-419 */,
+				FB062AAD232BD27400156144 /* es */,
+				FB062AB0232BD27700156144 /* fr */,
+				FB062AB3232BD27A00156144 /* fr-CA */,
+				FB062AB6232BD27E00156144 /* de */,
+				FB062AB9232BD28100156144 /* ru */,
+				FB062ABC232BD28400156144 /* en-IN */,
+				FB062ABF232BD28700156144 /* pt-PT */,
+				FB062AC2232BD28B00156144 /* pt-BR */,
+				FB062AC5232BD28F00156144 /* hi */,
+				FB062AC8232BD29300156144 /* el */,
+				FB062ACB232BD29700156144 /* cs */,
+				FB062ACE232BD29A00156144 /* sk */,
+				FB062AD1232BD29E00156144 /* uk */,
+				FB062AD4232BD2AA00156144 /* id */,
+				FB062AD7232BD2AE00156144 /* da */,
+				FB062ADA232BD2B100156144 /* tr */,
+				FB062ADD232BD2B400156144 /* it */,
+				FB062AE0232BD2C200156144 /* vi */,
+				FB062AE3232BD2C600156144 /* nl */,
+				FB062AE6232BD2C900156144 /* ko */,
+				FB062AE9232BD2CD00156144 /* sv */,
+				FB062AEC232BD2D000156144 /* ar */,
+				FB062AEF232BD2D400156144 /* nb */,
+				FB062AF2232BD2D800156144 /* pl */,
+				FB062AF5232BD2DC00156144 /* fi */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		FB062A94232BD23400156144 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FB062A95232BD23400156144 /* Base */,
+				FB062A99232BD25900156144 /* en-GB */,
+				FB062A9C232BD25D00156144 /* en-AU */,
+				FB062A9F232BD26000156144 /* ja */,
+				FB062AA2232BD26500156144 /* zh-HK */,
+				FB062AA5232BD26900156144 /* zh-Hans */,
+				FB062AA8232BD26E00156144 /* zh-Hant */,
+				FB062AAB232BD27100156144 /* es-419 */,
+				FB062AAE232BD27400156144 /* es */,
+				FB062AB1232BD27700156144 /* fr */,
+				FB062AB4232BD27B00156144 /* fr-CA */,
+				FB062AB7232BD27E00156144 /* de */,
+				FB062ABA232BD28100156144 /* ru */,
+				FB062ABD232BD28400156144 /* en-IN */,
+				FB062AC0232BD28700156144 /* pt-PT */,
+				FB062AC3232BD28B00156144 /* pt-BR */,
+				FB062AC6232BD28F00156144 /* hi */,
+				FB062AC9232BD29300156144 /* el */,
+				FB062ACC232BD29700156144 /* cs */,
+				FB062ACF232BD29A00156144 /* sk */,
+				FB062AD2232BD29F00156144 /* uk */,
+				FB062AD5232BD2AA00156144 /* id */,
+				FB062AD8232BD2AE00156144 /* da */,
+				FB062ADB232BD2B100156144 /* tr */,
+				FB062ADE232BD2B500156144 /* it */,
+				FB062AE1232BD2C200156144 /* vi */,
+				FB062AE4232BD2C600156144 /* nl */,
+				FB062AE7232BD2C900156144 /* ko */,
+				FB062AEA232BD2CD00156144 /* sv */,
+				FB062AED232BD2D000156144 /* ar */,
+				FB062AF0232BD2D400156144 /* nb */,
+				FB062AF3232BD2D800156144 /* pl */,
+				FB062AF6232BD2DC00156144 /* fi */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FB062A8A232BD1DD00156144 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FB062A8B232BD1DD00156144 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FB062A8D232BD1DD00156144 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A37F19B6CA664814EF944ACC /* Pods-LoveAlarm.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 74NMDHX448;
+				INFOPLIST_FILE = "$(SRCROOT)/src/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.appraf.lovealarm;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = LoveAlarmDebugProfile;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FB062A8E232BD1DD00156144 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 43A67A66974BFD21C7C4FA8C /* Pods-LoveAlarm.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 74NMDHX448;
+				INFOPLIST_FILE = "$(SRCROOT)/src/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.appraf.lovealarm;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = LoveAlarmReleaseProfile;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FB062A75232BD1DC00156144 /* Build configuration list for PBXProject "LoveAlarm" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB062A8A232BD1DD00156144 /* Debug */,
+				FB062A8B232BD1DD00156144 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FB062A8C232BD1DD00156144 /* Build configuration list for PBXNativeTarget "LoveAlarm" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB062A8D232BD1DD00156144 /* Debug */,
+				FB062A8E232BD1DD00156144 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FB062A72232BD1DC00156144 /* Project object */;
+}
