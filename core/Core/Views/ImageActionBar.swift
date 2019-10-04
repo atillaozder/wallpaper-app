@@ -11,7 +11,7 @@ import Foundation
 struct ActionButtonFactory {
     func createButton() -> UIButton {
         let btn = UIButton(type: .custom)
-        btn.backgroundColor = .defaultTextColor
+        btn.backgroundColor = .textColor
         btn.tintAdjustmentMode = .normal
         btn.adjustsImageWhenHighlighted = false
         btn.adjustsImageWhenDisabled = false
@@ -87,7 +87,11 @@ class ImageActionBar: UIStackView {
         self.axis = .horizontal
         self.spacing = 0
         
-        [downloadButton, shareButton, favoriteButton, editButton, previewButton].forEach { (btn) in
+        [downloadButton,
+         shareButton,
+         favoriteButton,
+         editButton,
+         previewButton].forEach { (btn) in
             self.addArrangedSubview(btn)
         }
     }

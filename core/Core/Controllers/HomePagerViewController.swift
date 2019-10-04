@@ -10,18 +10,29 @@ import SideMenu
 
 public class HomePagerViewController: PagerViewController {
     
+    private var askedForReview: Bool = false
+    
     public override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = Bundle.main.displayName
         dataSource = self
         
         let barButton = UIBarButtonItem(
-            image: Asset.icMenu.image,
+            image: Asset.icMenu.image.withRenderingMode(.alwaysTemplate),
             style: .plain,
             target: self,
             action: #selector(openSideMenu))
+        barButton.tintColor = .white
         self.navigationItem.setLeftBarButton(barButton, animated: false)
         let _ = SideMenuManager.default.addPanGestureToPresent(toView: self.navigationController!.navigationBar)
+    }
+    
+    public override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if !askedForReview {
+            StoreReviewHelper().askForReview()
+            askedForReview = true
+        }
     }
     
     @objc
@@ -32,11 +43,21 @@ public class HomePagerViewController: PagerViewController {
             sms.menuWidth = UIConstants.kSideMenuWidth
         }
         
+        let rootViewController = SideMenuViewController()
         let sideMenu = SideMenuNavigationController(
-            rootViewController: SideMenuViewController(),
+            rootViewController: rootViewController,
             settings: settings)
+        
+        rootViewController.delegate = self
         sideMenu.leftSide = true
         self.present(sideMenu, animated: true, completion: nil)
+    }
+}
+
+extension HomePagerViewController: SideMenuViewControllerDelegate {
+    func sideMenuViewController(_ viewController: SideMenuViewController,
+                                didSelectPageMenu pageMenu: HomePageMenu) {
+        self.move(at: pageMenu.rawValue, animated: false)
     }
 }
 

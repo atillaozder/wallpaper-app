@@ -20,7 +20,7 @@ class CategoryCellViewModel: Identifiable, ImageFetchable {
         width -= UIConstants.kImageEdgeInsets.left
         width -= UIConstants.kImageEdgeInsets.right
         return ImageTransformer(size: .init(width: width, height: 200),
-                                fillColor: .defaultImageBackground,
+                                fillColor: .imageBackground,
                                 alpha: 0.20)
     }
     

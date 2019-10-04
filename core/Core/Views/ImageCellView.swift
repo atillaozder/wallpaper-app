@@ -15,7 +15,7 @@ class ImageCellView: UIView {
     lazy var imageView: UIImageView = {
         let iv = UIImageView()
         iv.isUserInteractionEnabled = false
-        iv.backgroundColor = .defaultImageBackground
+        iv.backgroundColor = .imageBackground
         iv.sd_imageTransition = .fade
         return iv
     }()
@@ -31,7 +31,7 @@ class ImageCellView: UIView {
     }
     
     func setup() {
-        backgroundColor = .defaultImageBackground
+        backgroundColor = .imageBackground
         self.addSubview(imageView)
         imageView.pinEdgesToSuperview()
     }

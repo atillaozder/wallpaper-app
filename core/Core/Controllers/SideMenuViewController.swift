@@ -8,89 +8,270 @@
 
 import Foundation
 
-class SideMenuViewController: PagedCollectionViewController {
-    
-    private lazy var viewModel = CategoryViewModel()
-    private lazy var headerView = SideMenuHeaderView()
-    
-    var cellHeight: CGFloat {
-        return 40
+struct SideMenuButtonFactory {
+    func generateButton() -> UIButton {
+        let btn = UIButton(type: .custom)
+        btn.contentEdgeInsets = .init(top: 16, left: 0, bottom: 16, right: 0)
+        btn.titleEdgeInsets.left = 16
+        btn.backgroundColor = .darkTheme
+        btn.titleLabel?.font = .systemFont(ofSize: 16, weight: .medium)
+        btn.contentHorizontalAlignment = .left
+        btn.contentVerticalAlignment = .center
+        btn.tintColor = .white
+        btn.imageView?.contentMode = .center
+        btn.tintAdjustmentMode = .normal
+        btn.adjustsImageWhenHighlighted = false
+        btn.adjustsImageWhenDisabled = false
+        return btn
     }
+}
+
+enum HomePageMenu: Int {
+    case recent = 0
+    case category = 1
+    case random = 2
+    case favorites = 3
+}
+
+protocol SideMenuViewControllerDelegate: class {
+    func sideMenuViewController(_ viewController: SideMenuViewController, didSelectPageMenu pageMenu: HomePageMenu)
+}
+
+class SideMenuViewController: UIViewController {
     
-    override var pageViewModel: PagedViewModelType! {
-        return viewModel
-    }
+    weak var delegate: SideMenuViewControllerDelegate?
     
-    override func getCollectionView() -> UICollectionView {
-        let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.itemSize = .init(width: UIConstants.kSideMenuWidth, height: cellHeight)
-        flowLayout.sectionInset = .zero
-        flowLayout.minimumLineSpacing = 0
-        flowLayout.minimumInteritemSpacing = 0
-        flowLayout.scrollDirection = .vertical
-        flowLayout.headerReferenceSize = .zero
-        flowLayout.footerReferenceSize = .zero
-        let cv = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
-        cv.backgroundColor = .white
-        cv.isPagingEnabled = false
-        cv.showsHorizontalScrollIndicator = false
-        cv.showsVerticalScrollIndicator = false
-        cv.alwaysBounceVertical = true
-        cv.bounces = true
-        cv.delegate = self
-        cv.prefetchDataSource = self
-        cv.registerCell(SideMenuCell.self)
-        return cv
-    }
+    lazy var scrollView: UIScrollView = {
+        let sv = UIScrollView()
+        sv.bounces = true
+        sv.showsVerticalScrollIndicator = false
+        sv.showsHorizontalScrollIndicator = false
+        sv.backgroundColor = .darkTheme
+        sv.isScrollEnabled = true
+        return sv
+    }()
     
-    override func setupViews() {
-        super.setupViews()
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
-        headerView.favoritesButton.addTarget(
-            self, action: #selector(favoritesTapped), for: .touchUpInside)
-        headerView.privacyPolicyButton.addTarget(
-            self, action: #selector(privacyPolicyTapped), for: .touchUpInside)
-    }
+    lazy var contentView: UIView = {
+        let v = UIView()
+        v.backgroundColor = .darkTheme
+        return v
+    }()
     
-    override func setupCollectionView() {
-        view.addSubview(headerView)
-        let insets: UIEdgeInsets = .init(top: 8, left: 0, bottom: 0, right: 0)
-        if #available(iOS 11.0, *) {
-            headerView.pinEdgesToView(view, insets: insets, exclude: [.bottom])
-        } else {
-            headerView.pinEdgesToView(view, exclude: [.top, .bottom])
-            headerView.pinTop(to: topLayoutGuide.bottomAnchor, constant: insets.top)
+    let imageView: UIImageView = {
+        let iv = UIImageView(image: Asset.icLogo.image)
+        iv.contentMode = .scaleAspectFit
+        iv.backgroundColor = .imageBackground
+        return iv
+    }()
+    
+    let appNameLabel: UILabel = {
+        let lbl = UILabel()
+        lbl.text = Bundle.main.displayName
+        lbl.font = UIFont.systemFont(ofSize: 16)
+        lbl.textColor = .white
+        lbl.textAlignment = .left
+        return lbl
+    }()
+    
+    let descriptionLabel: UILabel = {
+        let lbl = UILabel()
+        lbl.text = "High Definition Wallpapers"
+        lbl.font = UIFont.systemFont(ofSize: 13)
+        lbl.textColor = .white
+        lbl.textAlignment = .left
+        return lbl
+    }()
+    
+    lazy var recentButton: UIButton = {
+        let btn = SideMenuButtonFactory().generateButton()
+        btn.setTitle(Localization.recent.capitalized(with: .current), for: .normal)
+        btn.setImage(Asset.icRecent.image.resize(to: .init(width: 24, height: 24)).withRenderingMode(.alwaysTemplate), for: .normal)
+        btn.addTarget(self, action: #selector(recentTapped), for: .touchUpInside)
+        return btn
+    }()
+    
+    lazy var categoryButton: UIButton = {
+        let btn = SideMenuButtonFactory().generateButton()
+        btn.setTitle(Localization.category.capitalized(with: .current), for: .normal)
+        btn.setImage(Asset.icCategory.image.resize(to: .init(width: 24, height: 24)).withRenderingMode(.alwaysTemplate), for: .normal)
+        btn.addTarget(self, action: #selector(categoryTapped), for: .touchUpInside)
+        return btn
+    }()
+    
+    lazy var randomButton: UIButton = {
+        let btn = SideMenuButtonFactory().generateButton()
+        btn.setTitle(Localization.random.capitalized(with: .current), for: .normal)
+        btn.setImage(Asset.icRandom.image.resize(to: .init(width: 24, height: 24)).withRenderingMode(.alwaysTemplate), for: .normal)
+        btn.addTarget(self, action: #selector(randomTapped), for: .touchUpInside)
+        return btn
+    }()
+    
+    lazy var favoritesButton: UIButton = {
+        let btn = SideMenuButtonFactory().generateButton()
+        btn.setTitle(Localization.favorites.capitalized(with: .current), for: .normal)
+        btn.setImage(Asset.icHeart.image.resize(to: .init(width: 24, height: 24)).withRenderingMode(.alwaysTemplate), for: .normal)
+        btn.addTarget(self, action: #selector(favoritesTapped), for: .touchUpInside)
+        return btn
+    }()
+    
+    lazy var privacyPolicyButton: UIButton = {
+        let btn = SideMenuButtonFactory().generateButton()
+        btn.setTitle("Privacy Policy", for: .normal)
+        btn.setImage(Asset.icPrivacyPolicy.image.resize(to: .init(width: 24, height: 24)).withRenderingMode(.alwaysTemplate), for: .normal)
+        btn.addTarget(self, action: #selector(privacyPolicyTapped), for: .touchUpInside)
+        return btn
+    }()
+    
+    lazy var shareButton: UIButton = {
+        let btn = SideMenuButtonFactory().generateButton()
+        btn.setTitle(Localization.share.capitalized(with: .current), for: .normal)
+        btn.setImage(Asset.icUpload.image.resize(to: .init(width: 24, height: 24)).withRenderingMode(.alwaysTemplate), for: .normal)
+        btn.addTarget(self, action: #selector(shareTapped), for: .touchUpInside)
+        return btn
+    }()
+    
+    lazy var moreAppButton: UIButton = {
+        let btn = SideMenuButtonFactory().generateButton()
+        btn.setTitle("More App", for: .normal)
+        btn.setImage(Asset.icMoreApp.image.resize(to: .init(width: 24, height: 24)).withRenderingMode(.alwaysTemplate), for: .normal)
+        btn.addTarget(self, action: #selector(moreAppTapped), for: .touchUpInside)
+        return btn
+    }()
+    
+    lazy var rateUsButton: UIButton = {
+        let btn = SideMenuButtonFactory().generateButton()
+        btn.setTitle("Rate Us", for: .normal)
+        btn.setImage(Asset.icEmptyStar.image.resize(to: .init(width: 24, height: 24)).withRenderingMode(.alwaysTemplate), for: .normal)
+        btn.addTarget(self, action: #selector(rateUsTapped), for: .touchUpInside)
+        return btn
+    }()
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        var frame = CGRect.zero
+        for view in contentView.subviews {
+            frame = frame.union(view.frame)
         }
+        frame.size.height += 16
+        let height = max(frame.size.height, view.bounds.height)
+        contentViewHeightConstraint?.constant = height
+        scrollView.contentSize = .init(width: scrollView.bounds.width, height: height)
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupViews()
+    }
+    
+    func setupViews() {
+        view.backgroundColor = .darkTheme
+        setupScrollView()
+        setupAppInfo()
         
-        headerView.pinHeight(to: cellHeight * 2)
-        view.addSubview(collectionView)
-        collectionView.pinEdgesToView(view, exclude: [.top])
-        collectionView.pinTop(to: headerView.bottomAnchor)
+        let vSeparator = UIView()
+        vSeparator.backgroundColor = .white
+        vSeparator.pinHeight(to: 1)
+        contentView.addSubview(vSeparator)
+        vSeparator.pinEdgesToView(contentView, exclude: [.top, .bottom])
+        vSeparator.pinTop(to: descriptionLabel.bottomAnchor, constant: 24)
+        
+        let stackView = UIStackView(arrangedSubviews: [recentButton, categoryButton, randomButton, favoritesButton])
+        stackView.axis = .vertical
+        stackView.spacing = 0
+        stackView.distribution = .fillEqually
+        stackView.alignment = .fill
+        stackView.isUserInteractionEnabled = true
+        
+        contentView.addSubview(stackView)
+        stackView.pinTop(to: vSeparator.bottomAnchor, constant: 8)
+        stackView.pinLeading(to: imageView.leadingAnchor)
+        stackView.pinTrailing(to: contentView.trailingAnchor)
+        
+        let vSeparator2 = UIView()
+        vSeparator2.backgroundColor = .white
+        vSeparator2.pinHeight(to: 1)
+        contentView.addSubview(vSeparator2)
+        vSeparator2.pinEdgesToView(contentView, exclude: [.top, .bottom])
+        vSeparator2.pinTop(to: stackView.bottomAnchor, constant: 8)
+        
+        let bottomVStack = UIStackView(arrangedSubviews: [rateUsButton, shareButton, moreAppButton, privacyPolicyButton])
+        bottomVStack.axis = .vertical
+        bottomVStack.spacing = 0
+        bottomVStack.distribution = .fillEqually
+        bottomVStack.alignment = .fill
+        bottomVStack.isUserInteractionEnabled = true
+
+        contentView.addSubview(bottomVStack)
+        bottomVStack.pinTop(to: vSeparator2.bottomAnchor, constant: 8)
+        bottomVStack.pinLeading(to: imageView.leadingAnchor)
+        bottomVStack.pinTrailing(to: contentView.trailingAnchor)
     }
     
-    override func setupBanner() {
-        return
+    var contentViewHeightConstraint: NSLayoutConstraint?
+    
+    private func setupScrollView() {
+        view.addSubview(scrollView)
+        scrollView.pinEdgesUnSafeArea()
+        scrollView.addSubview(contentView)
+        contentView.pinEdgesUnSafeArea()
+        contentView.pinWidth(to: scrollView.widthAnchor)
+        contentViewHeightConstraint = contentView.pinHeight(to: UIScreen.main.bounds.height)
     }
     
-    override func initOutputBinding() {
-        super.initOutputBinding()
-        viewModel.output
-            .dataSource
-            .drive(collectionView.rx.items(
-                cellIdentifier: SideMenuCell.identifier,
-                cellType: SideMenuCell.self)) { (item, identifiable, cell) in
-                    cell.bind(to: identifiable)
-            }.disposed(by: bag)
-    }
-    
-    override func showNextPageIndicator() {
-        return
+    private func setupAppInfo() {
+        contentView.addSubview(imageView)
+        imageView.pinTop(to: contentView.topAnchor)
+        imageView.pinLeading(to: contentView.leadingAnchor, constant: 16)
+        imageView.pin(size: .init(width: 60, height: 60))
+        
+        contentView.addSubview(appNameLabel)
+        appNameLabel.pinTop(to: imageView.bottomAnchor, constant: 24)
+        appNameLabel.pinLeading(to: imageView.leadingAnchor, constant: 0)
+        
+        contentView.addSubview(descriptionLabel)
+        descriptionLabel.pinTop(to: appNameLabel.bottomAnchor, constant: 4)
+        descriptionLabel.pinLeading(to: imageView.leadingAnchor, constant: 0)
     }
     
     @objc
     func favoritesTapped() {
-        let viewController = FavoritesViewController(viewModel: FavoritesViewModel())
-        navigationController?.pushViewController(viewController, animated: true)
+        dismiss(animated: true, completion: nil)
+        delegate?.sideMenuViewController(self, didSelectPageMenu: .favorites)
+    }
+    
+    @objc
+    func recentTapped() {
+        dismiss(animated: true, completion: nil)
+        delegate?.sideMenuViewController(self, didSelectPageMenu: .recent)
+    }
+    
+    @objc
+    func randomTapped() {
+        dismiss(animated: true, completion: nil)
+        delegate?.sideMenuViewController(self, didSelectPageMenu: .random)
+    }
+    
+    @objc
+    func categoryTapped() {
+        dismiss(animated: true, completion: nil)
+        delegate?.sideMenuViewController(self, didSelectPageMenu: .category)
+    }
+        
+    @objc
+    func moreAppTapped() {
+        if let url = URL(string: "https://apps.apple.com/tr/developer/atilla-ozder/id1440770128") {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+    }
+    
+    @objc
+    func shareTapped() {
+        if let url = URL(string: "https://apps.apple.com/tr/developer/atilla-ozder/id1440770128") {
+            let viewController = UIActivityViewController(
+                activityItems: [url],
+                applicationActivities: nil)
+            self.present(viewController, animated: true, completion: nil)
+        }
     }
     
     @objc
@@ -99,13 +280,9 @@ class SideMenuViewController: PagedCollectionViewController {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
     }
-}
-
-extension SideMenuViewController {
-    func collectionView(_ collectionView: UICollectionView,
-                        didSelectItemAt indexPath: IndexPath) {
-        if let cvm = viewModel.cellViewModel(at: indexPath.item) as? CategoryCellViewModel {
-            navigationController?.pushViewController(cvm.getViewController(), animated: true)
-        }
+    
+    @objc
+    func rateUsTapped() {
+        StoreReviewHelper().requestReview()
     }
 }

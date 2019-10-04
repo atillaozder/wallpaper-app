@@ -17,19 +17,23 @@ public extension UIColor {
         )
     }
     
-    class var defaultImageBackground: UIColor {
+    class var imageBackground: UIColor {
         return .init(red: 211, green: 211, blue: 211)
     }
     
-    class var defaultBorder: UIColor {
+    class var border: UIColor {
         return .init(red: 210, green: 210, blue: 210)
     }
     
-    class var defaultTextColor: UIColor {
+    class var textColor: UIColor {
         return .init(red: 34, green: 34, blue: 34)
     }
     
     class var separator: UIColor {
         return .init(red: 224, green: 224, blue: 224)
+    }
+    
+    class var darkTheme: UIColor {
+        return .init(red: 18, green: 18, blue: 18)
     }
 }

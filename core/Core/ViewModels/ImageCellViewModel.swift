@@ -20,7 +20,7 @@ class ImageCellViewModel: Identifiable, ImageFetchable {
     
     class var imageTransformer: ImageTransformer {
         return ImageTransformer(size: UIConstants.kItemSize,
-                                fillColor: .defaultImageBackground,
+                                fillColor: .imageBackground,
                                 contentMode: .scaleToFill)
     }
     

@@ -1,18 +1,21 @@
 platform :ios, '10.0'
 workspace 'Wallpapers.xcworkspace'
 
-def shared_pods
+def unused_pods
   pod 'Alamofire', '~> 5.0.0-beta.5'
   pod 'RxSwift', '~> 5'
   pod 'RxCocoa', '~> 5'
   pod 'SDWebImage', '~> 5.0'
+  pod 'SideMenu', '~> 6.0'
+end
+
+def shared_pods
   pod 'Google-Mobile-Ads-SDK'
   pod 'Firebase/Analytics'
   pod 'Firebase/Performance'
   pod 'Fabric', '~> 1.10.2'
   pod 'Crashlytics', '~> 3.13.4'
   pod 'CropViewController'
-  pod 'SideMenu', '~> 6.0'
 end
 
 abstract_target 'Wallpapers' do

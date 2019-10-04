@@ -25,7 +25,7 @@ extension UIImage {
                 with radius: CGFloat,
                 fillColor: UIColor = .white,
                 borderWidth: CGFloat? = nil,
-                borderColor: UIColor = .defaultBorder,
+                borderColor: UIColor = .border,
                 isOpaque: Bool = true,
                 alpha: CGFloat? = nil) -> UIImage?
     {

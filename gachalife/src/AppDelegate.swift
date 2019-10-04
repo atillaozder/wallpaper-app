@@ -17,9 +17,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         FirebaseHandler.initialize()
-        setupNavigationBar()
+        ViewFactory().setupNavigationBar()
+        
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.backgroundColor = .white
+        window?.backgroundColor = .darkTheme
         window?.rootViewController = NavigationController(rootViewController: HomePagerViewController())
         window?.makeKeyAndVisible()
         
@@ -31,11 +32,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         return true
     }
-    
-    private func setupNavigationBar() {
-        UINavigationBar.appearance().isTranslucent = false
-        UINavigationBar.appearance().tintColor = .defaultTextColor
-        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.defaultTextColor]
-    }
-    
 }

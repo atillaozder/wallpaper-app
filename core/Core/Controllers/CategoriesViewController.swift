@@ -32,7 +32,7 @@ class CategoriesViewController: PagedCollectionViewController {
         flowLayout.headerReferenceSize = .zero
         flowLayout.footerReferenceSize = .zero
         let cv = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
-        cv.backgroundColor = .white
+        cv.backgroundColor = .darkTheme
         cv.isPagingEnabled = false
         cv.showsHorizontalScrollIndicator = false
         cv.showsVerticalScrollIndicator = true

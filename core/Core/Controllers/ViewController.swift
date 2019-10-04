@@ -22,13 +22,13 @@ class ViewController: UIViewController {
     var pageViewModel: PagedViewModelType! { return nil }
     
     lazy var loadingIndicator: UIActivityIndicatorView = {
-        let ai = UIActivityIndicatorView(style: .gray)
+        let ai = UIActivityIndicatorView(style: .white)
         ai.hidesWhenStopped = true
         return ai
     }()
     
     lazy var pageIndicator: UIActivityIndicatorView = {
-        let ai = UIActivityIndicatorView(style: .gray)
+        let ai = UIActivityIndicatorView(style: .white)
         var frame = CGRect.zero
         frame.size = .init(width: self.view.bounds.width, height: UIConstants.kNextPageIndicatorHeight)
         ai.frame = frame
@@ -44,6 +44,7 @@ class ViewController: UIViewController {
         self.bag = DisposeBag()
         self.cachedCellSizes = [:]
         self.refreshControl = UIRefreshControl()
+        self.refreshControl.tintColor = .white
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -51,6 +52,7 @@ class ViewController: UIViewController {
         self.bag = DisposeBag()
         self.cachedCellSizes = [:]
         self.refreshControl = UIRefreshControl()
+        self.refreshControl.tintColor = .white
         super.init(coder: aDecoder)
     }
     
@@ -79,7 +81,7 @@ class ViewController: UIViewController {
     }
     
     func setupViews() {
-        self.view.backgroundColor = .white
+        self.view.backgroundColor = .darkTheme
     }
     
     func initInputBinding() {

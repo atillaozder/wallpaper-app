@@ -14,7 +14,7 @@ class MenuBarCell: CollectionCell {
         lbl.lineBreakMode = .byTruncatingTail
         lbl.numberOfLines = 1
         lbl.font = .systemFont(ofSize: 14.5, weight: .semibold)
-        lbl.backgroundColor = .white
+        lbl.backgroundColor = .darkTheme
         lbl.textColor = UIColor.gray
         lbl.adjustsFontSizeToFitWidth = true
         lbl.minimumScaleFactor = 0.5
@@ -33,7 +33,7 @@ class MenuBarCell: CollectionCell {
     
     override var isSelected: Bool {
         didSet {
-            label.textColor = isSelected ? .defaultTextColor : UIColor.gray
+            label.textColor = isSelected ? .white : .lightGray
         }
     }
     
@@ -43,9 +43,9 @@ class MenuBarCell: CollectionCell {
         label.pinEdgesToSuperview()
         
         let separator = UIView()
-        separator.backgroundColor = .lightGray
+        separator.backgroundColor = .gray
         self.contentView.addSubview(separator)
-        separator.pinEdgesToView(contentView, insets: .zero, exclude: [.top])
+        separator.pinEdgesToView(contentView, exclude: [.top])
         separator.pinHeight(to: 0.5)
     }
 }

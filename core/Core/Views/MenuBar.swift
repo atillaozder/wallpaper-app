@@ -28,7 +28,7 @@ public class MenuBar: UIView {
     private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        cv.backgroundColor = .white
+        cv.backgroundColor = .darkTheme
         cv.registerCell(MenuBarCell.self)
         cv.showsVerticalScrollIndicator = false
         cv.showsHorizontalScrollIndicator = false
@@ -40,7 +40,7 @@ public class MenuBar: UIView {
     
     lazy var separator: UIView = {
         let v = UIView()
-        v.backgroundColor = .defaultTextColor
+        v.backgroundColor = .white
         v.pinHeight(to: 1)
         return v
     }()

@@ -15,6 +15,13 @@ enum Asset: String {
     case icEmptyStar = "ic_empty_star"
     case icFilledStar = "ic_filled_star"
     case icPreview = "ic_preview"
+    case icLogo = "ic_logo"
+    case icHeart = "ic_heart"
+    case icMoreApp = "ic_more_app"
+    case icPrivacyPolicy = "ic_privacy_policy"
+    case icRecent = "ic_recent"
+    case icCategory = "ic_category"
+    case icRandom = "ic_random"
     
     var image: UIImage {
         return UIImage(asset: self)

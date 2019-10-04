@@ -48,7 +48,7 @@ class ImageListViewController: PagedCollectionViewController {
         flowLayout.headerReferenceSize = .zero
         flowLayout.footerReferenceSize = .zero
         let cv = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
-        cv.backgroundColor = .white
+        cv.backgroundColor = .darkTheme
         cv.isPagingEnabled = false
         cv.showsHorizontalScrollIndicator = false
         cv.showsVerticalScrollIndicator = true
@@ -65,7 +65,10 @@ class ImageListViewController: PagedCollectionViewController {
         super.initOutputBinding()
         viewModel.output
             .dataSource
-            .drive(collectionView.rx.items(
+            .do(onNext: { [weak self] (arr) in
+                guard let `self` = self else { return }
+                arr.isEmpty ? self.showNoDataView() : self.hideNoDataView()
+            }).drive(collectionView.rx.items(
                 cellIdentifier: ImageCell.identifier,
                 cellType: ImageCell.self)) { (item, identifiable, cell) in
                     if let cellView = cell.cellView {
@@ -76,6 +79,14 @@ class ImageListViewController: PagedCollectionViewController {
                         cell.cellView = cellView
                     }
             }.disposed(by: bag)
+    }
+    
+    func showNoDataView() {
+        return
+    }
+    
+    func hideNoDataView() {
+        collectionView.backgroundView = nil
     }
 }
 

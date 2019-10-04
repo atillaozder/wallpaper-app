@@ -102,7 +102,7 @@ public class PagerViewController: UIViewController {
     }
     
     public func setupViews() {
-        view.backgroundColor = .white
+        view.backgroundColor = .darkTheme
         setupMenuBar()
         setupScrollView()
     }

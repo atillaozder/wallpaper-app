@@ -31,7 +31,7 @@ class ImageTransformer {
     init(size: CGSize,
          cornerRadius: TransformerMode = .corners(radius: 0),
          fillColor: UIColor = .white,
-         borderColor: UIColor = .defaultBorder,
+         borderColor: UIColor = .border,
          borderWidth: CGFloat? = nil,
          isOpaque: Bool = true,
          alpha: CGFloat? = nil,

@@ -3,11 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7227DA229DA7A920029E8ED5 /* Pods_Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA0190533257FDF971AC54A0 /* Pods_Core.framework */; };
+		7227DA229DA7A920029E8ED5 /* Pods_Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA0190533257FDF971AC54A0 /* Pods_Core.framework */; platformFilter = ios; };
 		FB183CC9232F9F1C00612E77 /* PagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB183CC8232F9F1C00612E77 /* PagerViewController.swift */; };
 		FB183CCC232FA09E00612E77 /* ImageListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB183CCB232FA09E00612E77 /* ImageListViewController.swift */; };
 		FB183CCE232FA1D300612E77 /* PagedCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB183CCD232FA1D300612E77 /* PagedCollectionViewController.swift */; };
@@ -19,7 +19,16 @@
 		FB183CDA232FB56000612E77 /* LandImageCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB183CD9232FB56000612E77 /* LandImageCellView.swift */; };
 		FB183CDC232FB74A00612E77 /* Bundle+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB183CDB232FB74A00612E77 /* Bundle+Helpers.swift */; };
 		FB183CDE232FC40900612E77 /* ImageActionBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB183CDD232FC40900612E77 /* ImageActionBar.swift */; };
+		FB7DA4A42347B6F2006DDC8B /* Alamofire in Frameworks */ = {isa = PBXBuildFile; platformFilter = ios; productRef = FB7DA4A32347B6F2006DDC8B /* Alamofire */; };
+		FB7DA4A72347B752006DDC8B /* RxSwift in Frameworks */ = {isa = PBXBuildFile; platformFilter = ios; productRef = FB7DA4A62347B752006DDC8B /* RxSwift */; };
+		FB7DA4A92347B752006DDC8B /* RxRelay in Frameworks */ = {isa = PBXBuildFile; platformFilter = ios; productRef = FB7DA4A82347B752006DDC8B /* RxRelay */; };
+		FB7DA4AB2347B752006DDC8B /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; platformFilter = ios; productRef = FB7DA4AA2347B752006DDC8B /* RxCocoa */; };
+		FB7DA4AD2347B752006DDC8B /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; platformFilter = ios; productRef = FB7DA4AC2347B752006DDC8B /* RxBlocking */; };
+		FB7DA4B02347B7EB006DDC8B /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; platformFilter = ios; productRef = FB7DA4AF2347B7EB006DDC8B /* SDWebImage */; };
+		FB7DA4B32347B885006DDC8B /* SideMenu in Frameworks */ = {isa = PBXBuildFile; platformFilter = ios; productRef = FB7DA4B22347B885006DDC8B /* SideMenu */; };
 		FB8BDE1D2330E4A2009EF80F /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8BDE1C2330E4A2009EF80F /* Asset.swift */; };
+		FB9FFEFA2347C0D200904438 /* ViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9FFEF92347C0D200904438 /* ViewFactory.swift */; };
+		FB9FFEFC2347D15700904438 /* StoreReviewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9FFEFB2347D15700904438 /* StoreReviewHelper.swift */; };
 		FBBAF8F223127EA9005F7542 /* StorageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBAF8F123127EA9005F7542 /* StorageHelper.swift */; };
 		FBBAF8F4231286CB005F7542 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBAF8F3231286CB005F7542 /* FavoritesViewController.swift */; };
 		FBBAF8F92312891D005F7542 /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBAF8F82312891D005F7542 /* FavoritesViewModel.swift */; };
@@ -77,8 +86,6 @@
 		FBD004322300670900D12BF8 /* MenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD003F62300670800D12BF8 /* MenuBar.swift */; };
 		FBD004332300670900D12BF8 /* MenuBarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD003F72300670800D12BF8 /* MenuBarCell.swift */; };
 		FBE12604232FD16300FD70CD /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE12603232FD16300FD70CD /* SideMenuViewController.swift */; };
-		FBE12606232FD64A00FD70CD /* SideMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE12605232FD64A00FD70CD /* SideMenuCell.swift */; };
-		FBE1260A232FDCDD00FD70CD /* SideMenuHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE12609232FDCDD00FD70CD /* SideMenuHeaderView.swift */; };
 		FBE1260C232FF05400FD70CD /* InteractivePopGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE1260B232FF05400FD70CD /* InteractivePopGestureRecognizer.swift */; };
 /* End PBXBuildFile section */
 
@@ -100,6 +107,8 @@
 		FB183CDB232FB74A00612E77 /* Bundle+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Helpers.swift"; sourceTree = "<group>"; };
 		FB183CDD232FC40900612E77 /* ImageActionBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageActionBar.swift; sourceTree = "<group>"; };
 		FB8BDE1C2330E4A2009EF80F /* Asset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
+		FB9FFEF92347C0D200904438 /* ViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFactory.swift; sourceTree = "<group>"; };
+		FB9FFEFB2347D15700904438 /* StoreReviewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreReviewHelper.swift; sourceTree = "<group>"; };
 		FBBAF8F123127EA9005F7542 /* StorageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageHelper.swift; sourceTree = "<group>"; };
 		FBBAF8F3231286CB005F7542 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		FBBAF8F82312891D005F7542 /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
@@ -159,8 +168,6 @@
 		FBD003F62300670800D12BF8 /* MenuBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuBar.swift; sourceTree = "<group>"; };
 		FBD003F72300670800D12BF8 /* MenuBarCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuBarCell.swift; sourceTree = "<group>"; };
 		FBE12603232FD16300FD70CD /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
-		FBE12605232FD64A00FD70CD /* SideMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuCell.swift; sourceTree = "<group>"; };
-		FBE12609232FDCDD00FD70CD /* SideMenuHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuHeaderView.swift; sourceTree = "<group>"; };
 		FBE1260B232FF05400FD70CD /* InteractivePopGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractivePopGestureRecognizer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -169,7 +176,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB7DA4A72347B752006DDC8B /* RxSwift in Frameworks */,
+				FB7DA4AD2347B752006DDC8B /* RxBlocking in Frameworks */,
+				FB7DA4B32347B885006DDC8B /* SideMenu in Frameworks */,
 				7227DA229DA7A920029E8ED5 /* Pods_Core.framework in Frameworks */,
+				FB7DA4B02347B7EB006DDC8B /* SDWebImage in Frameworks */,
+				FB7DA4AB2347B752006DDC8B /* RxCocoa in Frameworks */,
+				FB7DA4A92347B752006DDC8B /* RxRelay in Frameworks */,
+				FB7DA4A42347B6F2006DDC8B /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,11 +247,8 @@
 			children = (
 				FB8BDE1C2330E4A2009EF80F /* Asset.swift */,
 				FBD003CF2300670800D12BF8 /* UIConstants.swift */,
-				FBBAF8F123127EA9005F7542 /* StorageHelper.swift */,
 				FBD003C62300670800D12BF8 /* Localization.swift */,
 				FBE1260B232FF05400FD70CD /* InteractivePopGestureRecognizer.swift */,
-				FBD003C72300670800D12BF8 /* DroppingFramesHelper.swift */,
-				FBD003A92300668900D12BF8 /* InfoPlistManager.swift */,
 				FBD003C82300670800D12BF8 /* Image */,
 				FBD003CE2300670800D12BF8 /* Extensions */,
 			);
@@ -303,6 +314,11 @@
 				FBD003E32300670800D12BF8 /* ActivityIndicator.swift */,
 				FBD003E42300670800D12BF8 /* InterstitialHandler.swift */,
 				FBD003E52300670800D12BF8 /* Identifiable.swift */,
+				FB9FFEF92347C0D200904438 /* ViewFactory.swift */,
+				FBBAF8F123127EA9005F7542 /* StorageHelper.swift */,
+				FB9FFEFB2347D15700904438 /* StoreReviewHelper.swift */,
+				FBD003C72300670800D12BF8 /* DroppingFramesHelper.swift */,
+				FBD003A92300668900D12BF8 /* InfoPlistManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -351,8 +367,6 @@
 				FB183CD7232FB55900612E77 /* ImageCellView.swift */,
 				FB183CD9232FB56000612E77 /* LandImageCellView.swift */,
 				FB183CDD232FC40900612E77 /* ImageActionBar.swift */,
-				FBE12605232FD64A00FD70CD /* SideMenuCell.swift */,
-				FBE12609232FDCDD00FD70CD /* SideMenuHeaderView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -386,6 +400,15 @@
 			dependencies = (
 			);
 			name = Core;
+			packageProductDependencies = (
+				FB7DA4A32347B6F2006DDC8B /* Alamofire */,
+				FB7DA4A62347B752006DDC8B /* RxSwift */,
+				FB7DA4A82347B752006DDC8B /* RxRelay */,
+				FB7DA4AA2347B752006DDC8B /* RxCocoa */,
+				FB7DA4AC2347B752006DDC8B /* RxBlocking */,
+				FB7DA4AF2347B7EB006DDC8B /* SDWebImage */,
+				FB7DA4B22347B885006DDC8B /* SideMenu */,
+			);
 			productName = CoreWallpapers;
 			productReference = FBD0039E2300667000D12BF8 /* Core.framework */;
 			productType = "com.apple.product-type.framework";
@@ -414,6 +437,12 @@
 				Base,
 			);
 			mainGroup = FBD003942300667000D12BF8;
+			packageReferences = (
+				FB7DA4A22347B6F2006DDC8B /* XCRemoteSwiftPackageReference "Alamofire" */,
+				FB7DA4A52347B752006DDC8B /* XCRemoteSwiftPackageReference "RxSwift" */,
+				FB7DA4AE2347B7EB006DDC8B /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				FB7DA4B12347B884006DDC8B /* XCRemoteSwiftPackageReference "SideMenu" */,
+			);
 			productRefGroup = FBD0039F2300667000D12BF8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -510,9 +539,10 @@
 				FBD004322300670900D12BF8 /* MenuBar.swift in Sources */,
 				FBD004202300670900D12BF8 /* ViewState.swift in Sources */,
 				FBD004132300670900D12BF8 /* UIColor+Custom.swift in Sources */,
-				FBE1260A232FDCDD00FD70CD /* SideMenuHeaderView.swift in Sources */,
+				FB9FFEFA2347C0D200904438 /* ViewFactory.swift in Sources */,
 				FB183CCE232FA1D300612E77 /* PagedCollectionViewController.swift in Sources */,
 				FB183CD8232FB55900612E77 /* ImageCellView.swift in Sources */,
+				FB9FFEFC2347D15700904438 /* StoreReviewHelper.swift in Sources */,
 				FBD0040B2300670900D12BF8 /* DroppingFramesHelper.swift in Sources */,
 				FBD004182300670900D12BF8 /* UIViewController+Helpers.swift in Sources */,
 				FBD004012300670900D12BF8 /* CategoryCellViewModel.swift in Sources */,
@@ -533,7 +563,6 @@
 				FBD003FA2300670900D12BF8 /* ImageCellViewModel.swift in Sources */,
 				FBD0042F2300670900D12BF8 /* PhotoViewController.swift in Sources */,
 				FBD003FC2300670900D12BF8 /* Image.swift in Sources */,
-				FBE12606232FD64A00FD70CD /* SideMenuCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -739,6 +768,79 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FB7DA4A22347B6F2006DDC8B /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = exactVersion;
+				version = "5.0.0-rc.2";
+			};
+		};
+		FB7DA4A52347B752006DDC8B /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
+		FB7DA4AE2347B7EB006DDC8B /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.2.2;
+			};
+		};
+		FB7DA4B12347B884006DDC8B /* XCRemoteSwiftPackageReference "SideMenu" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jonkykong/SideMenu.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.4.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FB7DA4A32347B6F2006DDC8B /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FB7DA4A22347B6F2006DDC8B /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		FB7DA4A62347B752006DDC8B /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FB7DA4A52347B752006DDC8B /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		FB7DA4A82347B752006DDC8B /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FB7DA4A52347B752006DDC8B /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
+		};
+		FB7DA4AA2347B752006DDC8B /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FB7DA4A52347B752006DDC8B /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		FB7DA4AC2347B752006DDC8B /* RxBlocking */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FB7DA4A52347B752006DDC8B /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxBlocking;
+		};
+		FB7DA4AF2347B7EB006DDC8B /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FB7DA4AE2347B7EB006DDC8B /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+		FB7DA4B22347B885006DDC8B /* SideMenu */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FB7DA4B12347B884006DDC8B /* XCRemoteSwiftPackageReference "SideMenu" */;
+			productName = SideMenu;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FBD003952300667000D12BF8 /* Project object */;
 }

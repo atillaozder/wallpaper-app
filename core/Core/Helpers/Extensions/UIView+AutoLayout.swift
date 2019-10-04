@@ -223,23 +223,27 @@ extension UIView {
         return constraint
     }
     
+    @discardableResult
     func pinHeight(to anchor: NSLayoutDimension,
                    priority: UILayoutPriority = .required,
-                   multiplier: CGFloat = 1) {
-        self.pin(heightAnchor, to: anchor, multiplier: multiplier, priority: priority)
+                   multiplier: CGFloat = 1) -> NSLayoutConstraint {
+        return self.pin(heightAnchor, to: anchor, multiplier: multiplier, priority: priority)
     }
     
-    func pinHeight(to constant: CGFloat, priority: UILayoutPriority = .required) {
-        self.pin(heightAnchor, constant: constant, priority: priority)
+    @discardableResult
+    func pinHeight(to constant: CGFloat, priority: UILayoutPriority = .required) -> NSLayoutConstraint {
+        return self.pin(heightAnchor, constant: constant, priority: priority)
     }
     
+    @discardableResult
     func pinWidth(to anchor: NSLayoutDimension,
                   priority: UILayoutPriority = .required,
-                  multiplier: CGFloat = 1) {
-        self.pin(widthAnchor, to: anchor, multiplier: multiplier, priority: priority)
+                  multiplier: CGFloat = 1) -> NSLayoutConstraint {
+        return self.pin(widthAnchor, to: anchor, multiplier: multiplier, priority: priority)
     }
     
-    func pinWidth(to constant: CGFloat, priority: UILayoutPriority = .required) {
-        self.pin(widthAnchor, constant: constant, priority: priority)
+    @discardableResult
+    func pinWidth(to constant: CGFloat, priority: UILayoutPriority = .required) -> NSLayoutConstraint {
+        return self.pin(widthAnchor, constant: constant, priority: priority)
     }
 }

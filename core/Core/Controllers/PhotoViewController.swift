@@ -23,8 +23,8 @@ class PhotoViewController: UIViewController {
     }()
     
     lazy var activityIndicator: UIActivityIndicatorView = {
-        let ai = UIActivityIndicatorView(style: .gray)
-        ai.backgroundColor = .white
+        let ai = UIActivityIndicatorView(style: .white)
+        ai.backgroundColor = .darkTheme
         ai.hidesWhenStopped = true
         return ai
     }()
@@ -58,7 +58,7 @@ class PhotoViewController: UIViewController {
         iv.isUserInteractionEnabled = true
         iv.clipsToBounds = true
         iv.sd_imageTransition = .fade
-        iv.backgroundColor = .defaultImageBackground
+        iv.backgroundColor = .imageBackground
         return iv
     }()
     
@@ -85,7 +85,8 @@ class PhotoViewController: UIViewController {
         super.viewDidLoad()
         InterstitialHandler.shared().setDelegate(self)
         InterstitialHandler.shared().increase()
-        view.backgroundColor = .white
+        navigationItem.title = "Picture"
+        view.backgroundColor = .darkTheme
         
         view.addSubview(activityIndicator)
         activityIndicator.pinCenterOfSuperview()
@@ -117,10 +118,22 @@ class PhotoViewController: UIViewController {
     
     private func setupButtons() {
         favBtn.addTarget(self, action: #selector(favoriteTapped), for: .touchUpInside)
-        buttonBar.shareButton.addTarget(self, action: #selector(shareTapped), for: .touchUpInside)
-        buttonBar.editButton.addTarget(self, action: #selector(editTapped), for: .touchUpInside)
-        buttonBar.downloadButton.addTarget(self, action: #selector(downloadTapped), for: .touchUpInside)
-        buttonBar.previewButton.addTarget(self, action: #selector(previewTapped), for: .touchUpInside)
+        buttonBar
+            .shareButton
+            .addTarget(self, action: #selector(shareTapped), for: .touchUpInside)
+        
+        buttonBar
+            .editButton
+            .addTarget(self, action: #selector(editTapped), for: .touchUpInside)
+        
+        buttonBar
+            .downloadButton
+            .addTarget(self, action: #selector(downloadTapped), for: .touchUpInside)
+        
+        buttonBar
+            .previewButton
+            .addTarget(self, action: #selector(previewTapped), for: .touchUpInside)
+        
         buttonBar.isFavorited = StorageHelper.shared().value(for: viewModel.item)
         
         view.insertSubview(buttonBar, at: 1)
@@ -228,6 +241,7 @@ class PhotoViewController: UIViewController {
             cropController.toolbarPosition = .top
             cropController.delegate = self
             cropController.showActivitySheetOnDone = true
+            cropController.toolbar.statusBarHeightInset = UIApplication.shared.statusBarFrame.height
             self.present(cropController, animated: true, completion: nil)
         }
     }
@@ -318,7 +332,7 @@ extension PhotoViewController: UIScrollViewDelegate {
 }
 
 extension PhotoViewController: GADBannerViewDelegate {
-    /// Tells the delegate an ad request loaded an ad.
+    // Tells the delegate an ad request loaded an ad.
     func adViewDidReceiveAd(_ bannerView: GADBannerView) {
         var insets = UIEdgeInsets.zero
         insets.bottom = bannerView.frame.height + ImageActionBar.defaultHeight + view.windowSafeAreaInsets.bottom
