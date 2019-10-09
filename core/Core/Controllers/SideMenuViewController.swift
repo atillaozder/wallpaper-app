@@ -41,6 +41,10 @@ class SideMenuViewController: UIViewController {
     
     weak var delegate: SideMenuViewControllerDelegate?
     
+    var iconSize: CGSize {
+        return .init(width: 24, height: 24)
+    }
+    
     lazy var scrollView: UIScrollView = {
         let sv = UIScrollView()
         sv.bounces = true
@@ -85,7 +89,12 @@ class SideMenuViewController: UIViewController {
     lazy var recentButton: UIButton = {
         let btn = SideMenuButtonFactory().generateButton()
         btn.setTitle(Localization.recent.capitalized(with: .current), for: .normal)
-        btn.setImage(Asset.icRecent.image.resize(to: .init(width: 24, height: 24)).withRenderingMode(.alwaysTemplate), for: .normal)
+        btn.setImage(
+            Asset.icRecent
+                .image
+                .resize(to: iconSize)
+                .withRenderingMode(.alwaysTemplate),
+            for: .normal)
         btn.addTarget(self, action: #selector(recentTapped), for: .touchUpInside)
         return btn
     }()
@@ -93,7 +102,12 @@ class SideMenuViewController: UIViewController {
     lazy var categoryButton: UIButton = {
         let btn = SideMenuButtonFactory().generateButton()
         btn.setTitle(Localization.category.capitalized(with: .current), for: .normal)
-        btn.setImage(Asset.icCategory.image.resize(to: .init(width: 24, height: 24)).withRenderingMode(.alwaysTemplate), for: .normal)
+        btn.setImage(
+            Asset.icCategory
+                .image
+                .resize(to: iconSize)
+                .withRenderingMode(.alwaysTemplate),
+            for: .normal)
         btn.addTarget(self, action: #selector(categoryTapped), for: .touchUpInside)
         return btn
     }()
@@ -101,7 +115,12 @@ class SideMenuViewController: UIViewController {
     lazy var randomButton: UIButton = {
         let btn = SideMenuButtonFactory().generateButton()
         btn.setTitle(Localization.random.capitalized(with: .current), for: .normal)
-        btn.setImage(Asset.icRandom.image.resize(to: .init(width: 24, height: 24)).withRenderingMode(.alwaysTemplate), for: .normal)
+        btn.setImage(
+            Asset.icRandom
+                .image
+                .resize(to: iconSize)
+                .withRenderingMode(.alwaysTemplate),
+            for: .normal)
         btn.addTarget(self, action: #selector(randomTapped), for: .touchUpInside)
         return btn
     }()
@@ -109,7 +128,12 @@ class SideMenuViewController: UIViewController {
     lazy var favoritesButton: UIButton = {
         let btn = SideMenuButtonFactory().generateButton()
         btn.setTitle(Localization.favorites.capitalized(with: .current), for: .normal)
-        btn.setImage(Asset.icHeart.image.resize(to: .init(width: 24, height: 24)).withRenderingMode(.alwaysTemplate), for: .normal)
+        btn.setImage(
+            Asset.icHeart
+                .image
+                .resize(to: iconSize)
+                .withRenderingMode(.alwaysTemplate),
+            for: .normal)
         btn.addTarget(self, action: #selector(favoritesTapped), for: .touchUpInside)
         return btn
     }()
@@ -117,7 +141,12 @@ class SideMenuViewController: UIViewController {
     lazy var privacyPolicyButton: UIButton = {
         let btn = SideMenuButtonFactory().generateButton()
         btn.setTitle("Privacy Policy", for: .normal)
-        btn.setImage(Asset.icPrivacyPolicy.image.resize(to: .init(width: 24, height: 24)).withRenderingMode(.alwaysTemplate), for: .normal)
+        btn.setImage(
+            Asset.icPrivacyPolicy
+                .image
+                .resize(to: iconSize)
+                .withRenderingMode(.alwaysTemplate),
+            for: .normal)
         btn.addTarget(self, action: #selector(privacyPolicyTapped), for: .touchUpInside)
         return btn
     }()
@@ -125,7 +154,12 @@ class SideMenuViewController: UIViewController {
     lazy var shareButton: UIButton = {
         let btn = SideMenuButtonFactory().generateButton()
         btn.setTitle(Localization.share.capitalized(with: .current), for: .normal)
-        btn.setImage(Asset.icUpload.image.resize(to: .init(width: 24, height: 24)).withRenderingMode(.alwaysTemplate), for: .normal)
+        btn.setImage(
+            Asset.icUpload
+                .image
+                .resize(to: iconSize)
+                .withRenderingMode(.alwaysTemplate),
+            for: .normal)
         btn.addTarget(self, action: #selector(shareTapped), for: .touchUpInside)
         return btn
     }()
@@ -133,7 +167,11 @@ class SideMenuViewController: UIViewController {
     lazy var moreAppButton: UIButton = {
         let btn = SideMenuButtonFactory().generateButton()
         btn.setTitle("More App", for: .normal)
-        btn.setImage(Asset.icMoreApp.image.resize(to: .init(width: 24, height: 24)).withRenderingMode(.alwaysTemplate), for: .normal)
+        btn.setImage(
+            Asset.icMoreApp
+                .image
+                .resize(to: iconSize)
+                .withRenderingMode(.alwaysTemplate), for: .normal)
         btn.addTarget(self, action: #selector(moreAppTapped), for: .touchUpInside)
         return btn
     }()
@@ -141,7 +179,12 @@ class SideMenuViewController: UIViewController {
     lazy var rateUsButton: UIButton = {
         let btn = SideMenuButtonFactory().generateButton()
         btn.setTitle("Rate Us", for: .normal)
-        btn.setImage(Asset.icEmptyStar.image.resize(to: .init(width: 24, height: 24)).withRenderingMode(.alwaysTemplate), for: .normal)
+        btn.setImage(
+            Asset.icEmptyStar
+                .image
+                .resize(to: iconSize)
+                .withRenderingMode(.alwaysTemplate),
+            for: .normal)
         btn.addTarget(self, action: #selector(rateUsTapped), for: .touchUpInside)
         return btn
     }()
@@ -175,7 +218,8 @@ class SideMenuViewController: UIViewController {
         vSeparator.pinEdgesToView(contentView, exclude: [.top, .bottom])
         vSeparator.pinTop(to: descriptionLabel.bottomAnchor, constant: 24)
         
-        let stackView = UIStackView(arrangedSubviews: [recentButton, categoryButton, randomButton, favoritesButton])
+        let tSubviews = [recentButton, categoryButton, randomButton, favoritesButton]
+        let stackView = UIStackView(arrangedSubviews: tSubviews)
         stackView.axis = .vertical
         stackView.spacing = 0
         stackView.distribution = .fillEqually
@@ -194,7 +238,8 @@ class SideMenuViewController: UIViewController {
         vSeparator2.pinEdgesToView(contentView, exclude: [.top, .bottom])
         vSeparator2.pinTop(to: stackView.bottomAnchor, constant: 8)
         
-        let bottomVStack = UIStackView(arrangedSubviews: [rateUsButton, shareButton, moreAppButton, privacyPolicyButton])
+        let vStackSubviews = [rateUsButton, shareButton, moreAppButton, privacyPolicyButton]
+        let bottomVStack = UIStackView(arrangedSubviews: vStackSubviews)
         bottomVStack.axis = .vertical
         bottomVStack.spacing = 0
         bottomVStack.distribution = .fillEqually
@@ -266,7 +311,7 @@ class SideMenuViewController: UIViewController {
     
     @objc
     func shareTapped() {
-        if let url = URL(string: "https://apps.apple.com/tr/developer/atilla-ozder/id1440770128") {
+        if let url = URL(string: "https://itunes.apple.com/app/id\(1481404298)") {
             let viewController = UIActivityViewController(
                 activityItems: [url],
                 applicationActivities: nil)
