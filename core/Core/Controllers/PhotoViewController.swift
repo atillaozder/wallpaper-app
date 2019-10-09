@@ -11,6 +11,7 @@ import Photos
 import CropViewController
 import GoogleMobileAds
 import SDWebImage
+import FMPhotoPicker
 
 class PhotoViewController: UIViewController {
     
@@ -181,15 +182,19 @@ class PhotoViewController: UIViewController {
     
     @objc
     func editTapped() {
-        getLibraryPermission { [weak self] (authorized) in
-            guard let `self` = self else { return }
-            authorized ? self.presentCropController() : self.askPermission()
+        if let img = viewModel.downloadedImage {
+            let editor = FMImageEditorViewController(config: .init(), sourceImage: img)
+            editor.delegate = self
+            self.present(editor, animated: true)
         }
     }
     
     @objc
     func previewTapped() {
-        return
+        getLibraryPermission { [weak self] (authorized) in
+            guard let `self` = self else { return }
+            authorized ? self.presentCropController() : self.askPermission()
+        }
     }
     
     @objc
@@ -234,15 +239,15 @@ class PhotoViewController: UIViewController {
     }
     
     private func presentCropController() {
-        if let image = self.imageView.image {
+        if let image = viewModel.downloadedImage {
             let cropController = CropViewController(croppingStyle: .default, image: image)
             cropController.aspectRatioPreset = .presetCustom
             cropController.aspectRatioPickerButtonHidden = false
-            cropController.toolbarPosition = .top
             cropController.delegate = self
             cropController.showActivitySheetOnDone = true
+            cropController.toolbarPosition = .top
             cropController.toolbar.statusBarHeightInset = UIApplication.shared.statusBarFrame.height
-            self.present(cropController, animated: true, completion: nil)
+            self.navigationController?.pushViewController(cropController, animated: true)
         }
     }
     
@@ -250,6 +255,7 @@ class PhotoViewController: UIViewController {
         viewModel.save() { [weak self] (success, error) in
             guard let `self` = self else { return }
             if success {
+                InterstitialHandler.shared().increase()
                 DispatchQueue.main.async {
                     let inset = ImageActionBar.defaultHeight + self.bannerView.frame.height
                     self.showToast(with: Localization.saved,
@@ -348,7 +354,7 @@ extension PhotoViewController: GADBannerViewDelegate {
 extension PhotoViewController: CropViewControllerDelegate {
     func cropViewController(_ cropViewController: CropViewController,
                             didFinishCancelled cancelled: Bool) {
-        cropViewController.dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
         if !cancelled {
             InterstitialHandler.shared().triggerPresentingInterstitial()
         }
@@ -359,6 +365,14 @@ extension PhotoViewController: InterstitialHandlerDelegate {
     func interstitialHandler(_ handler: InterstitialHandler,
                              willPresentInterstitial interstitial: GADInterstitial) {
         interstitial.present(fromRootViewController: self)
+    }
+}
+
+extension PhotoViewController: FMImageEditorViewControllerDelegate {
+    func fmImageEditorViewController(_ editor: FMImageEditorViewController,
+                                     didFinishEdittingPhotoWith photo: UIImage) {
+        viewModel.downloadedImage = photo
+        editor.dismiss(animated: true, completion: nil)
     }
 }
 

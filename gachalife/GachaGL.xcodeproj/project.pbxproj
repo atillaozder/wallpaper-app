@@ -37,6 +37,7 @@
 		59B5806411A63FA3EB46474A /* Pods_GachaGL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GachaGL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF722DE8DE09C34E175259EE /* Pods-GachaGL.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GachaGL.release.xcconfig"; path = "Target Support Files/Pods-GachaGL/Pods-GachaGL.release.xcconfig"; sourceTree = "<group>"; };
 		FB2E59AA233E1C4800973E3B /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FBB3F0D6234E47480059753A /* GachaGL.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GachaGL.entitlements; sourceTree = "<group>"; };
 		FBBD4EBA233D222200770038 /* GachaGL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GachaGL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBBD4EBD233D222200770038 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FBBD4EC4233D222300770038 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -177,6 +178,7 @@
 		FBBD4EB1233D222200770038 = {
 			isa = PBXGroup;
 			children = (
+				FBB3F0D6234E47480059753A /* GachaGL.entitlements */,
 				FB2E59AA233E1C4800973E3B /* Core.framework */,
 				FBBD4EBC233D222200770038 /* src */,
 				FBBD4EBB233D222200770038 /* Products */,
@@ -610,8 +612,9 @@
 			baseConfigurationReference = 2DA5E75775CCF626F6C31906 /* Pods-GachaGL.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = GachaGL.entitlements;
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = 74NMDHX448;
 				INFOPLIST_FILE = "$(SRCROOT)/src/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -631,9 +634,10 @@
 			baseConfigurationReference = CF722DE8DE09C34E175259EE /* Pods-GachaGL.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = GachaGL.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = 74NMDHX448;
 				INFOPLIST_FILE = "$(SRCROOT)/src/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (

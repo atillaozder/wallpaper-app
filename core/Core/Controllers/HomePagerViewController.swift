@@ -25,6 +25,8 @@ public class HomePagerViewController: PagerViewController {
         barButton.tintColor = .white
         self.navigationItem.setLeftBarButton(barButton, animated: false)
         let _ = SideMenuManager.default.addPanGestureToPresent(toView: self.navigationController!.navigationBar)
+        
+        registerRemoteNotifications()
     }
     
     public override func viewDidAppear(_ animated: Bool) {
@@ -32,6 +34,16 @@ public class HomePagerViewController: PagerViewController {
         if !askedForReview {
             StoreReviewHelper().askForReview()
             askedForReview = true
+        }
+    }
+    
+    private func registerRemoteNotifications() {
+        let options: UNAuthorizationOptions = [.alert, .badge, .sound]
+        UNUserNotificationCenter.current()
+            .requestAuthorization(options: options) { (_, _) in
+                DispatchQueue.main.async {
+                    UIApplication.shared.registerForRemoteNotifications()
+                }
         }
     }
     

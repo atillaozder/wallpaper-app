@@ -283,6 +283,10 @@ class SideMenuViewController: UIViewController {
     
     @objc
     func rateUsTapped() {
-        StoreReviewHelper().requestReview()
+        // StoreReviewHelper().requestReview()
+        let urlString = "https://itunes.apple.com/app/id\(1481404298)?action=write-review"
+        if let url = URL(string: urlString) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
     }
 }
