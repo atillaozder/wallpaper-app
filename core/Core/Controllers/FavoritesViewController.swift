@@ -20,6 +20,12 @@ class FavoritesViewController: ImageListViewController {
         self.navigationItem.title = Localization.favorites
     }
     
+    override func presentImages(source: [ImageCellViewModel], startFrom index: Int) {
+        let viewController = DetailViewController(images: source, startFrom: index)
+        viewController.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
+    
     override func showNoDataView() {
         super.showNoDataView()
         let noDataView = UIView()

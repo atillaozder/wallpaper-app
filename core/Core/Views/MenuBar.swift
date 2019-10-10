@@ -89,7 +89,7 @@ public class MenuBar: UIView {
     }
     
     func updateIndicator(_ xOffset: CGFloat) {
-        barLeftAnchorConstraint?.constant = mutableOffset
+        barLeftAnchorConstraint?.constant = xOffset
     }
 }
 

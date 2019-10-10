@@ -1,8 +1,8 @@
 //
-//  PhotoViewController.swift
+//  DetailViewController.swift
 //  Core
 //
-//  Created by Atilla Özder on 4.08.2019.
+//  Created by Atilla Özder on 10.10.2019.
 //  Copyright © 2019 Atilla Özder. All rights reserved.
 //
 
@@ -13,130 +13,107 @@ import GoogleMobileAds
 import SDWebImage
 import FMPhotoPicker
 
-class PhotoViewController: UIViewController {
+class DetailViewController: UIViewController {
     
     private let bag: DisposeBag = DisposeBag()
-    private let viewModel: PhotoViewModel
+    private let viewModel: DetailViewModel
     
     unowned var favBtn: UIButton { return buttonBar.favoriteButton }
     lazy var buttonBar: ImageActionBar = {
         return ImageActionBar()
     }()
-    
-    lazy var activityIndicator: UIActivityIndicatorView = {
-        let ai = UIActivityIndicatorView(style: .white)
-        ai.backgroundColor = .darkTheme
-        ai.hidesWhenStopped = true
-        return ai
-    }()
-    
-    lazy var scrollView: UIScrollView = {
-        let sv = UIScrollView()
-        sv.showsVerticalScrollIndicator = false
-        sv.showsHorizontalScrollIndicator = false
-        sv.bounces = true
-        sv.bouncesZoom = true
-        sv.clipsToBounds = true
-        sv.decelerationRate = .fast
-        sv.contentInset = .zero
-        sv.layer.speed = 2.5
-        var insets = UIEdgeInsets.zero
-        insets.bottom = ImageActionBar.defaultHeight + view.windowSafeAreaInsets.bottom
-        sv.contentInset = insets
-        sv.maximumZoomScale = 1
-        sv.minimumZoomScale = 1
-        return sv
-    }()
-    
-    private var imageViewBottomConstraint: NSLayoutConstraint?
-    private var imageViewLeadingConstraint: NSLayoutConstraint?
-    private var imageViewTopConstraint: NSLayoutConstraint?
-    private var imageViewTrailingConstraint: NSLayoutConstraint?
-    
-    lazy var imageView: UIImageView = {
-        let iv = UIImageView()
-        iv.contentMode = .scaleToFill
-        iv.isUserInteractionEnabled = true
-        iv.clipsToBounds = true
-        iv.sd_imageTransition = .fade
-        iv.backgroundColor = .imageBackground
-        return iv
+        
+    lazy var collectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.minimumLineSpacing = 0
+        layout.minimumInteritemSpacing = 0
+        layout.scrollDirection = .horizontal
+        layout.sectionInset = .zero
+        let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        cv.backgroundColor = .darkTheme
+        cv.registerCell(DetailCell.self)
+        cv.showsVerticalScrollIndicator = false
+        cv.showsHorizontalScrollIndicator = false
+        cv.bounces = false
+        cv.dataSource = self
+        cv.delegate = self
+        cv.isPagingEnabled = true
+        return cv
     }()
     
     lazy var bannerView: GADBannerView = {
         return getBannerView()
     }()
     
-    init(image: Image) {
-        self.viewModel = PhotoViewModel(image: image)
+    init(images: [ImageCellViewModel], startFrom item: Int) {
+        self.viewModel = DetailViewModel(images: images, startFrom: item)
         super.init(nibName: nil, bundle: nil)
     }
     
     required init?(coder aDecoder: NSCoder) {
-        self.viewModel = PhotoViewModel(image: nil)
+        self.viewModel = DetailViewModel(images: [], startFrom: 0)
         super.init(coder: aDecoder)
-    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        updateMinZoomScale(forSize: scrollView.bounds.size)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         InterstitialHandler.shared().setDelegate(self)
         InterstitialHandler.shared().increase()
-        navigationItem.title = Bundle.main.displayName
         view.backgroundColor = .darkTheme
-        
-        view.addSubview(activityIndicator)
-        activityIndicator.pinCenterOfSuperview()
-        activityIndicator.startAnimating()
-        
-        view.addSubview(scrollView)
-        scrollView.pinEdgesToSuperview()
-        
-        scrollView.addSubview(imageView)
-        imageViewTopConstraint = imageView.pinTop(to: scrollView.topAnchor)
-        imageViewLeadingConstraint = imageView.pinLeading(to: scrollView.leadingAnchor)
-        imageViewTrailingConstraint = imageView.pinTrailing(to: scrollView.trailingAnchor)
-        imageViewBottomConstraint = imageView.pinBottom(to: scrollView.bottomAnchor)
-        
+                
+        view.addSubview(collectionView)
+        collectionView.pinEdgesToSuperview()
+                
         view.addSubview(bannerView)
         bannerView.pinCenterX(to: view.centerXAnchor)
         bannerView.pinBottom(to: view.safeBottomAnchor)
 
         setupButtons()
-        bindUI()
+        
+        let ip = viewModel.indexPath
+        self.navigationItem.title = viewModel.navigationItemTitle
+        DispatchQueue.main.async {
+            self.collectionView.scrollToItem(at: ip, at: .centeredHorizontally, animated: false)
+            if let cell = self.collectionView.visibleCells.first {
+                self.collectionView(self.collectionView, willDisplay: cell, forItemAt: ip)
+            }
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        setTapGesture()
-        scrollView.delegate = self
         bannerView.delegate = self
     }
     
     private func setupButtons() {
-        favBtn.addTarget(self, action: #selector(favoriteTapped), for: .touchUpInside)
+        favBtn.addTarget(self,
+                         action: #selector(favoriteTapped),
+                         for: .touchUpInside)
+        
         buttonBar
             .shareButton
-            .addTarget(self, action: #selector(shareTapped), for: .touchUpInside)
+            .addTarget(self,
+                       action: #selector(shareTapped),
+                       for: .touchUpInside)
         
         buttonBar
             .editButton
-            .addTarget(self, action: #selector(editTapped), for: .touchUpInside)
+            .addTarget(self,
+                       action: #selector(editTapped),
+                       for: .touchUpInside)
         
         buttonBar
             .downloadButton
-            .addTarget(self, action: #selector(downloadTapped), for: .touchUpInside)
+            .addTarget(self,
+                       action: #selector(downloadTapped),
+                       for: .touchUpInside)
         
         buttonBar
             .previewButton
-            .addTarget(self, action: #selector(previewTapped), for: .touchUpInside)
-        
-        buttonBar.isFavorited = StorageHelper.shared().value(for: viewModel.item)
-        
+            .addTarget(self,
+                       action: #selector(previewTapped),
+                       for: .touchUpInside)
+                
         view.insertSubview(buttonBar, at: 1)
         buttonBar.pinEdgesToView(view, insets: .zero, exclude: [.top, .bottom])
         buttonBar.buttonBarBottomConstraint = buttonBar.pinBottom(to: view.safeBottomAnchor)
@@ -144,36 +121,10 @@ class PhotoViewController: UIViewController {
         view.bringSubviewToFront(buttonBar)
     }
     
-    func bindUI() {
-        viewModel.image
-            .asDriver()
-            .drive(onNext: { (image) in
-                self.setImage(image)
-            }).disposed(by: bag)
-    }
-    
-    func setImage(_ image: UIImage?) {
-        self.imageView.image = image
-        
-        if image != nil {
-            self.activityIndicator.stopAnimating()
-            self.activityIndicator.removeFromSuperview()
-        }
-
-        self.imageView.layoutIfNeeded()
-        self.view.sendSubviewToBack(scrollView)
-        
-        DispatchQueue.main.async {
-            let size = self.scrollView.bounds.size
-            self.updateConstraints(forSize: size)
-            self.updateMinZoomScale(forSize: size)
-        }
-    }
-    
     @objc
     func shareTapped() {
         InterstitialHandler.shared().increase()
-        guard let image = imageView.image?.jpegData(compressionQuality: 1.0) else { return }
+        guard let image = viewModel.uiImage()?.jpegData(compressionQuality: 1.0) else { return }
         let viewController = UIActivityViewController(activityItems: [image], applicationActivities: [])
         viewController.excludedActivityTypes = [.saveToCameraRoll]
         viewController.popoverPresentationController?.sourceView = self.view
@@ -182,8 +133,8 @@ class PhotoViewController: UIViewController {
     
     @objc
     func editTapped() {
-        if let img = viewModel.downloadedImage {
-            let editor = FMImageEditorViewController(config: .init(), sourceImage: img)
+        if let image = viewModel.uiImage() {
+            let editor = FMImageEditorViewController(config: .init(), sourceImage: image)
             editor.delegate = self
             self.present(editor, animated: true)
         }
@@ -199,7 +150,7 @@ class PhotoViewController: UIViewController {
     
     @objc
     func favoriteTapped() {
-        let newValue = !StorageHelper.shared().value(for: viewModel.item)
+        let newValue = !StorageHelper.shared().value(for: viewModel.image())
         viewModel.toggleFavorite()
         buttonBar.isFavorited = newValue
     }
@@ -239,7 +190,7 @@ class PhotoViewController: UIViewController {
     }
     
     private func presentCropController() {
-        if let image = viewModel.downloadedImage {
+        if let image = viewModel.uiImage() {
             let cropController = CropViewController(croppingStyle: .default, image: image)
             cropController.aspectRatioPreset = .presetCustom
             cropController.aspectRatioPickerButtonHidden = false
@@ -299,52 +250,18 @@ class PhotoViewController: UIViewController {
         alertController.addAction(openSettings)
         self.present(alertController, animated: true, completion: nil)
     }
-    
-    private func updateMinZoomScale(forSize size: CGSize) {
-        if imageView.bounds.width > 0, imageView.bounds.height > 0 {
-            let widthScale = size.width / imageView.bounds.width
-            let heightScale = size.height / imageView.bounds.height
-            
-            let minScale = min(widthScale, heightScale)
-            let maxScale = max(widthScale, heightScale) + 1
-            
-            scrollView.minimumZoomScale = minScale
-            scrollView.zoomScale = minScale
-            scrollView.maximumZoomScale = maxScale
-        }
-    }
-    
-    private func updateConstraints(forSize size: CGSize) {
-        let yOffset = max(0, (size.height - imageView.frame.height) / 2)
-        imageViewTopConstraint?.constant = yOffset
-        imageViewBottomConstraint?.constant = yOffset
-        
-        let xOffset = max(0, (size.width - imageView.frame.width) / 2)
-        imageViewLeadingConstraint?.constant = xOffset
-        imageViewTrailingConstraint?.constant = xOffset
-
-        view.layoutIfNeeded()
-    }
 }
 
-extension PhotoViewController: UIScrollViewDelegate {
-    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
-        return imageView
-    }
-    
-    func scrollViewDidZoom(_ scrollView: UIScrollView) {
-        updateConstraints(forSize: scrollView.bounds.size)
-    }
-}
-
-extension PhotoViewController: GADBannerViewDelegate {
+extension DetailViewController: GADBannerViewDelegate {
     // Tells the delegate an ad request loaded an ad.
     func adViewDidReceiveAd(_ bannerView: GADBannerView) {
         var insets = UIEdgeInsets.zero
         insets.bottom += bannerView.frame.height
-        insets.bottom += ImageActionBar.defaultHeight
         insets.bottom += view.windowSafeAreaInsets.bottom
-        scrollView.contentInset = insets
+        
+        if let cell = collectionView.visibleCells.first as? DetailCell {
+            cell.scrollView.contentInset = insets
+        }
         
         if !viewModel.didReceiveAd {
             buttonBar.buttonBarBottomConstraint?.constant -= bannerView.frame.height
@@ -353,7 +270,51 @@ extension PhotoViewController: GADBannerViewDelegate {
     }
 }
 
-extension PhotoViewController: CropViewControllerDelegate {
+extension DetailViewController: UICollectionViewDataSource {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        numberOfItemsInSection section: Int) -> Int {
+        return viewModel.dataSource.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(for: indexPath) as DetailCell
+        let cvm = viewModel.cellViewModel(at: indexPath)
+        cell.bind(to: cvm)
+        return cell
+    }
+}
+
+extension DetailViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView,
+                        willDisplay cell: UICollectionViewCell,
+                        forItemAt indexPath: IndexPath) {
+        viewModel.indexPath = indexPath
+        buttonBar.isFavorited = StorageHelper.shared().value(for: viewModel.image())
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        didEndDisplaying cell: UICollectionViewCell,
+                        forItemAt indexPath: IndexPath) {
+        InterstitialHandler.shared().increase()
+        navigationItem.title = viewModel.navigationItemTitle
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        var size = collectionView.frame.size
+        size.height -= ImageActionBar.defaultHeight
+        size.height -= collectionView.contentInset.bottom
+        return size
+    }
+}
+
+extension DetailViewController: CropViewControllerDelegate {
     func cropViewController(_ cropViewController: CropViewController,
                             didFinishCancelled cancelled: Bool) {
         self.navigationController?.popViewController(animated: true)
@@ -363,56 +324,17 @@ extension PhotoViewController: CropViewControllerDelegate {
     }
 }
 
-extension PhotoViewController: InterstitialHandlerDelegate {
+extension DetailViewController: InterstitialHandlerDelegate {
     func interstitialHandler(_ handler: InterstitialHandler,
                              willPresentInterstitial interstitial: GADInterstitial) {
         interstitial.present(fromRootViewController: self)
     }
 }
 
-extension PhotoViewController: FMImageEditorViewControllerDelegate {
+extension DetailViewController: FMImageEditorViewControllerDelegate {
     func fmImageEditorViewController(_ editor: FMImageEditorViewController,
                                      didFinishEdittingPhotoWith photo: UIImage) {
-        viewModel.downloadedImage = photo
+        viewModel.setImage(photo)
         editor.dismiss(animated: true, completion: nil)
-    }
-}
-
-extension PhotoViewController {
-    private func setTapGesture() {
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleDoubleTap(_:)))
-        tapGesture.numberOfTapsRequired = 2
-        imageView.addGestureRecognizer(tapGesture)
-    }
-    
-    @objc
-    func handleDoubleTap(_ sender: UITapGestureRecognizer) {
-        var zoomScale = scrollView.zoomScale
-        let maxScale = scrollView.maximumZoomScale
-        
-        // The difference is too small to take into account, simply ignore the difference
-        if (maxScale - zoomScale < 0.1) {
-            zoomScale = maxScale
-        }
-        
-        if maxScale != zoomScale {
-            self.zoom(to: sender.location(in: imageView), scale: maxScale)
-        } else {
-            scrollView.setZoomScale(scrollView.minimumZoomScale, animated: true)
-        }
-    }
-    
-    private func zoom(to point: CGPoint, scale: CGFloat) {
-        let bounds = scrollView.bounds.size
-        let width = bounds.width / scale
-        let height = bounds.height / scale
-        let size = CGSize(width: width, height: height)
-        
-        let posX = point.x - size.width / 2
-        let posY = point.y - size.height / 2
-        let origin = CGPoint(x: posX, y: posY)
-        
-        let zoomRect = CGRect(origin: origin, size: size)
-        scrollView.zoom(to: zoomRect, animated: true)
     }
 }

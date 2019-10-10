@@ -150,7 +150,8 @@ class PagedViewModel<T: Identifiable>: PagedViewModelType {
                 guard let `self` = self else { return current }
                 return self.pageInput.currentPage == 1 ?
                     self.merge(request, current) :
-                    self.distinct(current + request)
+                    current + request
+                    // self.distinct(current + request)
             }.catchErrorJustReturn([])
         
         sequence.bind(to: pageOutput.viewModels).disposed(by: bag)
@@ -178,13 +179,13 @@ class PagedViewModel<T: Identifiable>: PagedViewModelType {
     private func merge(_ request: [Identifiable], _ current: [Identifiable]) -> [Identifiable] {
         let slicedCurrent = Array(current.prefix(request.count))
         let merged = request + slicedCurrent
-        
         return merged.reduce(into: [Identifiable]()) { elements, element in
-            if let identifiable = elements.first(where: { $0.identifier == element.identifier }) {
-                identifiable.set(element)
-            } else {
-                elements.append(element)
-            }
+            return elements.append(element)
+//            if let identifiable = elements.first(where: { $0.identifier == element.identifier }) {
+//                identifiable.set(element)
+//            } else {
+//                elements.append(element)
+//            }
         }
     }
     

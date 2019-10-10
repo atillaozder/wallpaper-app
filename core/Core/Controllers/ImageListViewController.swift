@@ -88,6 +88,13 @@ class ImageListViewController: PagedCollectionViewController {
     func hideNoDataView() {
         collectionView.backgroundView = nil
     }
+    
+    func presentImages(source: [ImageCellViewModel], startFrom index: Int) {
+        let viewController = DetailViewController(images: source.incremented(count: 10000),
+                                                  startFrom: index)
+        viewController.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
 }
 
 extension ImageListViewController: InterstitialHandlerDelegate {
@@ -108,8 +115,8 @@ extension ImageListViewController: InterstitialHandlerDelegate {
 extension ImageListViewController {
     func collectionView(_ collectionView: UICollectionView,
                         didSelectItemAt indexPath: IndexPath) {
-        if let cvm = viewModel.cellViewModel(at: indexPath.item) as? ImageCellViewModel {
-            self.presentImageScreen(cvm.item)
-        }
+        let id = viewModel.cellViewModel(at: indexPath.item)?.identifier ?? ""
+        let index = viewModel.source.firstIndex(where: { $0.identifier == id }) ?? 0
+        self.presentImages(source: viewModel.source, startFrom: index)
     }
 }

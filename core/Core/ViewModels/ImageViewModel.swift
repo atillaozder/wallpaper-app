@@ -85,6 +85,7 @@ class ImageViewModel: PagedViewModel<ImageCellViewModel> {
         return (response as! PagedImage)
             .items
             .map { return ImageCellViewModel(item: $0) }
+            .incremented(count: 2500)
     }
     
 }

@@ -10,12 +10,6 @@ import GoogleMobileAds
 
 extension UIViewController {
     
-    func presentImageScreen(_ image: Image) {
-        let viewController = PhotoViewController(image: image)
-        viewController.hidesBottomBarWhenPushed = true
-        self.navigationController?.pushViewController(viewController, animated: true)
-    }
-    
     func getBannerView() -> GADBannerView {
         let v = GADBannerView(adSize: kGADAdSizeSmartBannerPortrait)
         do {
