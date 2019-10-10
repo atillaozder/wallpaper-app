@@ -58,7 +58,6 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         InterstitialHandler.shared().setDelegate(self)
-        InterstitialHandler.shared().increase()
         view.backgroundColor = .darkTheme
                 
         view.addSubview(collectionView)
