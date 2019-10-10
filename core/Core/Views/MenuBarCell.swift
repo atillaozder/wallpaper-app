@@ -8,12 +8,16 @@
 
 class MenuBarCell: CollectionCell {
     
+    static var labelFont: UIFont {
+        return .systemFont(ofSize: 14.5, weight: .semibold)
+    }
+    
     let label: UILabel = {
         let lbl = UILabel()
         lbl.textAlignment = .center
         lbl.lineBreakMode = .byTruncatingTail
         lbl.numberOfLines = 1
-        lbl.font = .systemFont(ofSize: 14.5, weight: .semibold)
+        lbl.font = MenuBarCell.labelFont
         lbl.backgroundColor = .darkTheme
         lbl.textColor = UIColor.gray
         lbl.adjustsFontSizeToFitWidth = true
@@ -41,11 +45,5 @@ class MenuBarCell: CollectionCell {
         super.setupViews()
         self.contentView.addSubview(label)
         label.pinEdgesToSuperview()
-        
-        let separator = UIView()
-        separator.backgroundColor = .gray
-        self.contentView.addSubview(separator)
-        separator.pinEdgesToView(contentView, exclude: [.top])
-        separator.pinHeight(to: 0.5)
     }
 }

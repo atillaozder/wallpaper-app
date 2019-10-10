@@ -14,6 +14,7 @@
 "saved" = "saved";
 "favorites" = "favorites";
 "random" = "random";
+"stream" = "stream";
 
 "cancel" = "cancel";
 "openSettingsTitle" = "Settings";

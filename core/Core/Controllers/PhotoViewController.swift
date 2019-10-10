@@ -86,7 +86,7 @@ class PhotoViewController: UIViewController {
         super.viewDidLoad()
         InterstitialHandler.shared().setDelegate(self)
         InterstitialHandler.shared().increase()
-        navigationItem.title = "Picture"
+        navigationItem.title = Bundle.main.displayName
         view.backgroundColor = .darkTheme
         
         view.addSubview(activityIndicator)
@@ -341,7 +341,9 @@ extension PhotoViewController: GADBannerViewDelegate {
     // Tells the delegate an ad request loaded an ad.
     func adViewDidReceiveAd(_ bannerView: GADBannerView) {
         var insets = UIEdgeInsets.zero
-        insets.bottom = bannerView.frame.height + ImageActionBar.defaultHeight + view.windowSafeAreaInsets.bottom
+        insets.bottom += bannerView.frame.height
+        insets.bottom += ImageActionBar.defaultHeight
+        insets.bottom += view.windowSafeAreaInsets.bottom
         scrollView.contentInset = insets
         
         if !viewModel.didReceiveAd {

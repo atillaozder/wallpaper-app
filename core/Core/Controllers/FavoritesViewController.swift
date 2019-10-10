@@ -26,7 +26,7 @@ class FavoritesViewController: ImageListViewController {
         let lbl = UILabel()
         lbl.textColor = .lightGray
         lbl.font = .systemFont(ofSize: 15, weight: .medium)
-        lbl.text = "You haven't added a favorite yet. If you want to set a favorite picture, click the star icon in any picture."
+        lbl.text = "You haven't added a favorite yet. If you set any favorite photo by clicking the star icon in detail page of the photo, you will see it in here."
         lbl.numberOfLines = 0
         lbl.textAlignment = .center
         noDataView.addSubview(lbl)

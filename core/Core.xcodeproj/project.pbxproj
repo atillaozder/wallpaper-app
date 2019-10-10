@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7227DA229DA7A920029E8ED5 /* Pods_Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA0190533257FDF971AC54A0 /* Pods_Core.framework */; platformFilter = ios; };
+		FB0BBFD5234F247A000C9F93 /* StreamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0BBFD4234F247A000C9F93 /* StreamViewController.swift */; };
 		FB183CC9232F9F1C00612E77 /* PagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB183CC8232F9F1C00612E77 /* PagerViewController.swift */; };
 		FB183CCC232FA09E00612E77 /* ImageListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB183CCB232FA09E00612E77 /* ImageListViewController.swift */; };
 		FB183CCE232FA1D300612E77 /* PagedCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB183CCD232FA1D300612E77 /* PagedCollectionViewController.swift */; };
@@ -95,6 +96,7 @@
 		780A3E98BD141C8E9FC7EEAC /* Pods-Core.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Core.debug.xcconfig"; path = "../../Pods/Target Support Files/Pods-Core/Pods-Core.debug.xcconfig"; sourceTree = "<group>"; };
 		83E5A38F8539AE6563D9EFB2 /* Pods-wallpapers-Core.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wallpapers-Core.release.xcconfig"; path = "../../Pods/Target Support Files/Pods-wallpapers-Core/Pods-wallpapers-Core.release.xcconfig"; sourceTree = "<group>"; };
 		DA0190533257FDF971AC54A0 /* Pods_Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB0BBFD4234F247A000C9F93 /* StreamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamViewController.swift; sourceTree = "<group>"; };
 		FB183CC8232F9F1C00612E77 /* PagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagerViewController.swift; sourceTree = "<group>"; };
 		FB183CCB232FA09E00612E77 /* ImageListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageListViewController.swift; sourceTree = "<group>"; };
 		FB183CCD232FA1D300612E77 /* PagedCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagedCollectionViewController.swift; sourceTree = "<group>"; };
@@ -349,6 +351,7 @@
 				FB183CD3232FA74800612E77 /* HomePagerViewController.swift */,
 				FB183CCB232FA09E00612E77 /* ImageListViewController.swift */,
 				FBBAF8F3231286CB005F7542 /* FavoritesViewController.swift */,
+				FB0BBFD4234F247A000C9F93 /* StreamViewController.swift */,
 				FB183CD5232FB00C00612E77 /* CategoriesViewController.swift */,
 				FBD003C12300670800D12BF8 /* CategoryItemsViewController.swift */,
 				FBE12603232FD16300FD70CD /* SideMenuViewController.swift */,
@@ -524,6 +527,7 @@
 				FBD003FD2300670900D12BF8 /* PagedImage.swift in Sources */,
 				FB183CD2232FA2B300612E77 /* ViewController.swift in Sources */,
 				FBD004282300670900D12BF8 /* ApiService.swift in Sources */,
+				FB0BBFD5234F247A000C9F93 /* StreamViewController.swift in Sources */,
 				FBD004122300670900D12BF8 /* DateFormatter+iso8601.swift in Sources */,
 				FBD004332300670900D12BF8 /* MenuBarCell.swift in Sources */,
 				FB183CD4232FA74800612E77 /* HomePagerViewController.swift in Sources */,

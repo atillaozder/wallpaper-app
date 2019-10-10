@@ -34,7 +34,8 @@ enum HomePageMenu: Int {
 }
 
 protocol SideMenuViewControllerDelegate: class {
-    func sideMenuViewController(_ viewController: SideMenuViewController, didSelectPageMenu pageMenu: HomePageMenu)
+    func sideMenuViewController(_ viewController: SideMenuViewController,
+                                didSelectPageMenu pageMenu: HomePageMenu)
 }
 
 class SideMenuViewController: UIViewController {

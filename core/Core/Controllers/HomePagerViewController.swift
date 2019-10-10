@@ -80,7 +80,8 @@ extension HomePagerViewController: PagerViewControllerDataSource {
             ImageListViewController(),
             CategoriesViewController(),
             ImageListViewController(),
-            FavoritesViewController(viewModel: FavoritesViewModel())
+            FavoritesViewController(viewModel: FavoritesViewModel()),
+            StreamViewController()
         ]
     }
     
@@ -90,7 +91,8 @@ extension HomePagerViewController: PagerViewControllerDataSource {
             Localization.recent,
             Localization.category,
             Localization.random,
-            Localization.favorites
+            Localization.favorites,
+            Localization.stream
         ]
     }
     

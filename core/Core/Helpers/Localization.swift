@@ -41,6 +41,10 @@ struct Localization {
         return "random".localized.capitalized(with: .current)
     }
     
+    static var stream: String {
+        return "stream".localized.capitalized(with: .current)
+    }
+    
     static var photoPermissionTitle: String {
         return "photoPermissionTitle".localized
     }

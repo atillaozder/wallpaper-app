@@ -13,8 +13,9 @@ class PagedCollectionViewController: ViewController {
     
     private let footerReuseId = "footerReuseId"
     private var footerHeight: CGFloat {
-        let isVisible = (pageViewModel != nil && pageViewModel.pageOutput.hasNextPage)
-        return isVisible ? UIConstants.kNextPageIndicatorHeight : 0.01
+        return (pageViewModel != nil && pageViewModel.pageOutput.hasNextPage) ?
+            UIConstants.kNextPageIndicatorHeight :
+            0.01
     }
     
     lazy var collectionView: UICollectionView = {

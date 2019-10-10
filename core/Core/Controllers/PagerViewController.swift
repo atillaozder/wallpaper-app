@@ -17,7 +17,7 @@ public protocol PagerViewControllerDataSource: class {
 
 extension PagerViewControllerDataSource {
     public func pagerViewController(_ pagerViewController: PagerViewController,
-                             heightFor menuBar: MenuBar) -> CGFloat {
+                                    heightFor menuBar: MenuBar) -> CGFloat {
         return MenuBar.defaultBarHeight
     }
 }
@@ -222,8 +222,8 @@ extension PagerViewController: UIScrollViewDelegate {
     }
     
     public func scrollViewWillEndDragging(_ scrollView: UIScrollView,
-                                   withVelocity velocity: CGPoint,
-                                   targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+                                          withVelocity velocity: CGPoint,
+                                          targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         let pageIndex = targetContentOffset.pointee.x / view.frame.width
         menuBar.scroll(at: Int(pageIndex))
     }
