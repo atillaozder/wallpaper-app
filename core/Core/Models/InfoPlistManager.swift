@@ -1,6 +1,6 @@
 //
 //  InfoPlistManager.swift
-//  CoreWallpapers
+//  Core
 //
 //  Created by Atilla Özder on 11.08.2019.
 //  Copyright © 2019 Atilla Özder. All rights reserved.

@@ -11,7 +11,7 @@ def shared_pods
   pod 'FMPhotoPicker', '~> 0.8'
 end
 
-abstract_target 'Wallpapers' do
+abstract_target 'Multiproject' do
   use_frameworks!
   shared_pods
 
