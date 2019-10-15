@@ -1,5 +1,5 @@
 platform :ios, '10.0'
-workspace 'Wallpapers.xcworkspace'
+workspace 'Multiproject.xcworkspace'
 
 def shared_pods
   pod 'Google-Mobile-Ads-SDK'
@@ -21,9 +21,9 @@ abstract_target 'Wallpapers' do
     shared_pods
   end
 
-  target 'GachaGL' do
+  target 'Pone' do
     inherit! :search_paths
-    project 'gachalife/GachaGL.xcodeproj'
+    project 'pone/Pone.xcodeproj'
     shared_pods
   end
 end

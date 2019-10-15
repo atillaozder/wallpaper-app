@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		24054D1091390724D2C347E8 /* Pods_GachaGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59B5806411A63FA3EB46474A /* Pods_GachaGL.framework */; };
+		AE3E00257A5A5E008BAC4D11 /* Pods_Pone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 492FDB4C303695F067E1DEDC /* Pods_Pone.framework */; };
 		FB2E59AB233E1C4800973E3B /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB2E59AA233E1C4800973E3B /* Core.framework */; };
 		FB2E59AC233E1C4800973E3B /* Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FB2E59AA233E1C4800973E3B /* Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FBBD4EBE233D222200770038 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBD4EBD233D222200770038 /* AppDelegate.swift */; };
@@ -33,11 +33,13 @@
 
 /* Begin PBXFileReference section */
 		2DA5E75775CCF626F6C31906 /* Pods-GachaGL.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GachaGL.debug.xcconfig"; path = "Target Support Files/Pods-GachaGL/Pods-GachaGL.debug.xcconfig"; sourceTree = "<group>"; };
-		59B5806411A63FA3EB46474A /* Pods_GachaGL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GachaGL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		492FDB4C303695F067E1DEDC /* Pods_Pone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B2697CBD2656F17A622159C /* Pods-Pone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pone.release.xcconfig"; path = "Target Support Files/Pods-Pone/Pods-Pone.release.xcconfig"; sourceTree = "<group>"; };
+		A5F67DAAF44866993BE43C84 /* Pods-Pone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pone.debug.xcconfig"; path = "Target Support Files/Pods-Pone/Pods-Pone.debug.xcconfig"; sourceTree = "<group>"; };
 		CF722DE8DE09C34E175259EE /* Pods-GachaGL.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GachaGL.release.xcconfig"; path = "Target Support Files/Pods-GachaGL/Pods-GachaGL.release.xcconfig"; sourceTree = "<group>"; };
 		FB2E59AA233E1C4800973E3B /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FBB3F0D6234E47480059753A /* Gacha.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Gacha.entitlements; sourceTree = "<group>"; };
-		FBBD4EBA233D222200770038 /* Gacha GL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gacha GL.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FBB3F0D6234E47480059753A /* Pone.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Pone.entitlements; sourceTree = "<group>"; };
+		FBBD4EBA233D222200770038 /* Pone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBBD4EBD233D222200770038 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FBBD4EC4233D222300770038 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FBBD4EC7233D222300770038 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -147,8 +149,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				24054D1091390724D2C347E8 /* Pods_GachaGL.framework in Frameworks */,
 				FB2E59AB233E1C4800973E3B /* Core.framework in Frameworks */,
+				AE3E00257A5A5E008BAC4D11 /* Pods_Pone.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,6 +162,8 @@
 			children = (
 				2DA5E75775CCF626F6C31906 /* Pods-GachaGL.debug.xcconfig */,
 				CF722DE8DE09C34E175259EE /* Pods-GachaGL.release.xcconfig */,
+				A5F67DAAF44866993BE43C84 /* Pods-Pone.debug.xcconfig */,
+				4B2697CBD2656F17A622159C /* Pods-Pone.release.xcconfig */,
 			);
 			name = Pods;
 			path = ../Pods;
@@ -168,7 +172,7 @@
 		E282112A5370639DA411D5A2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				59B5806411A63FA3EB46474A /* Pods_GachaGL.framework */,
+				492FDB4C303695F067E1DEDC /* Pods_Pone.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -176,7 +180,7 @@
 		FBBD4EB1233D222200770038 = {
 			isa = PBXGroup;
 			children = (
-				FBB3F0D6234E47480059753A /* Gacha.entitlements */,
+				FBB3F0D6234E47480059753A /* Pone.entitlements */,
 				FB2E59AA233E1C4800973E3B /* Core.framework */,
 				FBBD4EBC233D222200770038 /* src */,
 				FBBD4EBB233D222200770038 /* Products */,
@@ -188,7 +192,7 @@
 		FBBD4EBB233D222200770038 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FBBD4EBA233D222200770038 /* Gacha GL.app */,
+				FBBD4EBA233D222200770038 /* Pone.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -209,9 +213,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		FBBD4EB9233D222200770038 /* Gacha */ = {
+		FBBD4EB9233D222200770038 /* Pone */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FBBD4ECC233D222300770038 /* Build configuration list for PBXNativeTarget "Gacha" */;
+			buildConfigurationList = FBBD4ECC233D222300770038 /* Build configuration list for PBXNativeTarget "Pone" */;
 			buildPhases = (
 				C469526AAE2E9BBE60B79474 /* [CP] Check Pods Manifest.lock */,
 				FBBD4EB6233D222200770038 /* Sources */,
@@ -224,9 +228,9 @@
 			);
 			dependencies = (
 			);
-			name = Gacha;
+			name = Pone;
 			productName = GLWallpapers;
-			productReference = FBBD4EBA233D222200770038 /* Gacha GL.app */;
+			productReference = FBBD4EBA233D222200770038 /* Pone.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -244,7 +248,7 @@
 					};
 				};
 			};
-			buildConfigurationList = FBBD4EB5233D222200770038 /* Build configuration list for PBXProject "Gacha" */;
+			buildConfigurationList = FBBD4EB5233D222200770038 /* Build configuration list for PBXProject "Pone" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -289,7 +293,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				FBBD4EB9233D222200770038 /* Gacha */,
+				FBBD4EB9233D222200770038 /* Pone */,
 			);
 		};
 /* End PBXProject section */
@@ -324,7 +328,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-GachaGL-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Pone-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -337,15 +341,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-GachaGL/Pods-GachaGL-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Pone/Pods-Pone-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-GachaGL/Pods-GachaGL-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Pone/Pods-Pone-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GachaGL/Pods-GachaGL-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Pone/Pods-Pone-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -605,10 +609,10 @@
 		};
 		FBBD4ECD233D222300770038 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2DA5E75775CCF626F6C31906 /* Pods-GachaGL.debug.xcconfig */;
+			baseConfigurationReference = A5F67DAAF44866993BE43C84 /* Pods-Pone.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Gacha.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Pone.entitlements;
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = 74NMDHX448;
@@ -618,7 +622,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.appraf.gl;
-				PRODUCT_NAME = "Gacha GL";
+				PRODUCT_NAME = Pone;
 				PROVISIONING_PROFILE_SPECIFIER = GLDebugProfile;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -627,10 +631,10 @@
 		};
 		FBBD4ECE233D222300770038 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CF722DE8DE09C34E175259EE /* Pods-GachaGL.release.xcconfig */;
+			baseConfigurationReference = 4B2697CBD2656F17A622159C /* Pods-Pone.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Gacha.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Pone.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 7;
@@ -641,7 +645,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.appraf.gl;
-				PRODUCT_NAME = "Gacha GL";
+				PRODUCT_NAME = Pone;
 				PROVISIONING_PROFILE_SPECIFIER = GLReleaseProfile;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -651,7 +655,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		FBBD4EB5233D222200770038 /* Build configuration list for PBXProject "Gacha" */ = {
+		FBBD4EB5233D222200770038 /* Build configuration list for PBXProject "Pone" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FBBD4ECA233D222300770038 /* Debug */,
@@ -660,7 +664,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FBBD4ECC233D222300770038 /* Build configuration list for PBXNativeTarget "Gacha" */ = {
+		FBBD4ECC233D222300770038 /* Build configuration list for PBXNativeTarget "Pone" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FBBD4ECD233D222300770038 /* Debug */,
