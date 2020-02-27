@@ -1,5 +1,5 @@
 platform :ios, '10.0'
-workspace 'Multiproject.xcworkspace'
+workspace 'WallpapersHDClone.xcworkspace'
 
 def shared_pods
   pod 'Google-Mobile-Ads-SDK'
@@ -11,7 +11,7 @@ def shared_pods
   pod 'FMPhotoPicker', '~> 0.8'
 end
 
-abstract_target 'Multiproject' do
+abstract_target 'WallpapersHDClone' do
   use_frameworks!
   shared_pods
 
@@ -21,9 +21,9 @@ abstract_target 'Multiproject' do
     shared_pods
   end
 
-  target 'Pone' do
+  target 'WallpapersHDClone' do
     inherit! :search_paths
-    project 'pone/Pone.xcodeproj'
+    project 'wallpapersclone/WallpapersHDClone.xcodeproj'
     shared_pods
   end
 end
