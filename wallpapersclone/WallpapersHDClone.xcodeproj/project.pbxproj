@@ -35,7 +35,6 @@
 		44CB7431BDA82524BE3D100A /* Pods-WallpapersHDClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WallpapersHDClone.release.xcconfig"; path = "Target Support Files/Pods-WallpapersHDClone/Pods-WallpapersHDClone.release.xcconfig"; sourceTree = "<group>"; };
 		4F99E61151F285112397C580 /* Pods-WallpapersHDClone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WallpapersHDClone.debug.xcconfig"; path = "Target Support Files/Pods-WallpapersHDClone/Pods-WallpapersHDClone.debug.xcconfig"; sourceTree = "<group>"; };
 		BC968227CC48E44A34247C4A /* Pods_WallpapersHDClone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WallpapersHDClone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FB235C0F24080FBE00606060 /* WallpapersHDClone.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = WallpapersHDClone.entitlements; sourceTree = "<group>"; };
 		FB2E59AA233E1C4800973E3B /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBBD4EBA233D222200770038 /* WallpapersHDClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WallpapersHDClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBBD4EBD233D222200770038 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -187,7 +186,6 @@
 		FBBD4EB1233D222200770038 = {
 			isa = PBXGroup;
 			children = (
-				FB235C0F24080FBE00606060 /* WallpapersHDClone.entitlements */,
 				FB2E59AA233E1C4800973E3B /* Core.framework */,
 				FBBD4EBC233D222200770038 /* src */,
 				FBBD4EBB233D222200770038 /* Products */,
@@ -616,8 +614,9 @@
 			baseConfigurationReference = 4F99E61151F285112397C580 /* Pods-WallpapersHDClone.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = WallpapersHDClone.entitlements;
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 74NMDHX448;
 				INFOPLIST_FILE = "$(SRCROOT)/src/Info.plist";
@@ -627,7 +626,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.wallpapershd.clone;
 				PRODUCT_NAME = WallpapersHDClone;
-				PROVISIONING_PROFILE_SPECIFIER = GLDebugProfile;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -638,9 +637,9 @@
 			baseConfigurationReference = 44CB7431BDA82524BE3D100A /* Pods-WallpapersHDClone.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = WallpapersHDClone.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 74NMDHX448;
 				INFOPLIST_FILE = "$(SRCROOT)/src/Info.plist";
@@ -650,7 +649,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.wallpapershd.clone;
 				PRODUCT_NAME = WallpapersHDClone;
-				PROVISIONING_PROFILE_SPECIFIER = GLReleaseProfile;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
