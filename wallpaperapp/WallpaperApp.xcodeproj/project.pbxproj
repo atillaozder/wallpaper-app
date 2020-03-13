@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5AE6381EE66602DB074055F4 /* Pods_WallpapersHDClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC968227CC48E44A34247C4A /* Pods_WallpapersHDClone.framework */; };
+		0C061FF034F5910208908094 /* Pods_WallpaperApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39F98E04AD450FFE7CC50443 /* Pods_WallpaperApp.framework */; };
 		FB2E59AB233E1C4800973E3B /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB2E59AA233E1C4800973E3B /* Core.framework */; };
 		FB2E59AC233E1C4800973E3B /* Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FB2E59AA233E1C4800973E3B /* Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FBBD4EBE233D222200770038 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBD4EBD233D222200770038 /* AppDelegate.swift */; };
@@ -32,11 +32,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1CD62EAAD21E7A528A7E0307 /* Pods-WallpaperApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WallpaperApp.debug.xcconfig"; path = "Target Support Files/Pods-WallpaperApp/Pods-WallpaperApp.debug.xcconfig"; sourceTree = "<group>"; };
+		39F98E04AD450FFE7CC50443 /* Pods_WallpaperApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WallpaperApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		44CB7431BDA82524BE3D100A /* Pods-WallpapersHDClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WallpapersHDClone.release.xcconfig"; path = "Target Support Files/Pods-WallpapersHDClone/Pods-WallpapersHDClone.release.xcconfig"; sourceTree = "<group>"; };
 		4F99E61151F285112397C580 /* Pods-WallpapersHDClone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WallpapersHDClone.debug.xcconfig"; path = "Target Support Files/Pods-WallpapersHDClone/Pods-WallpapersHDClone.debug.xcconfig"; sourceTree = "<group>"; };
-		BC968227CC48E44A34247C4A /* Pods_WallpapersHDClone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WallpapersHDClone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F924ED9D616FEF3D88652FF2 /* Pods-WallpaperApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WallpaperApp.release.xcconfig"; path = "Target Support Files/Pods-WallpaperApp/Pods-WallpaperApp.release.xcconfig"; sourceTree = "<group>"; };
 		FB2E59AA233E1C4800973E3B /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FBBD4EBA233D222200770038 /* WallpapersHDClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WallpapersHDClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FBBD4EBA233D222200770038 /* WallpaperApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WallpaperApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBBD4EBD233D222200770038 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FBBD4EC4233D222300770038 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FBBD4EC7233D222300770038 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -147,7 +149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB2E59AB233E1C4800973E3B /* Core.framework in Frameworks */,
-				5AE6381EE66602DB074055F4 /* Pods_WallpapersHDClone.framework in Frameworks */,
+				0C061FF034F5910208908094 /* Pods_WallpaperApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,7 +159,7 @@
 		18DF653CC3A5A14DFAEEB96C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BC968227CC48E44A34247C4A /* Pods_WallpapersHDClone.framework */,
+				39F98E04AD450FFE7CC50443 /* Pods_WallpaperApp.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -167,6 +169,8 @@
 			children = (
 				4F99E61151F285112397C580 /* Pods-WallpapersHDClone.debug.xcconfig */,
 				44CB7431BDA82524BE3D100A /* Pods-WallpapersHDClone.release.xcconfig */,
+				1CD62EAAD21E7A528A7E0307 /* Pods-WallpaperApp.debug.xcconfig */,
+				F924ED9D616FEF3D88652FF2 /* Pods-WallpaperApp.release.xcconfig */,
 			);
 			name = Pods;
 			path = ../Pods;
@@ -197,7 +201,7 @@
 		FBBD4EBB233D222200770038 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FBBD4EBA233D222200770038 /* WallpapersHDClone.app */,
+				FBBD4EBA233D222200770038 /* WallpaperApp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -215,9 +219,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		FBBD4EB9233D222200770038 /* WallpapersHDClone */ = {
+		FBBD4EB9233D222200770038 /* WallpaperApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FBBD4ECC233D222300770038 /* Build configuration list for PBXNativeTarget "WallpapersHDClone" */;
+			buildConfigurationList = FBBD4ECC233D222300770038 /* Build configuration list for PBXNativeTarget "WallpaperApp" */;
 			buildPhases = (
 				C469526AAE2E9BBE60B79474 /* [CP] Check Pods Manifest.lock */,
 				FBBD4EB6233D222200770038 /* Sources */,
@@ -230,9 +234,9 @@
 			);
 			dependencies = (
 			);
-			name = WallpapersHDClone;
+			name = WallpaperApp;
 			productName = GLWallpapers;
-			productReference = FBBD4EBA233D222200770038 /* WallpapersHDClone.app */;
+			productReference = FBBD4EBA233D222200770038 /* WallpaperApp.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -250,7 +254,7 @@
 					};
 				};
 			};
-			buildConfigurationList = FBBD4EB5233D222200770038 /* Build configuration list for PBXProject "WallpapersHDClone" */;
+			buildConfigurationList = FBBD4EB5233D222200770038 /* Build configuration list for PBXProject "WallpaperApp" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -295,7 +299,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				FBBD4EB9233D222200770038 /* WallpapersHDClone */,
+				FBBD4EB9233D222200770038 /* WallpaperApp */,
 			);
 		};
 /* End PBXProject section */
@@ -330,7 +334,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-WallpapersHDClone-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-WallpaperApp-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -343,15 +347,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-WallpapersHDClone/Pods-WallpapersHDClone-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-WallpaperApp/Pods-WallpaperApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-WallpapersHDClone/Pods-WallpapersHDClone-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-WallpaperApp/Pods-WallpaperApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WallpapersHDClone/Pods-WallpapersHDClone-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WallpaperApp/Pods-WallpaperApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -611,7 +615,7 @@
 		};
 		FBBD4ECD233D222300770038 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4F99E61151F285112397C580 /* Pods-WallpapersHDClone.debug.xcconfig */;
+			baseConfigurationReference = 1CD62EAAD21E7A528A7E0307 /* Pods-WallpaperApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "";
@@ -625,7 +629,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.wallpapershd.clone;
-				PRODUCT_NAME = WallpapersHDClone;
+				PRODUCT_NAME = WallpaperApp;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -634,7 +638,7 @@
 		};
 		FBBD4ECE233D222300770038 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 44CB7431BDA82524BE3D100A /* Pods-WallpapersHDClone.release.xcconfig */;
+			baseConfigurationReference = F924ED9D616FEF3D88652FF2 /* Pods-WallpaperApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "";
@@ -648,7 +652,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.wallpapershd.clone;
-				PRODUCT_NAME = WallpapersHDClone;
+				PRODUCT_NAME = WallpaperApp;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -658,7 +662,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		FBBD4EB5233D222200770038 /* Build configuration list for PBXProject "WallpapersHDClone" */ = {
+		FBBD4EB5233D222200770038 /* Build configuration list for PBXProject "WallpaperApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FBBD4ECA233D222300770038 /* Debug */,
@@ -667,7 +671,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FBBD4ECC233D222300770038 /* Build configuration list for PBXNativeTarget "WallpapersHDClone" */ = {
+		FBBD4ECC233D222300770038 /* Build configuration list for PBXNativeTarget "WallpaperApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FBBD4ECD233D222300770038 /* Debug */,

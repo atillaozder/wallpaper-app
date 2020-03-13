@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "FBBD4EB9233D222200770038"
-               BuildableName = "WallpapersHDClone.app"
-               BlueprintName = "WallpapersHDClone"
-               ReferencedContainer = "container:WallpapersHDClone.xcodeproj">
+               BuildableName = "WallpaperApp.app"
+               BlueprintName = "WallpaperApp"
+               ReferencedContainer = "container:WallpaperApp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,9 +45,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FBBD4EB9233D222200770038"
-            BuildableName = "WallpapersHDClone.app"
-            BlueprintName = "WallpapersHDClone"
-            ReferencedContainer = "container:WallpapersHDClone.xcodeproj">
+            BuildableName = "WallpaperApp.app"
+            BlueprintName = "WallpaperApp"
+            ReferencedContainer = "container:WallpaperApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FBBD4EB9233D222200770038"
-            BuildableName = "WallpapersHDClone.app"
-            BlueprintName = "WallpapersHDClone"
-            ReferencedContainer = "container:WallpapersHDClone.xcodeproj">
+            BuildableName = "WallpaperApp.app"
+            BlueprintName = "WallpaperApp"
+            ReferencedContainer = "container:WallpaperApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
